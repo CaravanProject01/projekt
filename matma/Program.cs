@@ -9,11 +9,12 @@ namespace ConsoleApplication1
 {
     public class miasto
     {
-        int populacja;
-        int gotowosc;
-        int zywnosc;
-        int dobrobyt;
+        private int populacja;
+        private int gotowosc;
+        private int zywnosc;
+        private int dobrobyt;
         List<towar> towary = new List<towar>();
+        List<stan> stany = new List<stan>();
 
         public miasto (int a, int b, int c, int d)
         {
@@ -33,6 +34,44 @@ namespace ConsoleApplication1
                 x.policzCena(pop);
             }
 
+        }
+
+        public void dzien()
+        {
+            foreach(stan x in stany)
+            {
+                x.kolejnyDzien();
+                int a = x.dajTrwanie();
+                String id = x.dajId();
+                if (a == 0){   
+                    //stan się skończył-ewentualne zakończenie działania, usunięcie stanu                 
+                    switch (id){
+                        case "ST01":
+                            // cos
+                            break;
+                        case "ST02":
+                            // cos
+                            break;
+                        default:
+                            break;
+                    }
+                    stany.Remove(x);
+                }else{
+                    //ewentualne działania podczas stanu
+                    switch (id){
+                        case "ST01":
+                            // cos
+                            break;
+                        case "ST02":
+                            // cos
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            //losowanie ewentualnych nowych stanów
         }
 
         public void tydzien()
@@ -60,13 +99,13 @@ namespace ConsoleApplication1
                 zyw *= -1;
                 zyw /= 4;
                 zpop = populacja*zyw;
-                zpop /= 100;
+                zpop /= 200;
                 populacja -= zpop;
             }
             if (zyw > 0 && zyw <= 100){
                 zyw /= 10;
                 zpop = populacja * zyw;
-                zpop /= 100;
+                zpop /= 500;
                 populacja += zpop;
             }
             if (zyw > 100 && zyw <= 1000)
@@ -75,19 +114,36 @@ namespace ConsoleApplication1
                 zyw /= 40;
                 zyw += 10;
                 zpop = populacja * zyw;
-                zpop /= 100;
+                zpop /= 500;
                 populacja += zpop;
             }
             if (zyw > 1000)
             {
                 zpop = populacja * 33;
-                zpop /= 100;
+                zpop /= 500;
                 populacja += zpop;
             }
-            //Console.WriteLine("populacja wynosi " + populacja);
+            Console.WriteLine("populacja wynosi " + populacja);
         }       
             
         
+
+    }
+
+    public class stan
+    {
+        private String id;
+        private int trwanie;
+
+        public stan (String a, int b)
+        {
+            id = a;
+            trwanie = b;
+        }
+
+        public void kolejnyDzien() { trwanie--; }
+        public String dajId() { return id; }
+        public int dajTrwanie() { return trwanie; }
 
     }
 
@@ -310,11 +366,11 @@ namespace ConsoleApplication1
             //ilosc, cenaDef, produkcjaDef/Mod, zapotrzebowanieDef/Mod
             //towar chleb = new towar(1000, 100, 100, 900, 300, 0);
 
-            //chleb.policzCena(1000);     
+            //chleb.policzCena(1);     
             //chleb.zmianaIlosci(1);     
 
-            miasto m1 = new miasto(5000, 0, 10, 0);
-            m1.zmianaPopulacji();
+            //miasto m1 = new miasto(10000, 0, 700, 0);
+            //m1.zmianaPopulacji();
 
             Console.ReadKey();
 
