@@ -149,6 +149,7 @@ namespace ConsoleApplication1
 
     public class towar
     {
+        private String id;
         private int ilosc;      //ilość towaru w mieście
         private int cenaDef;        //podstawowa cena towaru
         private int produkcjaDef;       //podstawowa produkcja towaru
@@ -160,8 +161,9 @@ namespace ConsoleApplication1
         private int cenaSprzed;        //aktualne zapotrzebowanie 
 
         //konstruktor
-        public towar(int a, int b, int c, int d, int e, int f)
+        public towar(String x, int a, int b, int c, int d, int e, int f)
         {
+            id = x;
             ilosc = a;
             cenaDef = b;
             produkcjaDef = c;
@@ -173,6 +175,7 @@ namespace ConsoleApplication1
         }
 
         //funkcje pomocnicze, kontrolne
+        public String dajId() { return id; }
         public int dajIlosc() { return ilosc; }
         public int dajCenaDef() { return cenaDef; }
         public int dajProdukcjaDef() { return produkcjaDef; }
