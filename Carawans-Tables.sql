@@ -35,9 +35,10 @@ CREATE TABLE [dbo].[Locs] (
 
 CREATE TABLE [dbo].[Roads] (
     [IdRoad]  UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
-    [IdLoc_1] UNIQUEIDENTIFIER NOT NULL,							/*Klucz obcy Lokacji 1*/
-    [IdLoc_2] UNIQUEIDENTIFIER NOT NULL,							/*Klucz obcy Lokacji 2*/
-    [Length]  INT              DEFAULT ((1)) NOT NULL,				/*Dlugosc*/
+    [IdLoc_1] UNIQUEIDENTIFIER NOT NULL,
+    [IdLoc_2] UNIQUEIDENTIFIER NOT NULL,
+    [Length]  INT              DEFAULT ((1)) NOT NULL,
+    [Name] VARCHAR(50) NULL, 
     PRIMARY KEY CLUSTERED ([IdRoad] ASC),
     CONSTRAINT [FK_Roads_ToLocs_1] FOREIGN KEY ([IdLoc_1]) REFERENCES [dbo].[Locs] ([IdLoc]),
     CONSTRAINT [FK_Roads_ToLocs_2] FOREIGN KEY ([IdLoc_2]) REFERENCES [dbo].[Locs] ([IdLoc])
