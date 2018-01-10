@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[State] (
 
 CREATE TABLE [dbo].[Article] (
     [IdArticle]   UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
-    [Name]        INT              NULL,							/*Nazwa*/
+    [Name]        VARCHAR(50)              NULL,					/*Nazwa*/
     [Price]       INT              NULL,							/*Cena*/
     [Prod]        INT              NULL,							/*Produkcja*/
     [Requisition] INT              NULL,							/*Zapotrzebowanie*/
@@ -86,9 +86,9 @@ CREATE TABLE [dbo].[Art_in_Town] (
 
 
 CREATE TABLE [dbo].[Art_in_Cravan] (
-    [IdCaravan] UNIQUEIDENTIFIER NOT NULL,							/*Klucz obcy Karawany*/
-    [IdArticle] UNIQUEIDENTIFIER NOT NULL,							/*Klucz obcy Towaru*/
-    [Number]    INT              DEFAULT ((0)) NOT NULL,			/*Ilosc*/
+    [IdCaravan] UNIQUEIDENTIFIER  NOT NULL,							/*Klucz obcy Karawany*/
+    [IdArticle] UNIQUEIDENTIFIER  NOT NULL,							/*Klucz obcy Towaru*/
+    [Number]    INT DEFAULT ((0)) NOT NULL,							/*Ilosc*/
     CONSTRAINT [FK_Art_in_Caravan_Caravan] FOREIGN KEY ([IdCaravan]) REFERENCES [dbo].[Caravan] ([IdCaravan]),
     CONSTRAINT [FK_Art_in_Caravan_ToArticle] FOREIGN KEY ([IdArticle]) REFERENCES [dbo].[Article] ([IdArticle])
 );
