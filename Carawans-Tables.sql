@@ -1,8 +1,8 @@
 ﻿/*
+**		Caravans - Database
+**
 ** Kod generujacy tabeli bazy danych.
 ** Wszystkie tabeli sa ulozone w kolejnosci tworzenia
-**
-**
 */
 
 CREATE TABLE [dbo].[State] (
