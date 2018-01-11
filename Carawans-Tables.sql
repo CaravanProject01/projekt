@@ -9,6 +9,7 @@ CREATE TABLE [dbo].[State] (
     [IdState]     UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
     [Name]        VARCHAR (50)     NULL,							/*Nazwa*/
     [Descripcion] VARCHAR (500)    NULL,							/*Opis*/
+    [ShortDes] VARCHAR(100) NULL,									/*Krotki opis*/
     PRIMARY KEY CLUSTERED ([IdState] ASC)
 );
 /*Tabela stanow*/
