@@ -23,5 +23,8 @@ namespace Caravans.model
         public static int time;
         public static string getTimeS() { return time.ToString(); }
         public static int getTime() { return time; }
+
+
+
     }
 }
