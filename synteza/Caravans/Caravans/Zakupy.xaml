@@ -1,0 +1,34 @@
+﻿<Window x:Class="Caravans.Zakupy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Caravans"
+        mc:Ignorable="d"
+        Title="authors"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="460.331" Width="584.864" Visibility="Visible" WindowStartupLocation="CenterScreen" ContentStringFormat="Carawans" FontFamily="Stencil" FontSize="16" FontWeight="Bold" Icon="car.jpg" ShowInTaskbar="False" Cursor="Arrow" AllowsTransparency="True" WindowStyle="None">
+    <Window.Foreground>
+        <ImageBrush ImageSource="{Binding proekt_zespolowy\\Caravans\\Caravans\\car.jpg}" Stretch="None"/>
+    </Window.Foreground>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding F:\\proekt_zespolowy\\Caravans\\Caravans\\car.jpg}" TileMode="FlipXY">
+                <ImageBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ImageBrush.RelativeTransform>
+            </ImageBrush>
+        </Grid.Background>
+        <Image x:Name="ob_jpg" Margin="-11,-12,-13,-10" Source="ob.jpg" Stretch="Fill"/>
+        <Button x:Name="button" Content="EXIT" HorizontalAlignment="Left" Height="33" Margin="512,10,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.924,-0.172" Foreground="#FFFDFAFA">
+            <Button.Background>
+                <ImageBrush ImageSource="bac.jpg"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+
+</Window>
