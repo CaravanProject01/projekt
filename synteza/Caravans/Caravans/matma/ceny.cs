@@ -7,13 +7,17 @@ using Caravans.model;
 
 namespace Caravans.matma
 {
-    class wjazd
+    public class wjazd
     {
-        string[] id;
-        int[] cenaKup;
-        int[] cenaSp;
-        int[] ile;
+        private string[] id = new string[11];
+        private int[] cenaKup = new int[11];
+        private int[] cenaSp = new int[11];
+        private int[] ile = new int[11];
 
+        public string getId(int x) { return id[x]; }
+        public int getCenaKup(int x) { return cenaKup[x]; }
+        public int getCenaSp(int x) { return cenaSp[x]; }
+        public int getIle(int x) { return ile[x]; }
 
         public wjazd wjedz(string a)
         {
@@ -82,7 +86,7 @@ namespace Caravans.matma
         }
     }
 
-    class towar
+    public class towar
     {
         private String id;
         private int ilosc;      //ilość towaru w mieście
@@ -110,6 +114,8 @@ namespace Caravans.matma
 
         public String dajId() { return id; }
         public int dajIlosc() { return ilosc; }
+        public int dajProdukcje() { return produkcjaMod; }
+        public int dajZapotrzebowanie() { return zapotrzebowanieMod; }
         public int dajCenaKup() { return cenaKup; }
         public int dajCenaSprzed() { return cenaSprzed; }
 
@@ -142,6 +148,37 @@ namespace Caravans.matma
             }
             int zap = Convert.ToInt32(x);
             return zap * pop;
+        }
+
+        public int policzProdukcje(int pop)
+        {
+            double x;
+            if (produkcjaDef == 0)
+            {
+                if (produkcjaMod == 0)
+                {
+                    x = 0;
+                }
+                else
+                {
+                    x = produkcjaMod / 10;
+                }
+            }
+            else
+            {
+                if (produkcjaMod == 0)
+                {
+                    x = produkcjaDef;
+                }
+                else
+                {
+                    x = produkcjaMod + 100;
+                    x = x / 100;
+                    x = x * produkcjaDef;
+                }
+            }
+            int prod = Convert.ToInt32(x);
+            return prod * pop;
         }
 
         public void policzCena(int pop)
@@ -233,7 +270,67 @@ namespace Caravans.matma
             }
         }
 
+        public int zmianaIlosci(int pop)
+        {
+            int zap = policzZapotrzebowanie(pop);
+            int prod = policzProdukcje(pop);
+            int wynik = 0;
+            int x = 0;
 
+            Console.WriteLine("Początek-towaru jest " + ilosc);
+
+            ilosc -= zap;
+            if (ilosc < 0)
+            {
+                wynik--;
+                x = ilosc * -1;
+                ilosc = 0;
+            }
+
+            Console.WriteLine("Środek-towaru jest " + ilosc + ", zabrakło " + x);
+
+            if (x == 0)
+            {
+                ilosc += prod;
+            }
+            else
+            {
+                ilosc += prod;
+                x /= 2;
+                ilosc -= x;
+                if (ilosc < 0)
+                {
+                    ilosc = 0;
+                    wynik--;
+                }
+            }
+
+            Console.WriteLine("Koniec-towaru jest " + ilosc);
+
+            double roznica;
+            roznica = ilosc / zap;
+
+            if (roznica >= 5) { wynik++; }
+
+            Console.WriteLine("Koniec-modyfikator wynosi " + wynik);
+
+            return wynik;
+        }
+
+        public void wyprowadzDane(string idm)
+        {
+            foreach(TableArtInTown tow in Modele.tableArtInTown)
+            {
+                string id1 = tow.GetId();
+                string id2 = tow.GetIdArticle();
+                if(idm==id1 && id == id2)
+                {
+                    tow.SetNumber(dajIlosc());
+                    tow.SetProduction(dajProdukcje());
+                    tow.SetRequisition(dajZapotrzebowanie());
+                }
+            }
+        }
     }
 }
 
