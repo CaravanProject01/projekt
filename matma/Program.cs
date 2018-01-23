@@ -38,12 +38,13 @@ namespace ConsoleApp1
 
         public void dzien()
         {
+            Boolean zniszczone = false;
+            int licznik;
+            double licz;
             foreach (stan x in stany)
             {
                 x.kolejnyDzien();
-                int a = x.dajTrwanie();
-                int licznik;
-                double licz;
+                int a = x.dajTrwanie();    
                 String ids = x.dajId();
                 if (a == 0)
                 {
@@ -105,7 +106,8 @@ namespace ConsoleApp1
                                 }
                             }
                             break;
-                        case "ST06": //pożar                          
+                        case "ST06": //pożar  
+                            zniszczone = true;
                             break;
                         case "ST07": //odbudowa
                             foreach (towar y in towary){
@@ -165,6 +167,7 @@ namespace ConsoleApp1
                             }
                             break;
                         case "ST010": //oblężenie
+                            zniszczone = true;
                             break;
                         default:
                             break;
@@ -210,6 +213,7 @@ namespace ConsoleApp1
                             }
                             break;
                         case "ST08": //war prep
+                            gotowosc += 5;
                             break;
                         case "ST09": //war
                             break;
@@ -236,6 +240,160 @@ namespace ConsoleApp1
             }
 
             //losowanie ewentualnych nowych stanów
+            if (gotowosc < 50)
+            {
+                stan nowy = new stan("ST08", 12); //warprep
+                stany.Add(nowy);
+                foreach (towar y in towary)
+                {
+                    String idt = y.dajId();
+                    if (idt == "TO14")   //uzbrojenie
+                    {
+                        licznik = y.dajzapotrzebowanieMod();
+                        licznik -= 100;
+                        y.ustawZapotrzebowanieMod(licznik);
+                    }
+                }
+            }
+            if (gotowosc > 300)
+            {
+                stan nowy = new stan("ST09", 20);  //war
+                stany.Add(nowy);
+                foreach (towar y in towary)
+                {
+                    String idt = y.dajId();
+                    if (idt == "TO01")   //drewno
+                    {
+                        licznik = y.dajzapotrzebowanieMod();
+                        licznik += 25;
+                        y.ustawZapotrzebowanieMod(licznik);
+                    }
+                    if (idt == "TO06")   //metale
+                    {
+                        licznik = y.dajzapotrzebowanieMod();
+                        licznik += 25;
+                        y.ustawZapotrzebowanieMod(licznik);
+                    }
+                    if (idt == "TO21")   //medykamenty
+                    {
+                        licznik = y.dajzapotrzebowanieMod();
+                        licznik += 50;
+                        y.ustawZapotrzebowanieMod(licznik);
+                    }
+                    if (idt == "TO01")   //żywnosć
+                    {
+                        licznik = y.dajzapotrzebowanieMod();
+                        licznik += 200;
+                        y.ustawZapotrzebowanieMod(licznik);
+                    }
+                }
+            }
+            if (zniszczone == true)
+            {
+                stan nowy = new stan("ST07", 10);  //odbudowa
+                stany.Add(nowy);
+                foreach (towar y in towary)
+                {
+                    String idt = y.dajId();
+                    if (idt == "TO01")   //drewno
+                    {
+                        licznik = y.dajzapotrzebowanieMod();
+                        licznik += 50;
+                        y.ustawZapotrzebowanieMod(licznik);
+                    }
+                    if (idt == "TO02")   //kamień
+                    {
+                        licznik = y.dajzapotrzebowanieMod();
+                        licznik += 50;
+                        y.ustawZapotrzebowanieMod(licznik);
+                    }
+                }
+            }
+            Random rng = new Random();
+            int randomek = rng.Next(100);
+            int czas = rng.Next(5, 16);
+            switch (randomek)
+            {
+                case 1:
+                    stan nowy1 = new stan("ST01", czas);  //zaraza
+                    stany.Add(nowy1);
+                    foreach (towar y in towary)
+                    {
+                        String idt = y.dajId();
+                        if (idt == "TO21")   //medykamenty
+                        {
+                            licznik = y.dajzapotrzebowanieMod();
+                            licznik += 100;
+                            y.ustawZapotrzebowanieMod(licznik);
+                        }
+                    }
+                    break;
+                case 2:
+                    stan nowy2 = new stan("ST02", czas);  //susza
+                    stany.Add(nowy2);
+                    foreach (towar y in towary)
+                    {
+                        String idt = y.dajId();
+                        if (idt == "TO10")   //żywnosć
+                        {
+                            licznik = y.dajzapotrzebowanieMod();
+                            licznik -= 50;
+                            y.ustawZapotrzebowanieMod(licznik);
+                        }
+                    }
+                    break;
+                case 3:
+                    stan nowy3 = new stan("ST03", czas);  //nieurodzaj
+                    stany.Add(nowy3);
+                    foreach (towar y in towary)
+                    {
+                        String idt = y.dajId();
+                        if (idt == "TO10")   //żywność
+                        {
+                            licznik = y.dajzapotrzebowanieMod();
+                            licznik -= 20;
+                            y.ustawZapotrzebowanieMod(licznik);
+                        }
+                    }
+                    break;
+                case 4:
+                    stan nowy4 = new stan("ST04", czas);  //obf. plony
+                    stany.Add(nowy4);
+                    foreach (towar y in towary)
+                    {
+                        String idt = y.dajId();
+                        if (idt == "TO10")   //żywność
+                        {
+                            licznik = y.dajzapotrzebowanieMod();
+                            licznik += 20;
+                            y.ustawZapotrzebowanieMod(licznik);
+                        }
+                    }
+                    break;
+                case 5:
+                    stan nowy5 = new stan("ST05", czas);  //b. obf. plony
+                    stany.Add(nowy5);
+                    foreach (towar y in towary)
+                    {
+                        String idt = y.dajId();
+                        if (idt == "TO10")   //żywność
+                        {
+                            licznik = y.dajzapotrzebowanieMod();
+                            licznik += 50;
+                            y.ustawZapotrzebowanieMod(licznik);
+                        }
+                    }
+                    break;
+                case 6:
+                    czas /= 2;
+                    stan nowy6 = new stan("ST06", czas);  //pożar
+                    stany.Add(nowy6);
+                    break;
+                default:
+                    break;
+
+            }
+
         }
 
         public void tydzien()
