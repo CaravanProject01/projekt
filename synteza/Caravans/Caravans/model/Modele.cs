@@ -7,15 +7,15 @@ namespace Caravans.model
 {
     public class Modele
     {
-        static List<TableArticle> tableArticle = new List<TableArticle>();
-        static List<TableArtInCaravan> tableArtInCaravan = new List<TableArtInCaravan>();
-        static List<TableArtInTown> tableArtInTown = new List<TableArtInTown>();
-        static List<TableCaravan> tableCaravan = new List<TableCaravan>();
-        static List<TableLoc> tableLoc = new List<TableLoc>();
-        static List<TableRoad> tableRoad = new List<TableRoad>();
-        static List<TableState> tableState = new List<TableState>();
-        static List<TableTown> tableTown = new List<TableTown>();
-        static List<TableTownState> tableTownState = new List<TableTownState>();
+        public static List<TableArticle> tableArticle = new List<TableArticle>();
+        public static List<TableArtInCaravan> tableArtInCaravan = new List<TableArtInCaravan>();
+        public static List<TableArtInTown> tableArtInTown = new List<TableArtInTown>();
+        public static List<TableCaravan> tableCaravan = new List<TableCaravan>();
+        public static List<TableLoc> tableLoc = new List<TableLoc>();
+        public static List<TableRoad> tableRoad = new List<TableRoad>();
+        public static List<TableState> tableState = new List<TableState>();
+        public static List<TableTown> tableTown = new List<TableTown>();
+        public static List<TableTownState> tableTownState = new List<TableTownState>();
 
         private static int gold;
         public static string getGoldS() { return gold.ToString(); }
