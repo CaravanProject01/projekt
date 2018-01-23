@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ConsoleApplication1
+namespace ConsoleApp1
 {
     public class miasto
     {
@@ -16,7 +16,7 @@ namespace ConsoleApplication1
         List<towar> towary = new List<towar>();
         List<stan> stany = new List<stan>();
 
-        public miasto (int a, int b, int c, int d)
+        public miasto(int a, int b, int c, int d)
         {
             populacja = a;
             gotowosc = b;
@@ -29,7 +29,7 @@ namespace ConsoleApplication1
             //przy wjeździe do miasta wylicza ceny towarów
             foreach (towar x in towary)
             {
-                int pop = populacja / 1000;
+                int pop = populacja / 100;
                 if (pop == 0) { pop = 1; }
                 x.policzCena(pop);
             }
@@ -38,32 +38,196 @@ namespace ConsoleApplication1
 
         public void dzien()
         {
-            foreach(stan x in stany)
+            foreach (stan x in stany)
             {
                 x.kolejnyDzien();
                 int a = x.dajTrwanie();
-                String id = x.dajId();
-                if (a == 0){   
+                int licznik;
+                double licz;
+                String ids = x.dajId();
+                if (a == 0)
+                {
                     //stan się skończył-ewentualne zakończenie działania, usunięcie stanu                 
-                    switch (id){
-                        case "ST01":
-                            // cos
+                    switch (ids)
+                    {
+                        case "ST01":  //zaraza
+                            foreach(towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO21")   //medykamenty
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 100;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                            }
                             break;
-                        case "ST02":
-                            // cos
+                        case "ST02": //susza
+                            foreach (towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO10")   //żywność
+                                {
+                                    licznik = y.dajProdukcjaMod();
+                                    licznik += 50;
+                                    y.ustawProdukcjeMod(licznik);
+                                }
+                            }
+                            break;
+                        case "ST03": //nieurodzaj
+                            foreach (towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO10")   //żywność
+                                {
+                                    licznik = y.dajProdukcjaMod();
+                                    licznik += 20;
+                                    y.ustawProdukcjeMod(licznik);
+                                }
+                            }
+                            break;
+                        case "ST04": //obf. plony
+                            foreach (towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO10")   //żywność
+                                {
+                                    licznik = y.dajProdukcjaMod();
+                                    licznik -= 20;
+                                    y.ustawProdukcjeMod(licznik);
+                                }
+                            }
+                            break;
+                        case "ST05": //w. obf. plony
+                            foreach (towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO10")   //żywność
+                                {
+                                    licznik = y.dajProdukcjaMod();
+                                    licznik -= 50;
+                                    y.ustawProdukcjeMod(licznik);
+                                }
+                            }
+                            break;
+                        case "ST06": //pożar                          
+                            break;
+                        case "ST07": //odbudowa
+                            foreach (towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO01")   //drewno
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 50;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                                if(idt == "TO02")   //kamień
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 50;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                            }
+                            break;
+                        case "ST08": //war prep
+                            foreach (towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO14")   //uzbrojenie
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 100;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                            }
+                            break;
+                        case "ST09": //war
+                            foreach (towar y in towary){
+                                String idt = y.dajId();
+                                if (idt == "TO01")   //drewno
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 25;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                                if (idt == "TO06")   //metale
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 25;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                                if (idt == "TO21")   //medykamenty
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 50;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                                if (idt == "TO01")   //żywnosć
+                                {
+                                    licznik = y.dajzapotrzebowanieMod();
+                                    licznik -= 200;
+                                    y.ustawZapotrzebowanieMod(licznik);
+                                }
+                            }
+                            break;
+                        case "ST010": //oblężenie
                             break;
                         default:
                             break;
                     }
                     stany.Remove(x);
-                }else{
+                }
+                else
+                {
                     //ewentualne działania podczas stanu
-                    switch (id){
-                        case "ST01":
-                            // cos
+                    switch (ids)
+                    {
+                        case "ST01":  //zaraza
+                            licz = populacja*0.92;
+                            populacja = (int)licz;
                             break;
-                        case "ST02":
-                            // cos
+                        case "ST02": //susza
+                            break;
+                        case "ST03": //nieurodzaj
+                            break;
+                        case "ST04": //obf. plony
+                            break;
+                        case "ST05": //w. obf. plony
+                            break;
+                        case "ST06": //pożar       
+                            foreach (towar y in towary)
+                            {
+                                licznik = y.dajProdukcjaMod();
+                                licznik -= 5;
+                                y.ustawProdukcjeMod(licznik);
+
+                                licz = y.dajIlosc();
+                                licz *= 0.9;
+                                licznik = (int)licz;
+                                y.ustawIlosc(licznik);
+                            }
+                            break;
+                        case "ST07": //odbudowa
+                            foreach (towar y in towary)
+                            {
+                                licznik = y.dajProdukcjaMod();
+                                licznik += 5;
+                                y.ustawProdukcjeMod(licznik);
+                            }
+                            break;
+                        case "ST08": //war prep
+                            break;
+                        case "ST09": //war
+                            break;
+                        case "ST010": //oblężenie
+                            foreach (towar y in towary)
+                            {
+                                licznik = y.dajProdukcjaMod();
+                                licznik -= 5;
+                                y.ustawProdukcjeMod(licznik);
+
+                                licz = y.dajIlosc();
+                                licz *= 0.9;
+                                licznik = (int)licz;
+                                y.ustawIlosc(licznik);
+                            }
+                            licz = populacja * 0.95;
+                            populacja = (int)licz;
+                            break;
                             break;
                         default:
                             break;
@@ -78,12 +242,12 @@ namespace ConsoleApplication1
         {
             foreach (towar x in towary)
             {
-                int pop = populacja / 1000;
+                int pop = populacja / 100;
                 if (pop == 0) { pop = 1; }
                 int zmiana = x.zmianaIlosci(pop);
-                dobrobyt = +zmiana;                                        
+                dobrobyt = +zmiana;
             }
-            zmianaPopulacji();           
+            zmianaPopulacji();
         }
 
         public void miesiac()
@@ -95,14 +259,16 @@ namespace ConsoleApplication1
         {
             int zpop;
             int zyw = zywnosc;
-            if (zyw < 0){
+            if (zyw < 0)
+            {
                 zyw *= -1;
                 zyw /= 4;
-                zpop = populacja*zyw;
+                zpop = populacja * zyw;
                 zpop /= 200;
                 populacja -= zpop;
             }
-            if (zyw > 0 && zyw <= 100){
+            if (zyw > 0 && zyw <= 100)
+            {
                 zyw /= 10;
                 zpop = populacja * zyw;
                 zpop /= 500;
@@ -124,9 +290,9 @@ namespace ConsoleApplication1
                 populacja += zpop;
             }
             Console.WriteLine("populacja wynosi " + populacja);
-        }       
-            
-        
+        }
+
+
 
     }
 
@@ -135,7 +301,7 @@ namespace ConsoleApplication1
         private String id;
         private int trwanie;
 
-        public stan (String a, int b)
+        public stan(String a, int b)
         {
             id = a;
             trwanie = b;
@@ -174,7 +340,6 @@ namespace ConsoleApplication1
             cenaSprzed = 0;
         }
 
-        //funkcje pomocnicze, kontrolne
         public String dajId() { return id; }
         public int dajIlosc() { return ilosc; }
         public int dajCenaDef() { return cenaDef; }
@@ -185,37 +350,69 @@ namespace ConsoleApplication1
         public int dajCenaKup() { return cenaKup; }
         public int dajCenaSprzed() { return cenaSprzed; }
 
+        public void ustawIlosc(int a) { ilosc = a; }
+        public void ustawProdukcjeMod(int a) { produkcjaMod = a; }
+        public void ustawZapotrzebowanieMod(int a) { zapotrzebowanieMod = a; }
+
 
 
         public int policzZapotrzebowanie(int pop)
         {
             double x;
-            if (zapotrzebowanieMod == 0)
+            if (zapotrzebowanieDef == 0)
             {
-                x = zapotrzebowanieDef;
+                if (zapotrzebowanieMod == 0)
+                {
+                    x = 0;
+                }
+                else
+                {
+                    x = zapotrzebowanieMod / 10;
+                }
             }
             else
             {
-                x = zapotrzebowanieMod + 100;
-                x = x / 100;
-                x = x * zapotrzebowanieDef;
+                if (zapotrzebowanieMod == 0)
+                {
+                    x = zapotrzebowanieDef;
+                }
+                else
+                {
+                    x = zapotrzebowanieMod + 100;
+                    x = x / 100;
+                    x = x * zapotrzebowanieDef;
+                }
             }
             int zap = Convert.ToInt32(x);
-            return zap*pop;
+            return zap * pop;
         }
 
         public int policzProdukcje(int pop)
         {
             double x;
-            if (produkcjaMod == 0)
+            if (produkcjaDef == 0)
             {
-                x = produkcjaDef;
+                if (produkcjaMod == 0)
+                {
+                    x = 0;
+                }
+                else
+                {
+                    x = produkcjaMod / 10;
+                }
             }
             else
             {
-                x = produkcjaMod + 100;
-                x = x / 100;
-                x = x * produkcjaDef;
+                if (produkcjaMod == 0)
+                {
+                    x = produkcjaDef;
+                }
+                else
+                {
+                    x = produkcjaMod + 100;
+                    x = x / 100;
+                    x = x * produkcjaDef;
+                }
             }
             int prod = Convert.ToInt32(x);
             return prod * pop;
@@ -227,7 +424,7 @@ namespace ConsoleApplication1
             double roznica;
             int zapotrzebowanie = policzZapotrzebowanie(pop);
             //Console.WriteLine(zapotrzebowanie);
-            roznica = ilosc/zapotrzebowanie;
+            roznica = ilosc / zapotrzebowanie;
             //Console.WriteLine(roznica);
 
             //dla testów
@@ -249,7 +446,7 @@ namespace ConsoleApplication1
                 {
                     if (roznica < 0.5)
                     {
-                        double odw = 1/roznica;
+                        double odw = 1 / roznica;
                         double x;
                         double y;
                         x = (int)cenaDef * odw;
@@ -313,11 +510,12 @@ namespace ConsoleApplication1
         }
 
 
-        public int zmianaIlosci(int pop){
+        public int zmianaIlosci(int pop)
+        {
             int zap = policzZapotrzebowanie(pop);
             int prod = policzProdukcje(pop);
-            int wynik=0;
-            int x=0;
+            int wynik = 0;
+            int x = 0;
 
             Console.WriteLine("Początek-towaru jest " + ilosc);
 
@@ -328,7 +526,7 @@ namespace ConsoleApplication1
                 x = ilosc * -1;
                 ilosc = 0;
             }
-            
+
             Console.WriteLine("Środek-towaru jest " + ilosc + ", zabrakło " + x);
 
             if (x == 0)
@@ -358,7 +556,7 @@ namespace ConsoleApplication1
 
             return wynik;
         }
-        
+
 
     }
 
