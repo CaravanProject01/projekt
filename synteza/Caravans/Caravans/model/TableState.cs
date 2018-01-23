@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caravans.model
 {
-    class TableState
+    public class TableState
     {
         private string Id;
         private string Name;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caravans.model
 {
-    class TableArtInCaravan
+    public class TableArtInCaravan
     {
         private string Id;
         private string IdArticle;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caravans.model
 {
-    class TableArticle
+    public class TableArticle
     {
         private string Id;
         private string Name;
@@ -14,7 +14,7 @@ namespace Caravans.model
         private int Production;
         private int Requisition;
 
-        internal TableArticle(string Id, string Name, int Price, int Production, int Requisition)
+        public TableArticle(string Id, string Name, int Price, int Production, int Requisition)
         {
             this.Id = Id;
             this.Name = Name;
