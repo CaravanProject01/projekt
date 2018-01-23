@@ -24,7 +24,24 @@ namespace Caravans.model
         public static string getTimeS() { return time.ToString(); }
         public static int getTime() { return time; }
 
+	public static void KoniecStanu(string ids, string idm)
+        {
+            foreach(TableTownState stan in tableTownState)
+            {
+                string ids2 = stan.GetIdState();
+                string idm2 = stan.GetId();
+                if(ids==ids2 && idm == idm2)
+                {
+                    tableTownState.Remove(stan);
+                }
+            }
+        }
 
+        public static void NowyStan(string ids, string idm, int czas)
+        {
+            TableTownState stan = new TableTownState(idm, ids, czas);
+            tableTownState.Add(stan);
+        }
 
     }
 }
