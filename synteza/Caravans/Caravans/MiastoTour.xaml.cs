@@ -23,7 +23,7 @@ namespace Caravans
     public partial class MiastoTour : Window
     {
 
-        public static string illud = Modele.getGold();
+        public static string illud = Modele.getGoldS();
         
         public string ILLUD
         {

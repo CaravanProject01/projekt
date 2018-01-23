@@ -17,8 +17,11 @@ namespace Caravans.model
         static List<TableTown> tableTown = new List<TableTown>();
         static List<TableTownState> tableTownState = new List<TableTownState>();
 
-        private static int gold=1234;
-        public static string getGold() { return gold.ToString(); }
-        public int time;
+        private static int gold;
+        public static string getGoldS() { return gold.ToString(); }
+        public static int getGold() { return gold; }
+        public static int time;
+        public static string getTimeS() { return time.ToString(); }
+        public static int getTime() { return time; }
     }
 }
