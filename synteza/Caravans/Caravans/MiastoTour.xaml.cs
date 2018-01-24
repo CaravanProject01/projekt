@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Caravans.model;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace Caravans
@@ -23,7 +22,7 @@ namespace Caravans
     public partial class MiastoTour : Window
     {
 
-        public static string illud = Modele.getGoldS();
+        string illud="1000" ;
         
         public string ILLUD
         {

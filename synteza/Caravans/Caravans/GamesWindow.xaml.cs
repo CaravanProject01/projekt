@@ -19,17 +19,6 @@ namespace Caravans
    
     public partial class GamesWindow : Window
     {
-        string kasa="2345";
-
-        public string Kasa
-        {
-            get { return kasa; }
-            set { kasa = value;}
-        }
-
-     
-
-
         public GamesWindow() => InitializeComponent();
         private void Bmenu_Click(object sender, RoutedEventArgs e)
         {
@@ -44,23 +33,33 @@ namespace Caravans
             mt.Show();
         }
 
-        private void Waggon_Click(object sender, RoutedEventArgs e)
+        private void BWaggon_Click(object sender, RoutedEventArgs e)
         {
-           WaggonShop wa = new WaggonShop();
+            WaggonShop wa = new WaggonShop();
             wa.Show();
         }
 
-        private void button8_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void Bend_Click(object sender, RoutedEventArgs e)
+        {
+            endturn();
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void button9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void endturn()
         {
 
         }
