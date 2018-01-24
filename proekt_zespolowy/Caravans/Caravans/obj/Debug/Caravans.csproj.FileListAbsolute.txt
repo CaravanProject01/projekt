@@ -15,3 +15,13 @@ F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\Caravans.pdb
 F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\GamesWindow.g.cs
 F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\Caravans_MarkupCompile.lref
 F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\GamesWindow.baml
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\authors.g.cs
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\authors.baml
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\MiastoTour.g.cs
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\MiastoTour.baml
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\WaggonShop.g.cs
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\WaggonShop.baml
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\Zakupy.g.cs
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\Zakupy.baml
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\Podroz.g.cs
+F:\proekt_zespolowy\Caravans\Caravans\obj\Debug\Podroz.baml
