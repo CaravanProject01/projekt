@@ -79,7 +79,8 @@ namespace Caravans.model
 
         public void SetDuration(int Duraction)
         {
-            this.Duration = Duraction;
+            if (this.Duration - Duration >= 0)
+            this.Duration = this.Duration - Duraction;
         }
 
         public void SetMinions(int Minions)
