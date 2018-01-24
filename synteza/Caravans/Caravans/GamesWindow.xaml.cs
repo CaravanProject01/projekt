@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Caravans.model;
+using Caravans.matma;
 
 namespace Caravans
 {
@@ -61,7 +63,16 @@ namespace Caravans
 
         private void endturn()
         {
+            Modele.time += 1;
+            foreach (TableCaravan x in Modele.tableCaravan)//odejmujemy jedna ture od karawan
+            {
+                x.SetDuration(1); // tu juz jest kontrola czy jest zero tur (przynajmniej powinno)
 
+            }
+            dzien z = new dzien();
+            z.nowyDzien();
+            tydzien y = new tydzien();
+            if (Modele.time % 7 == 0) y.nowyTydzien();
         }
     }
 }

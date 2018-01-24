@@ -1,4 +1,18 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using Caravans.model;
+
 
 namespace Caravans
 {
@@ -59,11 +73,36 @@ namespace Caravans
         }
         private void BHightown_Click(object sender, RoutedEventArgs e)
         {
-            podrozdo("MI1q","KA01");
+            podrozdo("MI12","KA01");
         }
 
-        private void podrozdo(string a,string b ){
-            
+        private void podrozdo(string miastoid, string karawanaid){
+            foreach (TableCaravan x in Modele.tableCaravan)//tu trz bd zmienic na liste 
+            {
+                if (x.GetId() == karawanaid)
+                {
+                    foreach (TableTown y in Modele.tableTown)
+                    {
+                        if (y.GetId() == miastoid)
+                        {
+                            foreach (TableRoad z in Modele.tableRoad)
+                            {
+                                if (y.GetIdLoc() == z.GetIdLoc_1() && x.GetIdLoc() == z.GetIdLoc_2() && x.GetDuration() == 0)
+                                {
+                                    x.SetDuration(z.GetLength());
+                                    x.SetIdLoc(z.GetIdLoc_1());
+                                }
+                                else if (y.GetIdLoc() == z.GetIdLoc_2() && x.GetIdLoc() == z.GetIdLoc_1() && x.GetDuration() == 0)
+                                {
+                                    x.SetDuration(z.GetLength());
+                                    x.SetIdLoc(z.GetIdLoc_2());
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
         }
     }
 }
