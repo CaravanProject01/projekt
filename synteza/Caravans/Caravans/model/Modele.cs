@@ -37,6 +37,8 @@ namespace Caravans.model
 
             ReadListCaravan();
             ReadListTownState();
+            ReadListArtInCaravan();
+            ReadListArtInTown();
         }
 
 
