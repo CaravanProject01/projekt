@@ -361,71 +361,71 @@
                 </Image.OpacityMask>
             </Image>
         </Canvas>
-        <Button x:Name="sp" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,60,0,0" VerticalAlignment="Top" Width="83" Click="button_Click"/>
-        <Button x:Name="minus" Content="-" HorizontalAlignment="Left" Margin="418,60,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click"/>
-        <Button x:Name="kup" Content="Kupuj" HorizontalAlignment="Left" Margin="665,60,0,0" VerticalAlignment="Top" Width="83"/>
-        <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Margin="634,60,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174"/>
-        <TextBlock x:Name="tkan" HorizontalAlignment="Left" Height="23" Margin="450,60,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="sp" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,60,0,0" VerticalAlignment="Top" Width="83" Click="buttonT1_Click"/>
+        <Button x:Name="minus" Content="-" HorizontalAlignment="Left" Margin="418,60,0,0" VerticalAlignment="Top" Width="27" Click="buttonT2_Click"/>
+        <Button x:Name="kup" Content="Kupuj" HorizontalAlignment="Left" Margin="665,60,0,0" VerticalAlignment="Top" Width="83" Click="buttonT3_Click"/>
+        <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Margin="634,60,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Click="buttonT4_Click"/>
+        <TextBlock x:Name="tkan" HorizontalAlignment="Left" Height="23" Margin="450,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spwi" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,120,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minuswi" Content="-" HorizontalAlignment="Left" Margin="418,120,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupwi" Content="Kupuj" HorizontalAlignment="Left" Margin="665,120,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="pluswi" Content="+" HorizontalAlignment="Left" Margin="634,120,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="wino" HorizontalAlignment="Left" Height="23" Margin="450,120,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="spwi" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,120,0,0" VerticalAlignment="Top" Width="83" Click="buttonW1_Click" Height="23"/>
+        <Button x:Name="minuswi" Content="-" HorizontalAlignment="Left" Margin="418,120,0,0" VerticalAlignment="Top" Width="27" Click="buttonW2_Click" Height="23"/>
+        <Button x:Name="kupwi" Content="Kupuj" HorizontalAlignment="Left" Margin="665,120,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonW3_Click"/>
+        <Button x:Name="pluswi" Content="+" HorizontalAlignment="Left" Margin="634,120,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonW4_Click"/>
+        <TextBlock x:Name="wino" HorizontalAlignment="Left" Height="23" Margin="450,120,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spbr" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,180,0,0" VerticalAlignment="Top" Width="83" Click="sprz_Click" Height="23"/>
-        <Button x:Name="minusbr" Content="-" HorizontalAlignment="Left" Margin="418,180,0,0" VerticalAlignment="Top" Width="27" Click="min_Click" Height="23"/>
-        <Button x:Name="kupbr" Content="Kupuj" HorizontalAlignment="Left" Margin="665,180,0,0" VerticalAlignment="Top" Width="83" Click="kup_Click" Height="23"/>
-        <Button x:Name="plusbr" Content="+" HorizontalAlignment="Left" Margin="634,180,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="pl_Click"/>
-        <TextBlock x:Name="bron" HorizontalAlignment="Left" Height="23" Margin="450,180,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"><Run Foreground="Black" Text="{Binding Path=BR}"/></TextBlock>
+        <Button x:Name="spbr" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,180,0,0" VerticalAlignment="Top" Width="83" Click="buttonB1_Click" Height="23"/>
+        <Button x:Name="minusbr" Content="-" HorizontalAlignment="Left" Margin="418,180,0,0" VerticalAlignment="Top" Width="27" Click="buttonB2_Click" Height="23"/>
+        <Button x:Name="kupbr" Content="Kupuj" HorizontalAlignment="Left" Margin="665,180,0,0" VerticalAlignment="Top" Width="83" Click="buttonB3_Click" Height="23"/>
+        <Button x:Name="plusbr" Content="+" HorizontalAlignment="Left" Margin="634,180,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonB4_Click"/>
+        <TextBlock x:Name="bron" HorizontalAlignment="Left" Height="23" Margin="450,180,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"><Run Text="{Binding Path=BR}"/></TextBlock>
 
-        <Button x:Name="sphl" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,240,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minushl" Content="-" HorizontalAlignment="Left" Margin="418,240,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kuphl" Content="Kupuj" HorizontalAlignment="Left" Margin="665,240,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plushl" Content="+" HorizontalAlignment="Left" Margin="634,240,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="hleb" HorizontalAlignment="Left" Height="23" Margin="450,240,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="sphl" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,240,0,0" VerticalAlignment="Top" Width="83" Click="buttonC1_Click" Height="23"/>
+        <Button x:Name="minushl" Content="-" HorizontalAlignment="Left" Margin="418,240,0,0" VerticalAlignment="Top" Width="27" Click="buttonC2_Click" Height="23"/>
+        <Button x:Name="kuphl" Content="Kupuj" HorizontalAlignment="Left" Margin="665,240,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonC3_Click"/>
+        <Button x:Name="plushl" Content="+" HorizontalAlignment="Left" Margin="634,240,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonC4_Click"/>
+        <TextBlock x:Name="hleb" HorizontalAlignment="Left" Height="23" Margin="450,240,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spdrz" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,300,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minusdrz" Content="-" HorizontalAlignment="Left" Margin="418,300,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupbrdrz" Content="Kupuj" HorizontalAlignment="Left" Margin="665,300,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plusbrdrz" Content="+" HorizontalAlignment="Left" Margin="634,300,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="brondrz" HorizontalAlignment="Left" Height="23" Margin="450,300,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="spdrz" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,300,0,0" VerticalAlignment="Top" Width="83" Click="buttonD1_Click" Height="23"/>
+        <Button x:Name="minusdrz" Content="-" HorizontalAlignment="Left" Margin="418,300,0,0" VerticalAlignment="Top" Width="27" Click="buttonD2_Click" Height="23"/>
+        <Button x:Name="kupbrdrz" Content="Kupuj" HorizontalAlignment="Left" Margin="665,300,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonD3_Click"/>
+        <Button x:Name="plusbrdrz" Content="+" HorizontalAlignment="Left" Margin="634,300,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonD4_Click"/>
+        <TextBlock x:Name="brondrz" HorizontalAlignment="Left" Height="23" Margin="450,300,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spjabl" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,365,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minusjab" Content="-" HorizontalAlignment="Left" Margin="418,365,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupjab" Content="Kupuj" HorizontalAlignment="Left" Margin="665,365,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plusjab" Content="+" HorizontalAlignment="Left" Margin="634,365,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="jabl" HorizontalAlignment="Left" Height="23" Margin="450,365,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="spjabl" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,365,0,0" VerticalAlignment="Top" Width="83" Click="buttonJ1_Click" Height="23"/>
+        <Button x:Name="minusjab" Content="-" HorizontalAlignment="Left" Margin="418,365,0,0" VerticalAlignment="Top" Width="27" Click="buttonJ2_Click" Height="23"/>
+        <Button x:Name="kupjab" Content="Kupuj" HorizontalAlignment="Left" Margin="665,365,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonJ3_Click"/>
+        <Button x:Name="plusjab" Content="+" HorizontalAlignment="Left" Margin="634,365,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonJ4_Click"/>
+        <TextBlock x:Name="jabl" HorizontalAlignment="Left" Height="23" Margin="450,365,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spms" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,450,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minusms" Content="-" HorizontalAlignment="Left" Margin="418,450,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupbrms" Content="Kupuj" HorizontalAlignment="Left" Margin="665,450,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plusbrms" Content="+" HorizontalAlignment="Left" Margin="634,450,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="mies" HorizontalAlignment="Left" Height="23" Margin="450,450,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="spms" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,450,0,0" VerticalAlignment="Top" Width="83" Click="buttonM1_Click" Height="23"/>
+        <Button x:Name="minusms" Content="-" HorizontalAlignment="Left" Margin="418,450,0,0" VerticalAlignment="Top" Width="27" Click="buttonM2_Click" Height="23"/>
+        <Button x:Name="kupbrms" Content="Kupuj" HorizontalAlignment="Left" Margin="665,450,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonM3_Click"/>
+        <Button x:Name="plusbrms" Content="+" HorizontalAlignment="Left" Margin="634,450,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonM4_Click"/>
+        <TextBlock x:Name="mies" HorizontalAlignment="Left" Height="23" Margin="450,450,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="sppr" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,510,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minuspr" Content="-" HorizontalAlignment="Left" Margin="418,510,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupbrpr" Content="Kupuj" HorizontalAlignment="Left" Margin="665,510,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plusbrpr" Content="+" HorizontalAlignment="Left" Margin="634,510,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="perl" HorizontalAlignment="Left" Height="23" Margin="450,510,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="sppr" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,510,0,0" VerticalAlignment="Top" Width="83" Click="buttonP1_Click" Height="23"/>
+        <Button x:Name="minuspr" Content="-" HorizontalAlignment="Left" Margin="418,510,0,0" VerticalAlignment="Top" Width="27" Click="buttonP2_Click" Height="23"/>
+        <Button x:Name="kupbrpr" Content="Kupuj" HorizontalAlignment="Left" Margin="665,510,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonP3_Click"/>
+        <Button x:Name="plusbrpr" Content="+" HorizontalAlignment="Left" Margin="634,510,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonP4_Click"/>
+        <TextBlock x:Name="perl" HorizontalAlignment="Left" Height="23" Margin="450,510,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spsk" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,560,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minussk" Content="-" HorizontalAlignment="Left" Margin="418,560,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupsk" Content="Kupuj" HorizontalAlignment="Left" Margin="665,560,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plussk" Content="+" HorizontalAlignment="Left" Margin="634,560,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="skur" HorizontalAlignment="Left" Height="23" Margin="450,560,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="spsk" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,560,0,0" VerticalAlignment="Top" Width="83" Click="buttonS1_Click" Height="23"/>
+        <Button x:Name="minussk" Content="-" HorizontalAlignment="Left" Margin="418,560,0,0" VerticalAlignment="Top" Width="27" Click="buttonS2_Click" Height="23"/>
+        <Button x:Name="kupsk" Content="Kupuj" HorizontalAlignment="Left" Margin="665,560,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonS3_Click"/>
+        <Button x:Name="plussk" Content="+" HorizontalAlignment="Left" Margin="634,560,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonS4_Click"/>
+        <TextBlock x:Name="skur" HorizontalAlignment="Left" Height="23" Margin="450,560,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spsr" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,620,0,0" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23"/>
-        <Button x:Name="minussr" Content="-" HorizontalAlignment="Left" Margin="418,620,0,0" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupsr" Content="Kupuj" HorizontalAlignment="Left" Margin="665,620,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plusbsr" Content="+" HorizontalAlignment="Left" Margin="634,620,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="srodki" HorizontalAlignment="Left" Height="23" Margin="450,620,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="spsr" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,620,0,0" VerticalAlignment="Top" Width="83" Click="buttonA1_Click" Height="23"/>
+        <Button x:Name="minussr" Content="-" HorizontalAlignment="Left" Margin="418,620,0,0" VerticalAlignment="Top" Width="27" Click="buttonA2_Click" Height="23"/>
+        <Button x:Name="kupsr" Content="Kupuj" HorizontalAlignment="Left" Margin="665,620,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="buttonA3_Click"/>
+        <Button x:Name="plusbsr" Content="+" HorizontalAlignment="Left" Margin="634,620,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23" Click="buttonA4_Click"/>
+        <TextBlock x:Name="srodki" HorizontalAlignment="Left" Height="23" Margin="450,620,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
-        <Button x:Name="spprz" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,680,0,-5" VerticalAlignment="Top" Width="83" Click="button_Click" Height="23" BorderBrush="#FF727171"/>
-        <Button x:Name="minusprz" Content="-" HorizontalAlignment="Left" Margin="418,680,0,-5" VerticalAlignment="Top" Width="27" Click="button1_Click" Height="23"/>
-        <Button x:Name="kupprz" Content="Kupuj" HorizontalAlignment="Left" Margin="665,680,0,-5" VerticalAlignment="Top" Width="83" Height="23"/>
-        <Button x:Name="plusbrprz" Content="+" HorizontalAlignment="Left" Margin="634,680,0,-5" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Height="23"/>
-        <TextBlock x:Name="przyp" HorizontalAlignment="Left" Height="23" Margin="450,680,0,-5" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5"/>
+        <Button x:Name="spprz" Content="sprzedaj" HorizontalAlignment="Left" Margin="330,680,0,-5" VerticalAlignment="Top" Width="83" Click="buttonX1_Click" Height="23" BorderBrush="#FF727171"/>
+        <Button x:Name="minusprz" Content="-" HorizontalAlignment="Left" Margin="418,680,0,-5" VerticalAlignment="Top" Width="27" Click="buttonX2_Click" Height="23"/>
+        <Button x:Name="kupprz" Content="Kupuj" HorizontalAlignment="Left" Margin="665,680,0,-5" VerticalAlignment="Top" Width="83" Height="23" Click="buttonX3_Click"/>
+        <Button x:Name="plusbrprz" Content="+" HorizontalAlignment="Left" Margin="634,680,0,-5" VerticalAlignment="Top" Width="26" RenderTransformOrigin="1.125,-0.174" Click="buttonX4_Click" Height="23"/>
+        <TextBlock x:Name="przyp" HorizontalAlignment="Left" Height="23" Margin="450,680,0,-5" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
         <Image x:Name="gold_jpg" Margin="38,733,853,-55" Source="gold.jpg" Stretch="Fill"/>
         <TextBlock x:Name="GOLD" HorizontalAlignment="Left" Margin="92,750,0,-55" TextWrapping="Wrap" VerticalAlignment="Top" Text="000" IsEnabled="False" Background="#FFECDCDC" Width="99" Foreground="#FF131313"/>
