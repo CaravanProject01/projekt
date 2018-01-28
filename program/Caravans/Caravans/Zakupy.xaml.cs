@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Caravans.matma;
+using Caravans.model;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 
@@ -21,6 +23,7 @@ namespace Caravans
     /// </summary>
     public partial class Zakupy : Window
     {
+        //te zmienne prawdopodobnie pójdą do śmieci
         string iljabwag = "1000";
         string iltreew = "1000";
         string ilmeatt = "1000";
@@ -37,8 +40,73 @@ namespace Caravans
         string br = "0";
 
         //ID karawany i miasta-puki co przypisane odgórnie, potem się zrobi by jakoś szukało tych danych
-        string idm = "MI10";
-        string idk = "KA01";
+        static string idm = "MI10";
+        static string idk = "KA01";
+
+        //wsadza dane do powyższych zmiennych (włącznie z wywowałem funckji policzenia cen)
+        private static wjazd dane = new wjazd(idm);
+
+        //lista cen i ilości: IK-ilość w karawanie, IM-ilość w mieście, CK-cena kupna, CS-cena sprzedarzy
+        string tkanIK;
+        string tkanIM = dane.getIle("TO03");
+        string tkanCK = dane.getCenaKup("TO03");
+        string tkanCS = dane.getCenaSp("TO03");
+
+        string winoIK;
+        string winoIM = dane.getIle("TO09");
+        string winoCK = dane.getCenaKup("TO09");
+        string winoCS = dane.getCenaSp("TO09");
+
+        string bronIK;
+        string bronIM = dane.getIle("TO06");
+        string bronCK = dane.getCenaKup("TO06");
+        string bronCS = dane.getCenaSp("TO06");
+
+        string chlebIK;
+        string chlebIM = dane.getIle("TO05");
+        string chlebCK = dane.getCenaKup("TO05");
+        string chlebCS = dane.getCenaSp("TO05");
+
+        string drewIK;
+        string drewIM = dane.getIle("TO01");
+        string drewCK = dane.getCenaKup("TO01");
+        string drewCS = dane.getCenaSp("TO01");
+
+        string jablIK;
+        string jablIM = dane.getIle("TO02");
+        string jablCK = dane.getCenaKup("TO02");
+        string jablCS = dane.getCenaSp("TO02");
+
+        string miesoIK;
+        string miesoIM = dane.getIle("TO04");
+        string miesoCK = dane.getCenaKup("TO04");
+        string miesoCS = dane.getCenaSp("TO04");
+
+        string perlIK;
+        string perlIM = dane.getIle("TO07");
+        string perlCK = dane.getCenaKup("TO07");
+        string perlCS = dane.getCenaSp("TO07");
+
+        string skrIK;
+        string skrIM = dane.getIle("TO10");
+        string skrCK = dane.getCenaKup("TO10");
+        string skrCS = dane.getCenaSp("TO10");
+
+        string alchIK;
+        string alchIM = dane.getIle("TO11");
+        string alchCK = dane.getCenaKup("TO11");
+        string alchCS = dane.getCenaSp("TO11");
+
+        string przypIK;
+        string przypIM = dane.getIle("TO08");
+        string przypCK = dane.getCenaKup("TO08");
+        string przypCS = dane.getCenaSp("TO08");
+
+
+
+
+
+
 
         /*
          nie wiem co to za funkcje, potencjalnie niepotrzebne-jesli miały obsługiwać przyciski przy chandlu bronią, to na pewno nie potrzebne         
@@ -178,8 +246,9 @@ namespace Caravans
 
         //w te funkcje należy wkleić kod od kamila
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
-        private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile) { }
-        private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile) { }
+        //Muszą także zmieniać wyświetlana ilość towaru
+        private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) { }
+        private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) { }
 
         private void exitZ_Click(object sender, RoutedEventArgs e) => Close();
 
@@ -188,7 +257,8 @@ namespace Caravans
         private void buttonT1_Click(object sender, RoutedEventArgs e)//tkanina sprzedaj
         {
             int x = Convert.ToInt32(tkan.Text);
-            sprzedarz(idk, idm, "TO03", x);
+            int y = Convert.ToInt32(tkanCS);
+            sprzedarz(idk, idm, "TO03", x, y);
         }
 
         private void buttonT2_Click(object sender, RoutedEventArgs e)//tkanina -
@@ -202,7 +272,8 @@ namespace Caravans
         private void buttonT3_Click(object sender, RoutedEventArgs e)//tkanina kup
         {
             int x = Convert.ToInt32(tkan.Text);
-            kupowanie(idk, idm, "TO03", x);
+            int y = Convert.ToInt32(tkanCK);
+            kupowanie(idk, idm, "TO03", x, y);
         }
 
         private void buttonT4_Click(object sender, RoutedEventArgs e)//tkanina +
@@ -216,7 +287,8 @@ namespace Caravans
         private void buttonW1_Click(object sender, RoutedEventArgs e)//wino sprzedaj
         {
             int x = Convert.ToInt32(wino.Text);
-            sprzedarz(idk, idm, "TO09", x);
+            int y = Convert.ToInt32(winoCS);
+            sprzedarz(idk, idm, "TO09", x, y);
         }
 
         private void buttonW2_Click(object sender, RoutedEventArgs e)//wino -
@@ -230,7 +302,8 @@ namespace Caravans
         private void buttonW3_Click(object sender, RoutedEventArgs e)//wino kup
         {
             int x = Convert.ToInt32(wino.Text);
-            kupowanie(idk, idm, "TO09", x);
+            int y = Convert.ToInt32(winoCK);
+            kupowanie(idk, idm, "TO09", x, y);
         }
 
         private void buttonW4_Click(object sender, RoutedEventArgs e)//wino +
@@ -244,7 +317,8 @@ namespace Caravans
         private void buttonB1_Click(object sender, RoutedEventArgs e)//bron sprzedaj
         {
             int x = Convert.ToInt32(bron.Text);
-            sprzedarz(idk, idm, "TO06", x);
+            int y = Convert.ToInt32(bronCS);
+            sprzedarz(idk, idm, "TO06", x, y);
         }
 
         private void buttonB2_Click(object sender, RoutedEventArgs e)//bron -
@@ -258,7 +332,8 @@ namespace Caravans
         private void buttonB3_Click(object sender, RoutedEventArgs e)//bron kup
         {
             int x = Convert.ToInt32(bron.Text);
-            kupowanie(idk, idm, "TO06", x);
+            int y = Convert.ToInt32(bronCK);
+            kupowanie(idk, idm, "TO06", x, y);
         }
 
         private void buttonB4_Click(object sender, RoutedEventArgs e)//bron +
@@ -272,7 +347,8 @@ namespace Caravans
         private void buttonC1_Click(object sender, RoutedEventArgs e)//chleb sprzedaj
         {
             int x = Convert.ToInt32(hleb.Text);
-            sprzedarz(idk, idm, "TO05", x);
+            int y = Convert.ToInt32(chlebCS);
+            sprzedarz(idk, idm, "TO05", x, y);
         }
 
         private void buttonC2_Click(object sender, RoutedEventArgs e)//chleb -
@@ -286,7 +362,8 @@ namespace Caravans
         private void buttonC3_Click(object sender, RoutedEventArgs e)//chleb kup
         {
             int x = Convert.ToInt32(hleb.Text);
-            kupowanie(idk, idm, "TO05", x);
+            int y = Convert.ToInt32(chlebCK);
+            kupowanie(idk, idm, "TO05", x, y);
         }
 
         private void buttonC4_Click(object sender, RoutedEventArgs e)//chleb +
@@ -300,7 +377,8 @@ namespace Caravans
         private void buttonD1_Click(object sender, RoutedEventArgs e)//drewno sprzedaj
         {
             int x = Convert.ToInt32(brondrz.Text);
-            sprzedarz(idk, idm, "TO01", x);
+            int y = Convert.ToInt32(drewCS);
+            sprzedarz(idk, idm, "TO01", x, y);
         }
 
         private void buttonD2_Click(object sender, RoutedEventArgs e)//drewno -
@@ -314,7 +392,8 @@ namespace Caravans
         private void buttonD3_Click(object sender, RoutedEventArgs e)//drewno kup
         {
             int x = Convert.ToInt32(brondrz.Text);
-            kupowanie(idk, idm, "TO01", x);
+            int y = Convert.ToInt32(drewCK);
+            kupowanie(idk, idm, "TO01", x, y);
         }
 
         private void buttonD4_Click(object sender, RoutedEventArgs e)//drewno +
@@ -328,7 +407,8 @@ namespace Caravans
         private void buttonJ1_Click(object sender, RoutedEventArgs e)//jabłko sprzedaj
         {
             int x = Convert.ToInt32(jabl.Text);
-            sprzedarz(idk, idm, "TO02", x);
+            int y = Convert.ToInt32(jablCS);
+            sprzedarz(idk, idm, "TO02", x, y);
         }
 
         private void buttonJ2_Click(object sender, RoutedEventArgs e)//jabłko -
@@ -342,7 +422,8 @@ namespace Caravans
         private void buttonJ3_Click(object sender, RoutedEventArgs e)//jabłko kup
         {
             int x = Convert.ToInt32(jabl.Text);
-            kupowanie(idk, idm, "TO02", x);
+            int y = Convert.ToInt32(jablCK);
+            kupowanie(idk, idm, "TO02", x, y);
         }
 
         private void buttonJ4_Click(object sender, RoutedEventArgs e)//jabłko +
@@ -356,7 +437,8 @@ namespace Caravans
         private void buttonM1_Click(object sender, RoutedEventArgs e)//mięso sprzedaj
         {
             int x = Convert.ToInt32(mies.Text);
-            sprzedarz(idk, idm, "TO04", x);
+            int y = Convert.ToInt32(miesoCS);
+            sprzedarz(idk, idm, "TO04", x, y);
         }
 
         private void buttonM2_Click(object sender, RoutedEventArgs e)//mięso -
@@ -370,7 +452,8 @@ namespace Caravans
         private void buttonM3_Click(object sender, RoutedEventArgs e)//mięso kup
         {
             int x = Convert.ToInt32(mies.Text);
-            kupowanie(idk, idm, "TO04", x);
+            int y = Convert.ToInt32(miesoCK);
+            kupowanie(idk, idm, "TO04", x, y);
         }
 
         private void buttonM4_Click(object sender, RoutedEventArgs e)//mięso +
@@ -384,7 +467,8 @@ namespace Caravans
         private void buttonP1_Click(object sender, RoutedEventArgs e)//perła sprzedaj
         {
             int x = Convert.ToInt32(perl.Text);
-            sprzedarz(idk, idm, "TO07", x);
+            int y = Convert.ToInt32(perlCS);
+            sprzedarz(idk, idm, "TO07", x, y);
         }
 
         private void buttonP2_Click(object sender, RoutedEventArgs e)//perła -
@@ -398,7 +482,8 @@ namespace Caravans
         private void buttonP3_Click(object sender, RoutedEventArgs e)//perła kup
         {
             int x = Convert.ToInt32(perl.Text);
-            kupowanie(idk, idm, "TO07", x);
+            int y = Convert.ToInt32(perlCK);
+            kupowanie(idk, idm, "TO07", x, y);
         }
 
         private void buttonP4_Click(object sender, RoutedEventArgs e)//perła +
@@ -412,7 +497,8 @@ namespace Caravans
         private void buttonS1_Click(object sender, RoutedEventArgs e)//skóra sprzedaj
         {
             int x = Convert.ToInt32(skur.Text);
-            sprzedarz(idk, idm, "TO10", x);
+            int y = Convert.ToInt32(skrCS);
+            sprzedarz(idk, idm, "TO10", x, y);
         }
 
         private void buttonS2_Click(object sender, RoutedEventArgs e)//skóra -
@@ -426,7 +512,8 @@ namespace Caravans
         private void buttonS3_Click(object sender, RoutedEventArgs e)//skóra kup
         {
             int x = Convert.ToInt32(skur.Text);
-            kupowanie(idk, idm, "TO10", x);
+            int y = Convert.ToInt32(skrCK);
+            kupowanie(idk, idm, "TO10", x, y);
         }
 
         private void buttonS4_Click(object sender, RoutedEventArgs e)//skóra +
@@ -440,7 +527,8 @@ namespace Caravans
         private void buttonA1_Click(object sender, RoutedEventArgs e)//alchemia sprzedaj
         {
             int x = Convert.ToInt32(srodki.Text);
-            sprzedarz(idk, idm, "TO11", x);
+            int y = Convert.ToInt32(alchCS);
+            sprzedarz(idk, idm, "TO11", x, y);
         }
 
         private void buttonA2_Click(object sender, RoutedEventArgs e)//alchemia -
@@ -454,7 +542,8 @@ namespace Caravans
         private void buttonA3_Click(object sender, RoutedEventArgs e)//alchemia kup
         {
             int x = Convert.ToInt32(srodki.Text);
-            kupowanie(idk, idm, "TO11", x);
+            int y = Convert.ToInt32(alchCK);
+            kupowanie(idk, idm, "TO11", x, y);
         }
 
         private void buttonA4_Click(object sender, RoutedEventArgs e)//alchemia +
@@ -468,7 +557,8 @@ namespace Caravans
         private void buttonX1_Click(object sender, RoutedEventArgs e)//przyprawy sprzedaj
         {
             int x = Convert.ToInt32(przyp.Text);
-            sprzedarz(idk, idm, "TO08", x);
+            int y = Convert.ToInt32(przypCS);
+            sprzedarz(idk, idm, "TO08", x, y);
         }
 
         private void buttonX2_Click(object sender, RoutedEventArgs e)//przyprawy -
@@ -482,7 +572,8 @@ namespace Caravans
         private void buttonX3_Click(object sender, RoutedEventArgs e)//przyprawy kup
         {
             int x = Convert.ToInt32(przyp.Text);
-            kupowanie(idk, idm, "TO08", x);
+            int y = Convert.ToInt32(przypCK);
+            kupowanie(idk, idm, "TO08", x, y);
         }
 
         private void buttonX4_Click(object sender, RoutedEventArgs e)//przyprawy +
@@ -492,6 +583,7 @@ namespace Caravans
             x++;
             przyp.Text = x.ToString();
         }
+
     }
 
 }

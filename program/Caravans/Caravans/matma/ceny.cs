@@ -14,14 +14,33 @@ namespace Caravans.matma
         private int[] cenaSp = new int[11];
         private int[] ile = new int[11];
 
-        public string getId(int x) { return id[x]; }
-        public int getCenaKup(int x) { return cenaKup[x]; }
-        public int getCenaSp(int x) { return cenaSp[x]; }
-        public int getIle(int x) { return ile[x]; }
-
-        public wjazd wjedz(string a)
+        public string getCenaKup(string idt)
         {
-            wjazd wynik = new wjazd();
+            for (int x = 0; x < 11; x++)
+            {
+                if (id[x] == idt) { return cenaKup[x].ToString(); }
+            }
+            return "";
+        }
+        public string getCenaSp(string idt)
+        {
+            for (int x = 0; x < 11; x++)
+            {
+                if (id[x] == idt) { return cenaSp[x].ToString(); }
+            }
+            return "";
+        }
+        public string getIle(string idt)
+        {
+            for (int x = 0; x < 11; x++)
+            {
+                if (id[x] == idt) { return ile[x].ToString(); }
+            }
+            return "";
+        }
+
+        public wjazd(string a)
+        {
             int pop = 0;
             string idm = "a";
             List<towar> towary = new List<towar>();
@@ -82,8 +101,6 @@ namespace Caravans.matma
                 ile[licznik] = tow.dajIlosc();
                 licznik++;
             }
-
-            return wynik;
         }
     }
 
@@ -186,12 +203,17 @@ namespace Caravans.matma
         {
             double roznica;
             int zapotrzebowanie = policzZapotrzebowanie(pop);
-            //Console.WriteLine(zapotrzebowanie);
-            roznica = ilosc / zapotrzebowanie;
-            //Console.WriteLine(roznica);
 
-            //dla testów
-            //roznica = 10;        
+            if (zapotrzebowanie == 0)
+            {
+                roznica = 1;
+            }
+            else
+            {
+                roznica = ilosc / zapotrzebowanie;
+            }
+
+
 
             if (roznica < 0.18)
             {
