@@ -47,57 +47,57 @@ namespace Caravans
         private static wjazd dane = new wjazd(idm);
 
         //lista cen i ilości: IK-ilość w karawanie, IM-ilość w mieście, CK-cena kupna, CS-cena sprzedarzy
-        string tkanIK;
+        string tkanIK = Modele.IleTowaru(idk, "TO03");
         string tkanIM = dane.getIle("TO03");
         string tkanCK = dane.getCenaKup("TO03");
         string tkanCS = dane.getCenaSp("TO03");
 
-        string winoIK;
+        string winoIK = Modele.IleTowaru(idk, "TO09");
         string winoIM = dane.getIle("TO09");
         string winoCK = dane.getCenaKup("TO09");
         string winoCS = dane.getCenaSp("TO09");
 
-        string bronIK;
+        string bronIK = Modele.IleTowaru(idk, "TO06");
         string bronIM = dane.getIle("TO06");
         string bronCK = dane.getCenaKup("TO06");
         string bronCS = dane.getCenaSp("TO06");
 
-        string chlebIK;
+        string chlebIK = Modele.IleTowaru(idk, "TO05");
         string chlebIM = dane.getIle("TO05");
         string chlebCK = dane.getCenaKup("TO05");
         string chlebCS = dane.getCenaSp("TO05");
 
-        string drewIK;
+        string drewIK = Modele.IleTowaru(idk, "TO01");
         string drewIM = dane.getIle("TO01");
         string drewCK = dane.getCenaKup("TO01");
         string drewCS = dane.getCenaSp("TO01");
 
-        string jablIK;
+        string jablIK = Modele.IleTowaru(idk, "TO02");
         string jablIM = dane.getIle("TO02");
         string jablCK = dane.getCenaKup("TO02");
         string jablCS = dane.getCenaSp("TO02");
 
-        string miesoIK;
+        string miesoIK = Modele.IleTowaru(idk, "TO04");
         string miesoIM = dane.getIle("TO04");
         string miesoCK = dane.getCenaKup("TO04");
         string miesoCS = dane.getCenaSp("TO04");
 
-        string perlIK;
+        string perlIK = Modele.IleTowaru(idk, "TO07");
         string perlIM = dane.getIle("TO07");
         string perlCK = dane.getCenaKup("TO07");
         string perlCS = dane.getCenaSp("TO07");
 
-        string skrIK;
+        string skrIK = Modele.IleTowaru(idk, "TO10");
         string skrIM = dane.getIle("TO10");
         string skrCK = dane.getCenaKup("TO10");
         string skrCS = dane.getCenaSp("TO10");
 
-        string alchIK;
+        string alchIK = Modele.IleTowaru(idk, "TO11");
         string alchIM = dane.getIle("TO11");
         string alchCK = dane.getCenaKup("TO11");
         string alchCS = dane.getCenaSp("TO11");
 
-        string przypIK;
+        string przypIK = Modele.IleTowaru(idk, "TO08");
         string przypIM = dane.getIle("TO08");
         string przypCK = dane.getCenaKup("TO08");
         string przypCS = dane.getCenaSp("TO08");

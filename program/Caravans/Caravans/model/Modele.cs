@@ -88,14 +88,26 @@ namespace Caravans.model
             }
         }
 
-
-
         public static void NowyStan(string ids, string idm, int czas)
         {
             TableTownState stan = new TableTownState(idm, ids, czas);
             tableTownState.Add(stan);
         }
 
+        public static string IleTowaru(string idk, string idt)
+        {
+            string wynik = "";
+            foreach(TableArtInCaravan xyz in tableArtInCaravan)
+            {
+                string id1 = xyz.GetId();
+                string id2 = xyz.GetIdArticle();
+                if (id1==idk && id2 == idt)
+                {
+                    wynik = xyz.GetNumber().ToString();
+                }
+            }
+            return wynik;
+        }
 
 
         internal void ReadListLocation()
