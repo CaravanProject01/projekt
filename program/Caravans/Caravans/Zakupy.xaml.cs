@@ -47,6 +47,8 @@ namespace Caravans
         private static wjazd dane = new wjazd(idm);
 
         //lista cen i ilości: IK-ilość w karawanie, IM-ilość w mieście, CK-cena kupna, CS-cena sprzedarzy
+        //zmienienie tego co jest po znaku równości na "coś" zmienia wartość danej na "coś"-użyteczne przy testach
+
         string tkanIK = Modele.IleTowaru(idk, "TO03");
         string tkanIM = dane.getIle("TO03");
         string tkanCK = dane.getCenaKup("TO03");
@@ -102,10 +104,270 @@ namespace Caravans
         string przypCK = dane.getCenaKup("TO08");
         string przypCS = dane.getCenaSp("TO08");
 
+        //tworzenie dodatkowych zmiennych-obiektów odpowiedzialnych za wyświelanie danych
+        public string ileTkanKar
+        {
+            get { return tkanIK; }
+            set { tkanIK = value; }
+        }
 
+        public string ileWinoKar
+        {
+            get { return winoIK; }
+            set { winoIK = value; }
+        }
 
+        public string ileBronKar
+        {
+            get { return bronIK; }
+            set { bronIK = value; }
+        }
 
+        public string ileChlebKar
+        {
+            get { return chlebIK; }
+            set { chlebIK = value; }
+        }
 
+        public string ileDrewKar
+        {
+            get { return drewIK; }
+            set { drewIK = value; }
+        }
+
+        public string ileJablKar
+        {
+            get { return jablIK; }
+            set { jablIK = value; }
+        }
+
+        public string ileMiesKar
+        {
+            get { return miesoIK; }
+            set { miesoIK = value; }
+        }
+
+        public string ilePelrKar
+        {
+            get { return perlIK; }
+            set { perlIK = value; }
+        }
+
+        public string ileSkorKar
+        {
+            get { return skrIK; }
+            set { skrIK = value; }
+        }
+
+        public string ileAlchKar
+        {
+            get { return alchIK; }
+            set { alchIK = value; }
+        }
+
+        public string ilePrzypKar
+        {
+            get { return przypIK; }
+            set { przypIK = value; }
+        }
+
+        public string ileTkanMi
+        {
+            get { return tkanIM; }
+            set { tkanIM = value; }
+        }
+
+        public string ileWinoMi
+        {
+            get { return winoIM; }
+            set { winoIM = value; }
+        }
+
+        public string ileBronMi
+        {
+            get { return bronIM; }
+            set { bronIM = value; }
+        }
+
+        public string ileChlebMi
+        {
+            get { return chlebIM; }
+            set { chlebIM = value; }
+        }
+
+        public string ileDrewMi
+        {
+            get { return drewIM; }
+            set { drewIM = value; }
+        }
+
+        public string ileJablMi
+        {
+            get { return jablIM; }
+            set { jablIM = value; }
+        }
+
+        public string ileMiesMi
+        {
+            get { return miesoIM; }
+            set { miesoIM = value; }
+        }
+
+        public string ilePelrMi
+        {
+            get { return perlIM; }
+            set { perlIM = value; }
+        }
+
+        public string ileSkorMi
+        {
+            get { return skrIM; }
+            set { skrIM = value; }
+        }
+
+        public string ileAlchMi
+        {
+            get { return alchIM; }
+            set { alchIM = value; }
+        }
+
+        public string ilePrzypMi
+        {
+            get { return przypIM; }
+            set { przypIM = value; }
+        }
+
+        public string cenaTkanSp
+        {
+            get { return tkanCS; }
+            set { tkanCS = value; }
+        }
+
+        public string cenaWinoSp
+        {
+            get { return winoCS; }
+            set { winoCS = value; }
+        }
+
+        public string cenaBronSp
+        {
+            get { return bronCS; }
+            set { bronCS = value; }
+        }
+
+        public string cenaChlebSp
+        {
+            get { return chlebCS; }
+            set { chlebCS = value; }
+        }
+
+        public string cenaDrewSp
+        {
+            get { return drewCS; }
+            set { drewCS = value; }
+        }
+
+        public string cenaJablSp
+        {
+            get { return jablCS; }
+            set { jablCS = value; }
+        }
+
+        public string cenaMiesSp
+        {
+            get { return miesoCS; }
+            set { miesoCS = value; }
+        }
+
+        public string cenaPelrSp
+        {
+            get { return perlCS; }
+            set { perlCS = value; }
+        }
+
+        public string cenaSkorSp
+        {
+            get { return skrCS; }
+            set { skrCS = value; }
+        }
+
+        public string cenaAlchSp
+        {
+            get { return alchCS; }
+            set { alchCS = value; }
+        }
+
+        public string cenaPrzypSp
+        {
+            get { return przypCS; }
+            set { przypCS = value; }
+        }
+
+        public string cenaTkanKup
+        {
+            get { return tkanCK; }
+            set { tkanCK = value; }
+        }
+
+        public string cenaWinoKup
+        {
+            get { return winoCK; }
+            set { winoCK = value; }
+        }
+
+        public string cenaBronKup
+        {
+            get { return bronCK; }
+            set { bronCK = value; }
+        }
+
+        public string cenaChlebKup
+        {
+            get { return chlebCK; }
+            set { chlebCK = value; }
+        }
+
+        public string cenaDrewKup
+        {
+            get { return drewCK; }
+            set { drewCK = value; }
+        }
+
+        public string cenaJablKup
+        {
+            get { return jablCK; }
+            set { jablCK = value; }
+        }
+
+        public string cenaMiesKup
+        {
+            get { return miesoCK; }
+            set { miesoCK = value; }
+        }
+
+        public string cenaPelrKup
+        {
+            get { return perlCK; }
+            set { perlCK = value; }
+        }
+
+        public string cenSkorKup
+        {
+            get { return skrCK; }
+            set { skrCK = value; }
+        }
+
+        public string cenaAlchKup
+        {
+            get { return alchCK; }
+            set { alchCK = value; }
+        }
+
+        public string cenaPrzypKup
+        {
+            get { return przypCK; }
+            set { przypCK = value; }
+        }
 
 
         /*
@@ -145,6 +407,9 @@ namespace Caravans
 
         }
         */
+        
+        //te też najprawdopodobniej już nie są potrzebne, choć nie próbowałem odpalać programu bez nich. jeśli są to obiekty odpowiedzialne za wyświetlanie
+        //cen badź ilości towaru w mieście/karawanie-są zbędne, takowe są wyżej
 
         public string ILSKORAWAG
         {
@@ -220,13 +485,11 @@ namespace Caravans
             set { br = value; }
         }
 
+        //ważne-inicjalizacja jeśli texbox ma wyświetlać coś co nie jest z góry przypisane, trzeba go tu zainicjalizować
         public Zakupy()
         {
             InitializeComponent();
             bron.DataContext = this;
-            spbron.DataContext = this;
-            ilbrontour.DataContext = this;
-            cenabron.DataContext = this;
             iljabwagt.DataContext = this;
             iltreewag.DataContext = this;
             ilmeatwag.DataContext = this;
@@ -239,6 +502,40 @@ namespace Caravans
             ilprzyprawywag.DataContext = this;
             ilskorawag.DataContext = this;
 
+            cenatkanina.DataContext = this;
+            sptkanina.DataContext = this;
+            iltkaninatour.DataContext = this;
+            cenawino.DataContext = this;
+            spWino.DataContext = this;
+            ilwinotour.DataContext = this;
+            cenabron.DataContext = this;
+            spbron.DataContext = this;
+            ilbrontour.DataContext = this;
+            cenachleb.DataContext = this;
+            spchleb.DataContext = this;
+            ilchlebtour.DataContext = this;
+            cenatree.DataContext = this;
+            spdrzewo.DataContext = this;
+            iltreetour.DataContext = this;
+            cenahleb.DataContext = this;
+            spjab.DataContext = this;
+            iljabtour.DataContext = this;
+            cenameate.DataContext = this;
+            sptmieso.DataContext = this;
+            ilmeattour.DataContext = this;
+            cenaperla.DataContext = this;
+            spperla.DataContext = this;
+            ilperlatour.DataContext = this;
+            cenaskora.DataContext = this;
+            spskora.DataContext = this;
+            ilskoratour.DataContext = this;
+            cenanafta.DataContext = this;
+            spnafta.DataContext = this;
+            ilnaftatour.DataContext = this;
+            cenaprzyprawy.DataContext = this;
+            spprzyprawy.DataContext = this;
+            ilprzyprawytour.DataContext = this;
+
 
 
 
@@ -246,14 +543,14 @@ namespace Caravans
 
         //w te funkcje należy wkleić kod od kamila
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
-        //Muszą także zmieniać wyświetlana ilość towaru
+        //Muszą także zmieniać wyświetlana ilość towaru (nie wiem czy zmiana w bazie danych starczy-być może trzeba dodatkowo tu zmienić wartości w liście cen i ilości)
         private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) { }
         private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) { }
 
         private void exitZ_Click(object sender, RoutedEventArgs e) => Close();
 
 
-
+        //funkcje obsługujące przyciski
         private void buttonT1_Click(object sender, RoutedEventArgs e)//tkanina sprzedaj
         {
             int x = Convert.ToInt32(tkan.Text);

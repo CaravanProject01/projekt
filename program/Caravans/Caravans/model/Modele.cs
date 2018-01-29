@@ -103,7 +103,15 @@ namespace Caravans.model
                 string id2 = xyz.GetIdArticle();
                 if (id1==idk && id2 == idt)
                 {
-                    wynik = xyz.GetNumber().ToString();
+                    int zmienna=xyz.GetNumber();
+                    if (zmienna == 0)
+                    {
+                        wynik = "0";
+                    }
+                    else
+                    {
+                        wynik = zmienna.ToString();
+                    }
                 }
             }
             return wynik;
