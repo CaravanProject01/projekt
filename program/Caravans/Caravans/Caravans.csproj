@@ -285,6 +285,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CaravansDB.mdf</DependentUpon>
     </Content>
+    <Resource Include="klepsydra.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

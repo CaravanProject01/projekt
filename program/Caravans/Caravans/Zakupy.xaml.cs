@@ -23,31 +23,19 @@ namespace Caravans
     /// </summary>
     public partial class Zakupy : Window
     {
-        //te zmienne prawdopodobnie pójdą do śmieci
-        string iljabwag = "1000";
-        string iltreew = "1000";
-        string ilmeatt = "1000";
-        string ilchlebw = "1000";
-        string ilbronw = "1000";
-        string ilwinow = "1000";
-        string iltkaninaw = "1000";
-        string ilperlaw = "1000";
-        string ilprzypraw = "1000";
-        string ilskoraw = "1000";
-        string cbron = "57.00";
-        string ibron = "576";
-        string csbron = "48.00";
-        string br = "0";
-
         //ID karawany i miasta-puki co przypisane odgórnie, potem się zrobi by jakoś szukało tych danych
-        static string idm = "MI10";
         static string idk = "KA01";
-
+        static string idm = "MI10";
+  //      static string idm = Modele.GdzieJestem(idk);
+                
         //wsadza dane do powyższych zmiennych (włącznie z wywowałem funckji policzenia cen)
         private static wjazd dane = new wjazd(idm);
 
         //lista cen i ilości: IK-ilość w karawanie, IM-ilość w mieście, CK-cena kupna, CS-cena sprzedarzy
         //zmienienie tego co jest po znaku równości na "coś" zmienia wartość danej na "coś"-użyteczne przy testach
+
+        //zmienić by wyciągało kasę z modelu czy łotewa
+        string kasa = "1234";
 
         string tkanIK = Modele.IleTowaru(idk, "TO03");
         string tkanIM = dane.getIle("TO03");
@@ -105,6 +93,12 @@ namespace Caravans
         string przypCS = dane.getCenaSp("TO08");
 
         //tworzenie dodatkowych zmiennych-obiektów odpowiedzialnych za wyświelanie danych
+        public string KASA
+        {
+            get { return kasa; }
+            set { kasa = value; }
+        }
+
         public string ileTkanKar
         {
             get { return tkanIK; }
@@ -213,7 +207,7 @@ namespace Caravans
             set { miesoIM = value; }
         }
 
-        public string ilePelrMi
+        public string ilePerlMi
         {
             get { return perlIM; }
             set { perlIM = value; }
@@ -279,7 +273,7 @@ namespace Caravans
             set { miesoCS = value; }
         }
 
-        public string cenaPelrSp
+        public string cenaPerlSp
         {
             get { return perlCS; }
             set { perlCS = value; }
@@ -345,13 +339,13 @@ namespace Caravans
             set { miesoCK = value; }
         }
 
-        public string cenaPelrKup
+        public string cenaPerlKup
         {
             get { return perlCK; }
             set { perlCK = value; }
         }
 
-        public string cenSkorKup
+        public string cenaSkorKup
         {
             get { return skrCK; }
             set { skrCK = value; }
@@ -368,122 +362,7 @@ namespace Caravans
             get { return przypCK; }
             set { przypCK = value; }
         }
-
-
-        /*
-         nie wiem co to za funkcje, potencjalnie niepotrzebne-jesli miały obsługiwać przyciski przy chandlu bronią, to na pewno nie potrzebne         
-        private void sprz_Click(object sender, RoutedEventArgs e)
-        {
-            spbro();
-        }
-
-        private void spbro()
-        {
-
-        }
-
-        private void min_Click(object sender, RoutedEventArgs e)
-        {
-            minuso();
-        }
-        private void minuso()
-        {
-
-        }
-        private void kup_Click(object sender, RoutedEventArgs e)
-        {
-            kupbro();
-        }
-        private void kupbro()
-        {
-
-        }
-        private void pl_Click(object sender, RoutedEventArgs e)
-        {
-            plusbro();
-        }
-        private void plusbro()
-        {
-
-        }
-        */
         
-        //te też najprawdopodobniej już nie są potrzebne, choć nie próbowałem odpalać programu bez nich. jeśli są to obiekty odpowiedzialne za wyświetlanie
-        //cen badź ilości towaru w mieście/karawanie-są zbędne, takowe są wyżej
-
-        public string ILSKORAWAG
-        {
-            get { return ilskoraw; }
-            set { ilskoraw = value; }
-        }
-        public string ILPRZYPRAWAG
-        {
-            get { return ilprzypraw; }
-            set { ilprzypraw = value; }
-        }
-        public string ILPERLAWAG
-        {
-            get { return ilperlaw; }
-            set { ilperlaw = value; }
-        }
-        public string ILTKANINAWAG
-        {
-            get { return iltkaninaw; }
-            set { iltkaninaw = value; }
-        }
-        public string ILWINOWAG
-        {
-            get { return ilwinow; }
-            set { ilwinow = value; }
-        }
-        public string ILJABWAG
-        {
-            get { return iljabwag; }
-            set { iljabwag = value; }
-        }
-        public string ILTREE
-        {
-            get { return iltreew; }
-            set { iltreew = value; }
-        }
-        public string ILMEAT
-        {
-            get { return ilmeatt; }
-            set { ilmeatt = value; }
-        }
-        public string ILCHLEB
-        {
-            get { return ilchlebw; }
-            set { ilchlebw = value; }
-        }
-        public string ILBRON
-        {
-            get { return ilbronw; }
-            set { ilbronw = value; }
-        }
-
-        public string cenBRON
-        {
-            get { return cbron; }
-            set { cbron = value; }
-        }
-
-        public string IBRM
-        {
-            get { return ibron; }
-            set { ibron = value; }
-        }
-
-        public string CSBRON
-        {
-            get { return csbron; }
-            set { csbron = value; }
-        }
-        public string BR
-        {
-            get { return br; }
-            set { br = value; }
-        }
 
         //ważne-inicjalizacja jeśli texbox ma wyświetlać coś co nie jest z góry przypisane, trzeba go tu zainicjalizować
         public Zakupy()
@@ -523,9 +402,9 @@ namespace Caravans
             cenameate.DataContext = this;
             sptmieso.DataContext = this;
             ilmeattour.DataContext = this;
-            cenaperla.DataContext = this;
-            spperla.DataContext = this;
-            ilperlatour.DataContext = this;
+            cenaperla1.DataContext = this;
+            spperla1.DataContext = this;
+            ilperlatour1.DataContext = this;
             cenaskora.DataContext = this;
             spskora.DataContext = this;
             ilskoratour.DataContext = this;
@@ -535,6 +414,9 @@ namespace Caravans
             cenaprzyprawy.DataContext = this;
             spprzyprawy.DataContext = this;
             ilprzyprawytour.DataContext = this;
+
+            GOLD.DataContext = this;
+            nowy1.DataContext = this;
 
 
 

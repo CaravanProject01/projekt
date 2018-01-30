@@ -35,12 +35,9 @@
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="312" Margin="450,198,0,0" VerticalAlignment="Top" Width="282" RenderTransformOrigin="-0.15,0.385">
             <Canvas Height="65" Width="345">
                 <Image x:Name="apple_jpg1" Height="55" Source="apple.jpg" Stretch="Fill" Width="53"/>
-                <Label x:Name="labe" Content="Jabłka(cena za szt):" Canvas.Left="58" Width="144" FontFamily="Sylfaen"/>
-                <TextBlock x:Name="cenaapple" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="19" Foreground="Black" Canvas.Left="202" Canvas.Top="9" RenderTransformOrigin="0.831,0.547" Text="000000" FontFamily="Sylfaen" FontSize="12"/>
-                <Label x:Name="iljab" Content="Ilosc towaru w miejscu:" Canvas.Left="58" Canvas.Top="31" Height="24" Width="114" FontFamily="Sylfaen" FontSize="10"/>
-                <TextBlock x:Name="iljabtour" Canvas.Left="172" TextWrapping="Wrap" Text="000000" Canvas.Top="36" RenderTransformOrigin="0.209,-0.4" Height="19" Width="40" FontSize="12" FontFamily="Sylfaen"/>
-                <Label x:Name="potjab" Content="Ilosc towaru potrzebuje miejsce:" Canvas.Left="58" Canvas.Top="19" Height="27" Width="150" FontFamily="Sylfaen" FontSize="10"/>
-                <TextBlock x:Name="ilpotjab" Canvas.Left="207" TextWrapping="Wrap" Text="000000" Canvas.Top="22" RenderTransformOrigin="0.209,-0.4" Height="15" Width="46" FontSize="12" FontFamily="Sylfaen"/>
+                <Label x:Name="labe" Content="Jabłka:" Canvas.Left="58" Width="144" FontFamily="Sylfaen"/>
+                <Label x:Name="iljab" Content="Ilosc towaru w karawanie:" Canvas.Left="58" Canvas.Top="21" Height="24" Width="114" FontFamily="Sylfaen" FontSize="10"/>
+                <TextBlock x:Name="iljabtour" Canvas.Left="202" TextWrapping="Wrap" Canvas.Top="24" RenderTransformOrigin="0.209,-0.4" Height="19" Width="40" FontSize="12" FontFamily="Sylfaen"><Run Foreground="Black" Text="{Binding Path=ileJablKar}"/></TextBlock>
 
             </Canvas>
             <Canvas Height="65" Width="345">

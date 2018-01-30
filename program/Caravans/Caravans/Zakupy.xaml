@@ -119,7 +119,7 @@
             <Label x:Name="label11" Content="CENA KUPNA:" Canvas.Left="58" Width="144" FontFamily="Sylfaen" FontSize="10"/>
             <TextBlock x:Name="cenatkanina" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="19" Foreground="Black" Canvas.Left="177" Canvas.Top="7" RenderTransformOrigin="0.831,0.547" FontFamily="Sylfaen" FontSize="12"><Run Foreground="Black" Text="{Binding Path=cenaTkanKup}"/></TextBlock>
             <Label x:Name="label12" Content="Ilosc towaru w miejscu:" Canvas.Left="58" Canvas.Top="31" Height="24" Width="114" FontFamily="Sylfaen" FontSize="10"/>
-            <TextBlock x:Name="iltkaninatour" Canvas.Left="177" TextWrapping="Wrap" Canvas.Top="36" RenderTransformOrigin="0.209,-0.4" Height="19" Width="40" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=ileTkanKar}"/></TextBlock>
+            <TextBlock x:Name="iltkaninatour" Canvas.Left="177" TextWrapping="Wrap" Canvas.Top="36" RenderTransformOrigin="0.209,-0.4" Height="19" Width="40" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=ileTkanMi}"/></TextBlock>
             <Label x:Name="pottkanina" Content="CENA SPRZEDARZY" Canvas.Left="58" Canvas.Top="19" Height="24" Width="150" FontFamily="Sylfaen" FontSize="10"/>
             <TextBlock x:Name="sptkanina" Canvas.Left="177" TextWrapping="Wrap" Canvas.Top="24" RenderTransformOrigin="0.209,-0.4" Height="21" Width="46" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=cenaTkanSp}"/></TextBlock>
 
@@ -136,11 +136,11 @@
         </Canvas>
         <Canvas Margin="748,500,0,220">
             <Label x:Name="label13" Content="CENA KUPNA" Canvas.Left="58" Width="144" FontFamily="Sylfaen" FontSize="10"/>
-            <TextBlock x:Name="cenaperla" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="19" Foreground="Black" Canvas.Left="202" Canvas.Top="9" RenderTransformOrigin="0.831,0.547" FontFamily="Sylfaen" FontSize="12"><Run Foreground="Black" Text="{Binding Path=cenaPerlKup}"/></TextBlock>
+            <TextBlock x:Name="cenaperla1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="19" Foreground="Black" Canvas.Left="202" Canvas.Top="9" RenderTransformOrigin="0.831,0.547" FontFamily="Sylfaen" FontSize="12"><Run Foreground="Black" Text="{Binding Path=cenaPerlKup}"/></TextBlock>
             <Label x:Name="label14" Content="Ilosc towaru w miejscu:" Canvas.Left="58" Canvas.Top="31" Height="24" Width="114" FontFamily="Sylfaen" FontSize="10"/>
-            <TextBlock x:Name="ilperlatour" Canvas.Left="172" TextWrapping="Wrap" Canvas.Top="36" RenderTransformOrigin="0.209,-0.4" Height="19" Width="40" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Text="{Binding Path=ilePerlMi}"/></TextBlock>
+            <TextBlock x:Name="ilperlatour1" Canvas.Left="172" TextWrapping="Wrap" Canvas.Top="36" RenderTransformOrigin="0.209,-0.4" Height="19" Width="40" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Text="{Binding Path=ilePerlMi}"/></TextBlock>
             <Label x:Name="potperla" Content="CENA SPRZEDARZY" Canvas.Left="58" Canvas.Top="19" Height="24" Width="150" FontFamily="Sylfaen" FontSize="10"/>
-            <TextBlock x:Name="spperla" Canvas.Left="207" TextWrapping="Wrap" Canvas.Top="22" RenderTransformOrigin="0.209,-0.4" Height="15" Width="46" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=cenaPerlSp}"/></TextBlock>
+            <TextBlock x:Name="spperla1" Canvas.Left="207" TextWrapping="Wrap" Canvas.Top="22" RenderTransformOrigin="0.209,-0.4" Height="15" Width="46" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=cenaPerlSp}"/></TextBlock>
 
             <Image x:Name="perla_jpg" Height="47" Source="perla.jpg" Stretch="Fill" Width="63" Canvas.Top="8">
                 <Image.OpacityMask>
@@ -331,7 +331,6 @@
         </Canvas>
         <Canvas Margin="57,613,652,100">
             <Label x:Name="label18w" Content="Ilosc towaru mamy:" Canvas.Left="58" Canvas.Top="31" Height="24" Width="114" FontFamily="Sylfaen" FontSize="10"/>
-            <TextBlock x:Name="ilnaftatourw" Canvas.Left="172" TextWrapping="Wrap" Canvas.Top="36" RenderTransformOrigin="0.209,-0.4" Height="19" Width="40" FontSize="12" FontFamily="Sylfaen" Foreground="Black"><Run Text="{Binding Path=ileAlchKar}"/></TextBlock>
             <Label x:Name="potnaftaw" Content="ARODKI ALCHEMICZNE" Canvas.Left="58" Canvas.Top="19" Height="24" Width="150" FontFamily="Sylfaen" FontSize="12"/>
 
             <Image x:Name="nafta_jpgw" Height="47" Source="nafta.jpg" Stretch="Fill" Width="63" Canvas.Top="8">
@@ -428,7 +427,8 @@
         <TextBlock x:Name="przyp" HorizontalAlignment="Left" Height="23" Margin="450,680,0,-5" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="179" Background="#FFEAE5E5" Foreground="Black"/>
 
         <Image x:Name="gold_jpg" Margin="38,733,853,-55" Source="gold.jpg" Stretch="Fill"/>
-        <TextBlock x:Name="GOLD" HorizontalAlignment="Left" Margin="92,750,0,-55" TextWrapping="Wrap" VerticalAlignment="Top" Text="000" IsEnabled="False" Background="#FFECDCDC" Width="99" Foreground="#FF131313"/>
+        <TextBlock x:Name="GOLD" HorizontalAlignment="Left" Margin="92,750,0,-55" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False" Background="#FFECDCDC" Width="99" Foreground="#FF131313"><Run Text="{Binding Path=KASA}"/></TextBlock>
+        <TextBlock x:Name="nowy1" HorizontalAlignment="Left" Margin="236,655,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="11" Width="52" Foreground="Black" FontSize="12"><Run Text="{Binding Path=ileAlchKar}"/></TextBlock>
 
 
 

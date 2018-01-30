@@ -117,6 +117,21 @@ namespace Caravans.model
             return wynik;
         }
 
+        public static string GdzieJestem(string numerek)
+        {
+            string wynik="";
+            foreach(TableCaravan obiekt in tableCaravan)
+            {
+                string nasza = obiekt.GetId();
+                if (nasza == numerek)
+                {
+                    wynik = obiekt.GetIdLoc();
+                }
+            }
+
+            return wynik;
+        }
+
 
         internal void ReadListLocation()
         {

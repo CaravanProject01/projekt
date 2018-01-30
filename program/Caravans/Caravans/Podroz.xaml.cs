@@ -29,50 +29,62 @@ namespace Caravans
         private void Btourilguard_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI01","KA01");
+            Close();
         }
         private void BEdgetown_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI02","KA01");
+            Close();
         }
         private void BRivercross_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI03","KA01");
+            Close();
         }
         private void BSinTog_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI04","KA01");
+            Close();
         }
         private void BPortfolk_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI05","KA01");
+            Close();
         }
         private void BMountainroot_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI06","KA01");
+            Close();
         }
         private void BBottomStream_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI07","KA01");
+            Close();
         }
         private void BBlackyardt_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI08","KA01");
+            Close();
         }
         private void BLakeshiret_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI09","KA01");
+            Close();
         }
         private void BLothrant_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI10","KA01");
+            Close();
         }
         private void BWaterclaw_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI11","KA01");
+            Close();
         }
         private void BHightown_Click(object sender, RoutedEventArgs e)
         {
             podrozdo("MI12","KA01");
+            Close();
         }
 
         private void podrozdo(string miastoid, string karawanaid)

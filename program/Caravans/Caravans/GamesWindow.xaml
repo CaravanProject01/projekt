@@ -94,7 +94,7 @@
                 </Button.Background>
             </Button>
         </Menu>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="18" Margin="129,24,0,0" TextWrapping="Wrap" Text="000000000" VerticalAlignment="Top" Width="105" Background="White" Foreground="#FF1D1717"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="18" Margin="129,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Background="White" Foreground="#FF1D1717"><Run Text="{Binding Path=KASA}"/></TextBlock>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="34" Margin="80,24,0,0" VerticalAlignment="Top" Width="44">
             <Image x:Name="gold_jpg" Margin="0,0,-1,-1" Source="gold.jpg" Stretch="Fill"/>
         </Border>
@@ -108,6 +108,9 @@
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
         </Button>
+        <TextBlock x:Name="zegarek" HorizontalAlignment="Left" Margin="375,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Foreground="Black" RenderTransformOrigin="0.5,0.5" Width="111"><Run Text="{Binding Path=CZAS}"/></TextBlock>
+
+
 
 
     </Grid>

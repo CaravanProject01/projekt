@@ -18,10 +18,31 @@ using Caravans.matma;
 
 namespace Caravans
 {
-   
+
     public partial class GamesWindow : Window
     {
-        public GamesWindow() => InitializeComponent();
+        
+
+        string kasa = "1234";
+        string czas = "1";
+        public string KASA
+        {
+            get { return kasa; }
+            set { kasa = value; }
+        }
+        public string CZAS
+        {
+            get { return czas; }
+            set { czas = value; }
+        }
+
+        public GamesWindow()
+        {
+            InitializeComponent();
+            textBlock.DataContext=this;
+            zegarek.DataContext = this;
+        }
+
         private void Bmenu_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mi = new MainWindow();
