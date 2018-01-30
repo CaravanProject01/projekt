@@ -426,9 +426,40 @@ namespace Caravans
         //w te funkcje należy wkleić kod od kamila
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
         //Muszą także zmieniać wyświetlana ilość towaru (nie wiem czy zmiana w bazie danych starczy-być może trzeba dodatkowo tu zmienić wartości w liście cen i ilości)
-        private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) { }
-        private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) { }
-
+        private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
+                    foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
+                    {
+                        if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana)
+                        {
+                            foreach (TableArtInTown z in Modele.tableArtInTown)
+                            {
+                                if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
+                                {
+                                    Modele.setGold(Modele.getGold()+cena);
+                                    y.SetNumber(y.GetNumber()-ile);
+                                    z.SetNumber(z.GetNumber()+ile);
+                                }
+                            }
+                        }
+                    }
+        }
+        private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
+            foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
+            {
+                if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana && cena <= Modele.getGold())
+                {
+                    foreach (TableArtInTown z in Modele.tableArtInTown)
+                    {
+                        if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
+                        {
+                            Modele.setGold(Modele.getGold() - cena);
+                            y.SetNumber(y.GetNumber() + ile);
+                            z.SetNumber(z.GetNumber() - ile);
+                        }
+                    }
+                }
+            }
+        }
         private void exitZ_Click(object sender, RoutedEventArgs e) => Close();
 
 
