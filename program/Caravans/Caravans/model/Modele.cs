@@ -50,6 +50,10 @@ namespace Caravans.model
         {
             return gold;
         }
+        public static void setGold(int newgold)
+        {
+            gold = newgold;
+        }
         public static string getTimeS()
         {
             return time.ToString();
