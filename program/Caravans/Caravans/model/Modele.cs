@@ -121,19 +121,30 @@ namespace Caravans.model
             return wynik;
         }
 
-        public static string GdzieJestem(string numerek)
+        public static string GdzieJestem(string idk)
         {
-            string wynik="";
-            foreach(TableCaravan obiekt in tableCaravan)
+            string idm = "";
+            string idl = "";
+            string roboczy;
+            foreach (TableCaravan kar in tableCaravan)
             {
-                string nasza = obiekt.GetId();
-                if (nasza == numerek)
+                roboczy = kar.GetId();
+                if (roboczy == idk)
                 {
-                    wynik = obiekt.GetIdLoc();
+                    idl = kar.GetIdLoc();
+                }
+            }
+            foreach (TableTown miasto in tableTown)
+            {
+                roboczy = miasto.GetIdLoc();
+                if (roboczy == idl)
+                {
+                    idm = miasto.GetId();
                 }
             }
 
-            return wynik;
+
+            return idm;
         }
 
 

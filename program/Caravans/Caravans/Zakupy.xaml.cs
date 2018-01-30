@@ -25,8 +25,7 @@ namespace Caravans
     {
         //ID karawany i miasta-puki co przypisane odgórnie, potem się zrobi by jakoś szukało tych danych
         static string idk = "KA01";
-        static string idm = "MI10";
-  //      static string idm = Modele.GdzieJestem(idk);
+        static string idm = Modele.GdzieJestem(idk);
                 
         //wsadza dane do powyższych zmiennych (włącznie z wywowałem funckji policzenia cen)
         private static wjazd dane = new wjazd(idm);
