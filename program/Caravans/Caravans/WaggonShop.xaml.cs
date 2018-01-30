@@ -114,6 +114,16 @@ namespace Caravans
             InitializeComponent();
             lokal.DataContext = this;
             iljabtour.DataContext = this;
+            iltreetour.DataContext = this;
+            ilmeattour.DataContext = this;
+            ilchlebtour.DataContext = this;
+            ilbrontour.DataContext = this;
+            ilwinotour.DataContext = this;
+            iltkaninatour.DataContext = this;
+            ilperlatour.DataContext = this;
+            ilskoratour.DataContext = this;
+            ilsrodtour.DataContext = this;
+            ilprzyprawytour.DataContext = this;
         }
 
         private void ExitW_Click(object sender, RoutedEventArgs e) => Close();

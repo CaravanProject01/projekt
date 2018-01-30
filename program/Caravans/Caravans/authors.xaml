@@ -39,6 +39,10 @@
         <Label x:Name="label2" Content="marcin wardzinski" HorizontalAlignment="Left" Height="29" Margin="99,278,0,0" VerticalAlignment="Top" Width="184"/>
         <Label x:Name="label3" Content="kamil kiedrowicz" HorizontalAlignment="Left" Height="28" Margin="309,170,0,0" VerticalAlignment="Top" Width="167"/>
         <Label x:Name="label4" Content="     mark rybak" HorizontalAlignment="Left" Height="29" Margin="309,278,0,0" VerticalAlignment="Top" Width="167"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="77" Margin="327,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"><Run Foreground="Black" FontSize="10" Text="  CZesc graficzna"/><Run Text=",jhg"/></TextBlock>
+        <Label x:Name="label5" Content="BAza dannych i modele" HorizontalAlignment="Left" Height="70" Margin="109,203,0,0" VerticalAlignment="Top" Width="157" FontSize="10"/>
+        <Label x:Name="label6" Content="Swiat&#xD;&#xA;mapa &#xD;&#xA;Drogi i wypelnienie &#xD;&#xA;podrozy" HorizontalAlignment="Left" Height="61" Margin="327,203,0,0" VerticalAlignment="Top" Width="130" FontSize="10"/>
+        <Label x:Name="label7" Content="Logika cenowa &#xD;&#xA;rozwój miast &#xD;&#xA;Kalkulator Cen" HorizontalAlignment="Left" Height="72" Margin="109,312,0,0" VerticalAlignment="Top" Width="157" FontSize="10"/>
 
     </Grid>
 

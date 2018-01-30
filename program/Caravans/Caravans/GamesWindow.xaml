@@ -96,19 +96,24 @@
         </Menu>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="18" Margin="129,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Background="White" Foreground="#FF1D1717"><Run Text="{Binding Path=KASA}"/></TextBlock>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="34" Margin="80,24,0,0" VerticalAlignment="Top" Width="44">
-            <Image x:Name="gold_jpg" Margin="0,0,-1,-1" Source="gold.jpg" Stretch="Fill"/>
+            <Image x:Name="gold_jpg" Margin="0,-1,-1,0" Source="gold.jpg" Stretch="Fill"/>
         </Border>
         <Button x:Name="BWaggon" Content="Waggon Shop" HorizontalAlignment="Left" Height="68" Margin="28,0,0,21" VerticalAlignment="Bottom" Width="278" Click="BWaggon_Click" Foreground="#FFFBFBFB">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="Bend" Content="END TURN" HorizontalAlignment="Left" Height="84" Margin="28,500,0,0" VerticalAlignment="Top" Width="224" Foreground="White" Click="Bend_Click">
+        <Button x:Name="Bend" Content="END TURN" HorizontalAlignment="Left" Height="84" Margin="28,0,0,94" VerticalAlignment="Bottom" Width="224" Foreground="White" Click="Bend_Click">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="zegarek" HorizontalAlignment="Left" Margin="375,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Foreground="Black" RenderTransformOrigin="0.5,0.5" Width="111"><Run Text="{Binding Path=CZAS}"/></TextBlock>
+        <TextBlock x:Name="zegarek" HorizontalAlignment="Left" Margin="293,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Foreground="Black" RenderTransformOrigin="0.5,0.5" Width="111"><Run Text="{Binding Path=CZAS}"/></TextBlock>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="35" Margin="239,23,0,0" VerticalAlignment="Top" Width="49">
+            <Border.Background>
+                <ImageBrush ImageSource="klepsydra.jpg"/>
+            </Border.Background>
+        </Border>
 
 
 

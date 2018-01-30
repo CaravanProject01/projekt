@@ -298,7 +298,9 @@ namespace Caravans.matma
             int zap = policzZapotrzebowanie(pop);
             int prod = policzProdukcje(pop);
             int wynik = 0;
-            int x = 0;          
+            int x = 0;
+
+            Console.WriteLine("Początek-towaru jest " + ilosc);
 
             ilosc -= zap;
             if (ilosc < 0)
@@ -307,6 +309,8 @@ namespace Caravans.matma
                 x = ilosc * -1;
                 ilosc = 0;
             }
+
+            Console.WriteLine("Środek-towaru jest " + ilosc + ", zabrakło " + x);
 
             if (x == 0)
             {
@@ -324,18 +328,14 @@ namespace Caravans.matma
                 }
             }
 
+            Console.WriteLine("Koniec-towaru jest " + ilosc);
+
             double roznica;
-            if (zap == 0)
-            {
-                roznica = 0;
-            }
-            else
-            {
-                roznica = ilosc / zap;
-            }
+            roznica = ilosc / zap;
 
             if (roznica >= 5) { wynik++; }
 
+            Console.WriteLine("Koniec-modyfikator wynosi " + wynik);
 
             return wynik;
         }
