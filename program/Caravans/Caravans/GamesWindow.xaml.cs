@@ -23,8 +23,9 @@ namespace Caravans
     {
         
 
-        string kasa = "1234";
-        string czas = "1";
+        string kasa = Modele.getGoldS();
+        string czas = Modele.getTimeS();
+
         public string KASA
         {
             get { return kasa; }
@@ -66,6 +67,8 @@ namespace Caravans
         private void Bend_Click(object sender, RoutedEventArgs e)
         {
             endturn();
+            czas = Modele.getTimeS();
+            zegarek.Text = czas;
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
