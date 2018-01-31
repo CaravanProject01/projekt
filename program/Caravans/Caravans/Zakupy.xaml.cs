@@ -426,6 +426,7 @@ namespace Caravans
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
         //Muszą także zmieniać wyświetlana ilość towaru (nie wiem czy zmiana w bazie danych starczy-być może trzeba dodatkowo tu zmienić wartości w liście cen i ilości)
         private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
+               if(ile>0)
                     foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
                     {
                         if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana)
@@ -443,21 +444,22 @@ namespace Caravans
                     }
         }
         private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
-            foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
-            {
-                if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana && cena <= Modele.getGold())
+            if (ile > 0)
+                foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
                 {
-                    foreach (TableArtInTown z in Modele.tableArtInTown)
+                    if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana && cena <= Modele.getGold())
                     {
-                        if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
+                        foreach (TableArtInTown z in Modele.tableArtInTown)
                         {
-                            Modele.setGold(Modele.getGold() - cena);
-                            y.SetNumber(y.GetNumber() + ile);
-                            z.SetNumber(z.GetNumber() - ile);
+                             if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
+                             {
+                                Modele.setGold(Modele.getGold() - cena);
+                                y.SetNumber(y.GetNumber() + ile);
+                                z.SetNumber(z.GetNumber() - ile);
+                             }
                         }
                     }
                 }
-            }
         }
         private void exitZ_Click(object sender, RoutedEventArgs e) => Close();
 
