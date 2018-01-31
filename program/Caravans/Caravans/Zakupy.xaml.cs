@@ -34,7 +34,7 @@ namespace Caravans
         //zmienienie tego co jest po znaku równości na "coś" zmienia wartość danej na "coś"-użyteczne przy testach
 
         //zmienić by wyciągało kasę z modelu czy łotewa
-        string kasa = "1234";
+        string kasa = Modele.getGoldS();
 
         string tkanIK = Modele.IleTowaru(idk, "TO03");
         string tkanIM = dane.getIle("TO03");
@@ -426,40 +426,47 @@ namespace Caravans
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
         //Muszą także zmieniać wyświetlana ilość towaru (nie wiem czy zmiana w bazie danych starczy-być może trzeba dodatkowo tu zmienić wartości w liście cen i ilości)
         private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
-               if(ile>0)
-                    foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
+            if (ile > 0)
+            {
+                foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
+                {
+                    if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana)
                     {
-                        if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana)
+                        foreach (TableArtInTown z in Modele.tableArtInTown)
                         {
-                            foreach (TableArtInTown z in Modele.tableArtInTown)
+                            if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
                             {
-                                if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
-                                {
-                                    Modele.setGold(Modele.getGold()+cena);
-                                    y.SetNumber(y.GetNumber()-ile);
-                                    z.SetNumber(z.GetNumber()+ile);
-                                }
+                                Modele.setGold(Modele.getGold() + cena);
+                                y.SetNumber(y.GetNumber() - ile);
+                                z.SetNumber(z.GetNumber() + ile);
                             }
                         }
                     }
+                }
+                zassaj();
+            }
         }
         private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
             if (ile > 0)
+            {
                 foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
                 {
                     if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana && cena <= Modele.getGold())
                     {
                         foreach (TableArtInTown z in Modele.tableArtInTown)
                         {
-                             if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
-                             {
+                            if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
+                            {
                                 Modele.setGold(Modele.getGold() - cena);
                                 y.SetNumber(y.GetNumber() + ile);
                                 z.SetNumber(z.GetNumber() - ile);
-                             }
+                            }
                         }
                     }
                 }
+                zassaj();
+            }
+            
         }
         private void exitZ_Click(object sender, RoutedEventArgs e) => Close();
 
@@ -795,6 +802,116 @@ namespace Caravans
             przyp.Text = x.ToString();
         }
 
+        public void zassaj()
+        {
+            idm = Modele.GdzieJestem(idk);
+            dane = new wjazd(idm);
+            kasa = Modele.getGoldS();
+
+            tkanIK = Modele.IleTowaru(idk, "TO03");
+            tkanIM = dane.getIle("TO03");
+            tkanCK = dane.getCenaKup("TO03");
+            tkanCS = dane.getCenaSp("TO03");
+
+            winoIK = Modele.IleTowaru(idk, "TO09");
+            winoIM = dane.getIle("TO09");
+            winoCK = dane.getCenaKup("TO09");
+            winoCS = dane.getCenaSp("TO09");
+
+            bronIK = Modele.IleTowaru(idk, "TO06");
+            bronIM = dane.getIle("TO06");
+            bronCK = dane.getCenaKup("TO06");
+            bronCS = dane.getCenaSp("TO06");
+
+            chlebIK = Modele.IleTowaru(idk, "TO05");
+            chlebIM = dane.getIle("TO05");
+            chlebCK = dane.getCenaKup("TO05");
+            chlebCS = dane.getCenaSp("TO05");
+
+            drewIK = Modele.IleTowaru(idk, "TO01");
+            drewIM = dane.getIle("TO01");
+            drewCK = dane.getCenaKup("TO01");
+            drewCS = dane.getCenaSp("TO01");
+
+            jablIK = Modele.IleTowaru(idk, "TO02");
+            jablIM = dane.getIle("TO02");
+            jablCK = dane.getCenaKup("TO02");
+            jablCS = dane.getCenaSp("TO02");
+
+            miesoIK = Modele.IleTowaru(idk, "TO04");
+            miesoIM = dane.getIle("TO04");
+            miesoCK = dane.getCenaKup("TO04");
+            miesoCS = dane.getCenaSp("TO04");
+
+            perlIK = Modele.IleTowaru(idk, "TO07");
+            perlIM = dane.getIle("TO07");
+            perlCK = dane.getCenaKup("TO07");
+            perlCS = dane.getCenaSp("TO07");
+
+            skrIK = Modele.IleTowaru(idk, "TO10");
+            skrIM = dane.getIle("TO10");
+            skrCK = dane.getCenaKup("TO10");
+            skrCS = dane.getCenaSp("TO10");
+
+            alchIK = Modele.IleTowaru(idk, "TO11");
+            alchIM = dane.getIle("TO11");
+            alchCK = dane.getCenaKup("TO11");
+            alchCS = dane.getCenaSp("TO11");
+
+            przypIK = Modele.IleTowaru(idk, "TO08");
+            przypIM = dane.getIle("TO08");
+            przypCK = dane.getCenaKup("TO08");
+            przypCS = dane.getCenaSp("TO08");
+
+
+            iltkaninatour.Text = tkanIM;
+            iltkaninawag.Text = tkanIK;
+            cenatkanina.Text = tkanCK;
+            sptkanina.Text = tkanCS;
+            ilwinowag.Text = winoIK;
+            cenawino.Text = winoCK;
+            spWino.Text = winoCS;
+            ilwinotour.Text = winoIM;
+            ilbronwag.Text = bronIK;
+            cenabron.Text = bronCK;
+            spbron.Text = bronCS;
+            ilbrontour.Text = bronIM;
+            ilchlebwag.Text = chlebIK;
+            cenachleb.Text = chlebCK;
+            spchleb.Text = chlebCS;
+            ilchlebtour.Text = chlebIM;
+            iltreewag.Text = drewIK;
+            cenatree.Text = drewCK;
+            spdrzewo.Text = drewCS;
+            iltreetour.Text = drewIM;
+            iljabwagt.Text = jablIK;
+            cenahleb.Text = jablCK;
+            spjab.Text = jablCS;
+            iljabtour.Text = jablIM;
+            ilmeatwag.Text = miesoIK;
+            cenameate.Text = miesoCK;
+            sptmieso.Text = miesoCS;
+            ilmeattour.Text = miesoIM;
+            ilperlawag.Text = perlIK;
+            cenaperla1.Text = perlCK;
+            spperla1.Text = perlCS;
+            ilperlatour1.Text = perlIM;
+            ilskorawag.Text = skrIK;
+            cenaskora.Text = skrCK;
+            spskora.Text = skrCS;
+            ilskoratour.Text = skrIM;
+            nowy1.Text = alchIK;
+            cenanafta.Text = alchCK;
+            spnafta.Text = alchCS;
+            ilnaftatour.Text = alchIM;
+            ilprzyprawywag.Text = przypIK;
+            cenaprzyprawy.Text = przypCK;
+            spprzyprawy.Text = przypCS;
+            ilprzyprawytour.Text = przypIM;
+
+            GOLD.Text = kasa;                
+
+        }
     }
 
 }
