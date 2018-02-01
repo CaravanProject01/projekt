@@ -475,7 +475,8 @@ namespace Caravans
         private void buttonT1_Click(object sender, RoutedEventArgs e)//tkanina sprzedaj
         {
             int x = Convert.ToInt32(tkan.Text);
-            int y = Convert.ToInt32(tkanCS);
+            string zmienna = sptkanina.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO03", x, y);
         }
 
@@ -490,7 +491,16 @@ namespace Caravans
         private void buttonT3_Click(object sender, RoutedEventArgs e)//tkanina kup
         {
             int x = Convert.ToInt32(tkan.Text);
-            int y = Convert.ToInt32(tkanCK);
+            string zmienna = cenatkanina.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO03", x, y);
         }
 
@@ -505,7 +515,8 @@ namespace Caravans
         private void buttonW1_Click(object sender, RoutedEventArgs e)//wino sprzedaj
         {
             int x = Convert.ToInt32(wino.Text);
-            int y = Convert.ToInt32(winoCS);
+            string zmienna = spWino.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO09", x, y);
         }
 
@@ -520,7 +531,16 @@ namespace Caravans
         private void buttonW3_Click(object sender, RoutedEventArgs e)//wino kup
         {
             int x = Convert.ToInt32(wino.Text);
-            int y = Convert.ToInt32(winoCK);
+            string zmienna = cenatkanina.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO09", x, y);
         }
 
@@ -535,7 +555,8 @@ namespace Caravans
         private void buttonB1_Click(object sender, RoutedEventArgs e)//bron sprzedaj
         {
             int x = Convert.ToInt32(bron.Text);
-            int y = Convert.ToInt32(bronCS);
+            string zmienna = spbron.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO06", x, y);
         }
 
@@ -550,7 +571,16 @@ namespace Caravans
         private void buttonB3_Click(object sender, RoutedEventArgs e)//bron kup
         {
             int x = Convert.ToInt32(bron.Text);
-            int y = Convert.ToInt32(bronCK);
+            string zmienna = cenabron.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO06", x, y);
         }
 
@@ -565,7 +595,8 @@ namespace Caravans
         private void buttonC1_Click(object sender, RoutedEventArgs e)//chleb sprzedaj
         {
             int x = Convert.ToInt32(hleb.Text);
-            int y = Convert.ToInt32(chlebCS);
+            string zmienna = spchleb.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO05", x, y);
         }
 
@@ -580,7 +611,16 @@ namespace Caravans
         private void buttonC3_Click(object sender, RoutedEventArgs e)//chleb kup
         {
             int x = Convert.ToInt32(hleb.Text);
-            int y = Convert.ToInt32(chlebCK);
+            string zmienna = cenachleb.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO05", x, y);
         }
 
@@ -595,7 +635,8 @@ namespace Caravans
         private void buttonD1_Click(object sender, RoutedEventArgs e)//drewno sprzedaj
         {
             int x = Convert.ToInt32(brondrz.Text);
-            int y = Convert.ToInt32(drewCS);
+            string zmienna = spdrzewo.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO01", x, y);
         }
 
@@ -610,7 +651,16 @@ namespace Caravans
         private void buttonD3_Click(object sender, RoutedEventArgs e)//drewno kup
         {
             int x = Convert.ToInt32(brondrz.Text);
-            int y = Convert.ToInt32(drewCK);
+            string zmienna = cenatree.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO01", x, y);
         }
 
@@ -625,7 +675,8 @@ namespace Caravans
         private void buttonJ1_Click(object sender, RoutedEventArgs e)//jabłko sprzedaj
         {
             int x = Convert.ToInt32(jabl.Text);
-            int y = Convert.ToInt32(jablCS);
+            string zmienna = spjab.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO02", x, y);
         }
 
@@ -640,7 +691,16 @@ namespace Caravans
         private void buttonJ3_Click(object sender, RoutedEventArgs e)//jabłko kup
         {
             int x = Convert.ToInt32(jabl.Text);
-            int y = Convert.ToInt32(jablCK);
+            string zmienna = cenahleb.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO02", x, y);
         }
 
@@ -655,7 +715,8 @@ namespace Caravans
         private void buttonM1_Click(object sender, RoutedEventArgs e)//mięso sprzedaj
         {
             int x = Convert.ToInt32(mies.Text);
-            int y = Convert.ToInt32(miesoCS);
+            string zmienna = sptmieso.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO04", x, y);
         }
 
@@ -670,7 +731,16 @@ namespace Caravans
         private void buttonM3_Click(object sender, RoutedEventArgs e)//mięso kup
         {
             int x = Convert.ToInt32(mies.Text);
-            int y = Convert.ToInt32(miesoCK);
+            string zmienna = cenameate.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO04", x, y);
         }
 
@@ -685,7 +755,8 @@ namespace Caravans
         private void buttonP1_Click(object sender, RoutedEventArgs e)//perła sprzedaj
         {
             int x = Convert.ToInt32(perl.Text);
-            int y = Convert.ToInt32(perlCS);
+            string zmienna = spperla1.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO07", x, y);
         }
 
@@ -700,7 +771,16 @@ namespace Caravans
         private void buttonP3_Click(object sender, RoutedEventArgs e)//perła kup
         {
             int x = Convert.ToInt32(perl.Text);
-            int y = Convert.ToInt32(perlCK);
+            string zmienna = cenaperla1.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO07", x, y);
         }
 
@@ -715,7 +795,8 @@ namespace Caravans
         private void buttonS1_Click(object sender, RoutedEventArgs e)//skóra sprzedaj
         {
             int x = Convert.ToInt32(skur.Text);
-            int y = Convert.ToInt32(skrCS);
+            string zmienna = spskora.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO10", x, y);
         }
 
@@ -730,7 +811,16 @@ namespace Caravans
         private void buttonS3_Click(object sender, RoutedEventArgs e)//skóra kup
         {
             int x = Convert.ToInt32(skur.Text);
-            int y = Convert.ToInt32(skrCK);
+            string zmienna = cenaskora.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO10", x, y);
         }
 
@@ -745,7 +835,8 @@ namespace Caravans
         private void buttonA1_Click(object sender, RoutedEventArgs e)//alchemia sprzedaj
         {
             int x = Convert.ToInt32(srodki.Text);
-            int y = Convert.ToInt32(alchCS);
+            string zmienna = spnafta.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO11", x, y);
         }
 
@@ -760,7 +851,16 @@ namespace Caravans
         private void buttonA3_Click(object sender, RoutedEventArgs e)//alchemia kup
         {
             int x = Convert.ToInt32(srodki.Text);
-            int y = Convert.ToInt32(alchCK);
+            string zmienna = cenanafta.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO11", x, y);
         }
 
@@ -775,7 +875,8 @@ namespace Caravans
         private void buttonX1_Click(object sender, RoutedEventArgs e)//przyprawy sprzedaj
         {
             int x = Convert.ToInt32(przyp.Text);
-            int y = Convert.ToInt32(przypCS);
+            string zmienna = spprzyprawy.Text.ToString();
+            int y = Convert.ToInt32(zmienna);
             sprzedarz(idk, idm, "TO08", x, y);
         }
 
@@ -790,7 +891,16 @@ namespace Caravans
         private void buttonX3_Click(object sender, RoutedEventArgs e)//przyprawy kup
         {
             int x = Convert.ToInt32(przyp.Text);
-            int y = Convert.ToInt32(przypCK);
+            string zmienna = cenaprzyprawy.Text.ToString();
+            int y = 0;
+            if (zmienna == "niemożliwe")
+            {
+                y = -1;
+            }
+            else
+            {
+                y = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO08", x, y);
         }
 
@@ -866,56 +976,67 @@ namespace Caravans
             tkanIK2 = Modele.IleTowaru(idk, "TO03");
             tkanIM2 = dane2.getIle("TO03");
             tkanCK2 = dane2.getCenaKup("TO03");
+            if (tkanCK2 == "-1") { tkanCK2 = "niemożliwe"; }
             tkanCS2 = dane2.getCenaSp("TO03");
 
             winoIK2 = Modele.IleTowaru(idk, "TO09");
             winoIM2 = dane.getIle("TO09");
             winoCK2 = dane.getCenaKup("TO09");
+            if (winoCK2 == "-1") { winoCK2 = "niemożliwe"; }
             winoCS2 = dane.getCenaSp("TO09");
 
             bronIK2 = Modele.IleTowaru(idk, "TO06");
             bronIM2 = dane2.getIle("TO06");
             bronCK2 = dane2.getCenaKup("TO06");
+            if (bronCK2 == "-1") { bronCK2 = "niemożliwe"; }
             bronCS2 = dane2.getCenaSp("TO06");
 
             chlebIK2 = Modele.IleTowaru(idk, "TO05");
             chlebIM2 = dane2.getIle("TO05");
             chlebCK2 = dane2.getCenaKup("TO05");
+            if (chlebCK2 == "-1") { chlebCK2 = "niemożliwe"; }
             chlebCS2 = dane2.getCenaSp("TO05");
 
             drewIK2 = Modele.IleTowaru(idk, "TO01");
             drewIM2 = dane2.getIle("TO01");
             drewCK2 = dane2.getCenaKup("TO01");
+            if (drewCK2 == "-1") { drewCK2 = "niemożliwe"; }
             drewCS2 = dane2.getCenaSp("TO01");
 
             jablIK2 = Modele.IleTowaru(idk, "TO02");
             jablIM2 = dane2.getIle("TO02");
             jablCK2 = dane2.getCenaKup("TO02");
+            if (jablCK2 == "-1") { jablCK2 = "niemożliwe"; }
             jablCS2 = dane2.getCenaSp("TO02");
 
             miesoIK2 = Modele.IleTowaru(idk, "TO04");
             miesoIM2 = dane2.getIle("TO04");
             miesoCK2 = dane2.getCenaKup("TO04");
+            if (miesoCK2 == "-1") { miesoCK2 = "niemożliwe"; }
             miesoCS2 = dane2.getCenaSp("TO04");
 
             perlIK2 = Modele.IleTowaru(idk, "TO07");
             perlIM2 = dane2.getIle("TO07");
             perlCK2 = dane2.getCenaKup("TO07");
+            if (perlCK2 == "-1") { perlCK2 = "niemożliwe"; }
             perlCS2 = dane2.getCenaSp("TO07");
 
             skrIK2 = Modele.IleTowaru(idk, "TO10");
             skrIM2 = dane2.getIle("TO10");
             skrCK2 = dane2.getCenaKup("TO10");
+            if (skrCK2 == "-1") { skrCK2 = "niemożliwe"; }
             skrCS2 = dane2.getCenaSp("TO10");
 
             alchIK2 = Modele.IleTowaru(idk, "TO11");
             alchIM2 = dane2.getIle("TO11");
             alchCK2 = dane2.getCenaKup("TO11");
+            if (alchCK2 == "-1") { alchCK2 = "niemożliwe"; }
             alchCS2 = dane2.getCenaSp("TO11");
 
             przypIK2 = Modele.IleTowaru(idk, "TO08");
             przypIM2 = dane2.getIle("TO08");
             przypCK2 = dane2.getCenaKup("TO08");
+            if (przypCK2 == "-1") { przypCK2 = "niemożliwe"; }
             przypCS2 = dane2.getCenaSp("TO08");
 
 
