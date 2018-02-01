@@ -531,7 +531,7 @@ namespace Caravans
         private void buttonW3_Click(object sender, RoutedEventArgs e)//wino kup
         {
             int x = Convert.ToInt32(wino.Text);
-            string zmienna = cenatkanina.Text.ToString();
+            string zmienna = cenawino.Text.ToString();
             int y = 0;
             if (zmienna == "niemożliwe")
             {
@@ -539,7 +539,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO09", x, y);
         }
@@ -579,7 +579,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO06", x, y);
         }
@@ -619,7 +619,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO05", x, y);
         }
@@ -659,7 +659,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO01", x, y);
         }
@@ -699,7 +699,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO02", x, y);
         }
@@ -739,7 +739,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO04", x, y);
         }
@@ -779,7 +779,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO07", x, y);
         }
@@ -819,7 +819,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO10", x, y);
         }
@@ -859,7 +859,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO11", x, y);
         }
@@ -899,7 +899,7 @@ namespace Caravans
             }
             else
             {
-                y = Convert.ToInt32(tkanCK);
+                y = Convert.ToInt32(zmienna);
             }
             kupowanie(idk, idm, "TO08", x, y);
         }
