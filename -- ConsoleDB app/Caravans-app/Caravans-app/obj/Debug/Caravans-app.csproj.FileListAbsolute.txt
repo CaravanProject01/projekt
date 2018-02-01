@@ -1,0 +1,9 @@
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\bin\Debug\CaravansDB.mdf
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\bin\Debug\CaravansDB_log.ldf
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\bin\Debug\Caravans-app.exe.config
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\bin\Debug\Caravans-app.exe
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\bin\Debug\Caravans-app.pdb
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\obj\Debug\Caravans-app.csprojResolveAssemblyReference.cache
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\obj\Debug\Caravans-app.csproj.CoreCompileInputs.cache
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\obj\Debug\Caravans-app.exe
+C:\Users\Gre\source\repos\Caravans-app\Caravans-app\obj\Debug\Caravans-app.pdb
