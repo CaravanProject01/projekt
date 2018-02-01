@@ -77,14 +77,16 @@ namespace Caravans.model
             this.Guard = Guard;
         }
 
-        public void SetDuration(int Duraction)
+        public void ChangeDuration()
         {
-            if (this.Duration - Duration > 0)
-                this.Duration = this.Duration - Duraction;
+            if (this.Duration > 0)
+            {
+                this.Duration--;
+            }
         }
-        public void SetDuration2(int Duraction)
+        public void ChangeDuration(int zmienna)
         {
-                this.Duration = Duraction;
+                this.Duration = zmienna;
         }
 
         public void SetMinions(int Minions)

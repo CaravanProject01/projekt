@@ -101,12 +101,12 @@ namespace Caravans
                             {
                                 if (y.GetIdLoc() == z.GetIdLoc_1() && x.GetIdLoc() == z.GetIdLoc_2() && x.GetDuration() == 0)
                                 {
-                                    x.SetDuration2(z.GetLength());
+                                    x.ChangeDuration(z.GetLength());
                                     x.SetIdLoc(z.GetIdLoc_1());
                                 }
                                 else if (y.GetIdLoc() == z.GetIdLoc_2() && x.GetIdLoc() == z.GetIdLoc_1() && x.GetDuration() == 0)
                                 {
-                                    x.SetDuration(z.GetLength());
+                                    x.ChangeDuration(z.GetLength());
                                     x.SetIdLoc(z.GetIdLoc_2());
                                 }
                             }

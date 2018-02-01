@@ -90,7 +90,7 @@ namespace Caravans
             Modele.time += 1;
             foreach (TableCaravan x in Modele.tableCaravan)//odejmujemy jedna ture od karawan
             {
-                x.SetDuration(1); // tu juz jest kontrola czy jest zero tur (przynajmniej powinno)
+                x.ChangeDuration(); // tu juz jest kontrola czy jest zero tur (przynajmniej powinno)
 
             }
             dzien z = new dzien();
