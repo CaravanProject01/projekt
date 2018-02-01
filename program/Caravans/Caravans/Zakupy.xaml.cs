@@ -451,7 +451,7 @@ namespace Caravans
             {
                 foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
                 {
-                    if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana && cena <= Modele.getGold())
+                    if (y.GetIdArticle() == IDtowar && y.GetId() == IDkarawana && cena <= Modele.getGold())
                     {
                         foreach (TableArtInTown z in Modele.tableArtInTown)
                         {
