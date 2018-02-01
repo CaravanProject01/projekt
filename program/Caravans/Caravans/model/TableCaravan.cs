@@ -79,7 +79,7 @@ namespace Caravans.model
 
         public void SetDuration(int Duraction)
         {
-            if (this.Duration - Duration >= 0)
+            if (this.Duration - Duration > 0)
                 this.Duration = this.Duration - Duraction;
         }
 
