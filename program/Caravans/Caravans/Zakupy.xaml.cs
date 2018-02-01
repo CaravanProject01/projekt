@@ -477,6 +477,7 @@ namespace Caravans
             int x = Convert.ToInt32(tkan.Text);
             string zmienna = sptkanina.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO03", x, y);
         }
 
@@ -501,6 +502,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(tkanCK);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO03", x, y);
         }
 
@@ -517,6 +519,7 @@ namespace Caravans
             int x = Convert.ToInt32(wino.Text);
             string zmienna = spWino.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO09", x, y);
         }
 
@@ -541,6 +544,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO09", x, y);
         }
 
@@ -557,6 +561,7 @@ namespace Caravans
             int x = Convert.ToInt32(bron.Text);
             string zmienna = spbron.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO06", x, y);
         }
 
@@ -581,6 +586,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO06", x, y);
         }
 
@@ -597,6 +603,7 @@ namespace Caravans
             int x = Convert.ToInt32(hleb.Text);
             string zmienna = spchleb.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO05", x, y);
         }
 
@@ -621,6 +628,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO05", x, y);
         }
 
@@ -637,6 +645,7 @@ namespace Caravans
             int x = Convert.ToInt32(brondrz.Text);
             string zmienna = spdrzewo.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO01", x, y);
         }
 
@@ -661,6 +670,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO01", x, y);
         }
 
@@ -677,6 +687,7 @@ namespace Caravans
             int x = Convert.ToInt32(jabl.Text);
             string zmienna = spjab.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO02", x, y);
         }
 
@@ -701,6 +712,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO02", x, y);
         }
 
@@ -717,6 +729,7 @@ namespace Caravans
             int x = Convert.ToInt32(mies.Text);
             string zmienna = sptmieso.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO04", x, y);
         }
 
@@ -741,6 +754,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO04", x, y);
         }
 
@@ -757,6 +771,7 @@ namespace Caravans
             int x = Convert.ToInt32(perl.Text);
             string zmienna = spperla1.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO07", x, y);
         }
 
@@ -781,6 +796,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO07", x, y);
         }
 
@@ -797,6 +813,7 @@ namespace Caravans
             int x = Convert.ToInt32(skur.Text);
             string zmienna = spskora.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO10", x, y);
         }
 
@@ -821,6 +838,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO10", x, y);
         }
 
@@ -837,6 +855,7 @@ namespace Caravans
             int x = Convert.ToInt32(srodki.Text);
             string zmienna = spnafta.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO11", x, y);
         }
 
@@ -861,6 +880,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO11", x, y);
         }
 
@@ -877,6 +897,7 @@ namespace Caravans
             int x = Convert.ToInt32(przyp.Text);
             string zmienna = spprzyprawy.Text.ToString();
             int y = Convert.ToInt32(zmienna);
+            idm = Modele.GdzieJestem(idk);
             sprzedarz(idk, idm, "TO08", x, y);
         }
 
@@ -901,6 +922,7 @@ namespace Caravans
             {
                 y = Convert.ToInt32(zmienna);
             }
+            idm = Modele.GdzieJestem(idk);
             kupowanie(idk, idm, "TO08", x, y);
         }
 
@@ -1086,6 +1108,7 @@ namespace Caravans
             ilprzyprawytour.Text = przypIM2;
 
             GOLD.Text = kasa2;
+         
 
         }
     }

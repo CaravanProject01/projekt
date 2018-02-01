@@ -69,6 +69,8 @@ namespace Caravans
             endturn();
             czas = Modele.getTimeS();
             zegarek.Text = czas;
+            kasa = Modele.getGoldS();
+            textBlock.Text = kasa;
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
@@ -98,6 +100,8 @@ namespace Caravans
             tydzien y = new tydzien();
             if (Modele.time % 7 == 0) y.nowyTydzien();
         }
+
+       
     }
 }
 
