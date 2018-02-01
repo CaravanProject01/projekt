@@ -417,7 +417,7 @@ namespace Caravans
             GOLD.DataContext = this;
             nowy1.DataContext = this;
 
-
+            zassaj();
 
 
         }
@@ -804,112 +804,167 @@ namespace Caravans
 
         public void zassaj()
         {
-            idm = Modele.GdzieJestem(idk);
-            dane = new wjazd(idm);
-            kasa = Modele.getGoldS();
+            string idm2 = Modele.GdzieJestem(idk);
+            wjazd dane2 = new wjazd(idm2);
+            string kasa2 = Modele.getGoldS();
 
-            tkanIK = Modele.IleTowaru(idk, "TO03");
-            tkanIM = dane.getIle("TO03");
-            tkanCK = dane.getCenaKup("TO03");
-            tkanCS = dane.getCenaSp("TO03");
+            string tkanIK2;
+            string tkanIM2;
+            string tkanCK2;
+            string tkanCS2;
 
-            winoIK = Modele.IleTowaru(idk, "TO09");
-            winoIM = dane.getIle("TO09");
-            winoCK = dane.getCenaKup("TO09");
-            winoCS = dane.getCenaSp("TO09");
+            string winoIK2;
+            string winoIM2;
+            string winoCK2;
+            string winoCS2;
 
-            bronIK = Modele.IleTowaru(idk, "TO06");
-            bronIM = dane.getIle("TO06");
-            bronCK = dane.getCenaKup("TO06");
-            bronCS = dane.getCenaSp("TO06");
+            string bronIK2;
+            string bronIM2;
+            string bronCK2;
+            string bronCS2;
 
-            chlebIK = Modele.IleTowaru(idk, "TO05");
-            chlebIM = dane.getIle("TO05");
-            chlebCK = dane.getCenaKup("TO05");
-            chlebCS = dane.getCenaSp("TO05");
+            string chlebIK2;
+            string chlebIM2;
+            string chlebCK2;
+            string chlebCS2;
 
-            drewIK = Modele.IleTowaru(idk, "TO01");
-            drewIM = dane.getIle("TO01");
-            drewCK = dane.getCenaKup("TO01");
-            drewCS = dane.getCenaSp("TO01");
+            string drewIK2;
+            string drewIM2;
+            string drewCK2;
+            string drewCS2;
 
-            jablIK = Modele.IleTowaru(idk, "TO02");
-            jablIM = dane.getIle("TO02");
-            jablCK = dane.getCenaKup("TO02");
-            jablCS = dane.getCenaSp("TO02");
+            string jablIK2;
+            string jablIM2;
+            string jablCK2;
+            string jablCS2;
 
-            miesoIK = Modele.IleTowaru(idk, "TO04");
-            miesoIM = dane.getIle("TO04");
-            miesoCK = dane.getCenaKup("TO04");
-            miesoCS = dane.getCenaSp("TO04");
+            string miesoIK2;
+            string miesoIM2;
+            string miesoCK2;
+            string miesoCS2;
 
-            perlIK = Modele.IleTowaru(idk, "TO07");
-            perlIM = dane.getIle("TO07");
-            perlCK = dane.getCenaKup("TO07");
-            perlCS = dane.getCenaSp("TO07");
+            string perlIK2;
+            string perlIM2;
+            string perlCK2;
+            string perlCS2;
 
-            skrIK = Modele.IleTowaru(idk, "TO10");
-            skrIM = dane.getIle("TO10");
-            skrCK = dane.getCenaKup("TO10");
-            skrCS = dane.getCenaSp("TO10");
+            string skrIK2;
+            string skrIM2;
+            string skrCK2;
+            string skrCS2;
 
-            alchIK = Modele.IleTowaru(idk, "TO11");
-            alchIM = dane.getIle("TO11");
-            alchCK = dane.getCenaKup("TO11");
-            alchCS = dane.getCenaSp("TO11");
+            string alchIK2;
+            string alchIM2;
+            string alchCK2;
+            string alchCS2;
 
-            przypIK = Modele.IleTowaru(idk, "TO08");
-            przypIM = dane.getIle("TO08");
-            przypCK = dane.getCenaKup("TO08");
-            przypCS = dane.getCenaSp("TO08");
+            string przypIK2;
+            string przypIM2;
+            string przypCK2;
+            string przypCS2;
+
+            tkanIK2 = Modele.IleTowaru(idk, "TO03");
+            tkanIM2 = dane2.getIle("TO03");
+            tkanCK2 = dane2.getCenaKup("TO03");
+            tkanCS2 = dane2.getCenaSp("TO03");
+
+            winoIK2 = Modele.IleTowaru(idk, "TO09");
+            winoIM2 = dane.getIle("TO09");
+            winoCK2 = dane.getCenaKup("TO09");
+            winoCS2 = dane.getCenaSp("TO09");
+
+            bronIK2 = Modele.IleTowaru(idk, "TO06");
+            bronIM2 = dane2.getIle("TO06");
+            bronCK2 = dane2.getCenaKup("TO06");
+            bronCS2 = dane2.getCenaSp("TO06");
+
+            chlebIK2 = Modele.IleTowaru(idk, "TO05");
+            chlebIM2 = dane2.getIle("TO05");
+            chlebCK2 = dane2.getCenaKup("TO05");
+            chlebCS2 = dane2.getCenaSp("TO05");
+
+            drewIK2 = Modele.IleTowaru(idk, "TO01");
+            drewIM2 = dane2.getIle("TO01");
+            drewCK2 = dane2.getCenaKup("TO01");
+            drewCS2 = dane2.getCenaSp("TO01");
+
+            jablIK2 = Modele.IleTowaru(idk, "TO02");
+            jablIM2 = dane2.getIle("TO02");
+            jablCK2 = dane2.getCenaKup("TO02");
+            jablCS2 = dane2.getCenaSp("TO02");
+
+            miesoIK2 = Modele.IleTowaru(idk, "TO04");
+            miesoIM2 = dane2.getIle("TO04");
+            miesoCK2 = dane2.getCenaKup("TO04");
+            miesoCS2 = dane2.getCenaSp("TO04");
+
+            perlIK2 = Modele.IleTowaru(idk, "TO07");
+            perlIM2 = dane2.getIle("TO07");
+            perlCK2 = dane2.getCenaKup("TO07");
+            perlCS2 = dane2.getCenaSp("TO07");
+
+            skrIK2 = Modele.IleTowaru(idk, "TO10");
+            skrIM2 = dane2.getIle("TO10");
+            skrCK2 = dane2.getCenaKup("TO10");
+            skrCS2 = dane2.getCenaSp("TO10");
+
+            alchIK2 = Modele.IleTowaru(idk, "TO11");
+            alchIM2 = dane2.getIle("TO11");
+            alchCK2 = dane2.getCenaKup("TO11");
+            alchCS2 = dane2.getCenaSp("TO11");
+
+            przypIK2 = Modele.IleTowaru(idk, "TO08");
+            przypIM2 = dane2.getIle("TO08");
+            przypCK2 = dane2.getCenaKup("TO08");
+            przypCS2 = dane2.getCenaSp("TO08");
 
 
-            iltkaninatour.Text = tkanIM;
-            iltkaninawag.Text = tkanIK;
-            cenatkanina.Text = tkanCK;
-            sptkanina.Text = tkanCS;
-            ilwinowag.Text = winoIK;
-            cenawino.Text = winoCK;
-            spWino.Text = winoCS;
-            ilwinotour.Text = winoIM;
-            ilbronwag.Text = bronIK;
-            cenabron.Text = bronCK;
-            spbron.Text = bronCS;
-            ilbrontour.Text = bronIM;
-            ilchlebwag.Text = chlebIK;
-            cenachleb.Text = chlebCK;
-            spchleb.Text = chlebCS;
-            ilchlebtour.Text = chlebIM;
-            iltreewag.Text = drewIK;
-            cenatree.Text = drewCK;
-            spdrzewo.Text = drewCS;
-            iltreetour.Text = drewIM;
-            iljabwagt.Text = jablIK;
-            cenahleb.Text = jablCK;
-            spjab.Text = jablCS;
-            iljabtour.Text = jablIM;
-            ilmeatwag.Text = miesoIK;
-            cenameate.Text = miesoCK;
-            sptmieso.Text = miesoCS;
-            ilmeattour.Text = miesoIM;
-            ilperlawag.Text = perlIK;
-            cenaperla1.Text = perlCK;
-            spperla1.Text = perlCS;
-            ilperlatour1.Text = perlIM;
-            ilskorawag.Text = skrIK;
-            cenaskora.Text = skrCK;
-            spskora.Text = skrCS;
-            ilskoratour.Text = skrIM;
-            nowy1.Text = alchIK;
-            cenanafta.Text = alchCK;
-            spnafta.Text = alchCS;
-            ilnaftatour.Text = alchIM;
-            ilprzyprawywag.Text = przypIK;
-            cenaprzyprawy.Text = przypCK;
-            spprzyprawy.Text = przypCS;
-            ilprzyprawytour.Text = przypIM;
+            iltkaninatour.Text = tkanIM2;
+            iltkaninawag.Text = tkanIK2;
+            cenatkanina.Text = tkanCK2;
+            sptkanina.Text = tkanCS2;
+            ilwinowag.Text = winoIK2;
+            cenawino.Text = winoCK2;
+            spWino.Text = winoCS2;
+            ilwinotour.Text = winoIM2;
+            ilbronwag.Text = bronIK2;
+            cenabron.Text = bronCK2;
+            spbron.Text = bronCS2;
+            ilbrontour.Text = bronIM2;
+            ilchlebwag.Text = chlebIK2;
+            cenachleb.Text = chlebCK2;
+            spchleb.Text = chlebCS2;
+            ilchlebtour.Text = chlebIM2;
+            iltreewag.Text = drewIK2;
+            cenatree.Text = drewCK2;
+            spdrzewo.Text = drewCS2;
+            iltreetour.Text = drewIM2;
+            iljabwagt.Text = jablIK2;
+            cenahleb.Text = jablCK2;
+            spjab.Text = jablCS2;
+            iljabtour.Text = jablIM2;
+            ilmeatwag.Text = miesoIK2;
+            cenameate.Text = miesoCK2;
+            sptmieso.Text = miesoCS2;
+            ilmeattour.Text = miesoIM2;
+            ilperlawag.Text = perlIK2;
+            cenaperla1.Text = perlCK2;
+            spperla1.Text = perlCS2;
+            ilperlatour1.Text = perlIM2;
+            ilskorawag.Text = skrIK2;
+            cenaskora.Text = skrCK2;
+            spskora.Text = skrCS2;
+            ilskoratour.Text = skrIM2;
+            nowy1.Text = alchIK2;
+            cenanafta.Text = alchCK2;
+            spnafta.Text = alchCS2;
+            ilnaftatour.Text = alchIM2;
+            ilprzyprawywag.Text = przypIK2;
+            cenaprzyprawy.Text = przypCK2;
+            spprzyprawy.Text = przypCS2;
+            ilprzyprawytour.Text = przypIM2;
 
-            GOLD.Text = kasa;                
+            GOLD.Text = kasa2;
 
         }
     }
