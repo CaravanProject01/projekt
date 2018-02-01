@@ -455,7 +455,7 @@ namespace Caravans
                     {
                         foreach (TableArtInTown z in Modele.tableArtInTown)
                         {
-                            if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
+                            if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar && ile <= z.GetNumber())
                             {
                                 Modele.setGold(Modele.getGold() - cena * ile);
                                 y.SetNumber(y.GetNumber() + ile);
