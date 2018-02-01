@@ -199,8 +199,8 @@
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
         </Button>
-        <Label x:Name="label" Content="LOKALIZACJ&#xD;&#xA;" HorizontalAlignment="Left" Margin="100,181,0,0" VerticalAlignment="Top" Width="86" Height="41"/>
-        <TextBlock x:Name="lokal" HorizontalAlignment="Left" Height="36" Margin="191,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"><Run Foreground="Black" Text="{Binding Path=LOK}"/></TextBlock>
+        <Label x:Name="label" Content="LOKALIZACJ&#xD;&#xA;" HorizontalAlignment="Left" Margin="78,181,0,0" VerticalAlignment="Top" Width="86" Height="41"/>
+        <TextBlock x:Name="lokal" HorizontalAlignment="Left" Height="67" Margin="169,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"><Run Foreground="Black" Text="{Binding Path=LOK}"/></TextBlock>
     </Grid>
 
 </Window>

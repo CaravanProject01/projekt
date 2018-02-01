@@ -22,9 +22,7 @@ namespace Caravans
     {
         static string idk = "KA01";
 
-        string tkanIK = Modele.IleTowaru(idk, "TO03");
-        
-
+        string tkanIK = Modele.IleTowaru(idk, "TO03");       
         string winoIK = Modele.IleTowaru(idk, "TO09");
         string bronIK = Modele.IleTowaru(idk, "TO06");      
         string chlebIK = Modele.IleTowaru(idk, "TO05");
@@ -102,7 +100,7 @@ namespace Caravans
             set { przypIK = value; }
         }
 
-        string lokal1 = Modele.Nazwalokacji();
+        string lokal1 = lokalizuj();
         public string LOK
         {
             get { return lokal1; }
@@ -138,6 +136,43 @@ namespace Caravans
         {
             Podroz po = new Podroz();
             po.Show();
+        }
+
+        private static string lokalizuj()
+        {
+            string roboczy;
+            string nazwa="";
+            int czas=0;
+            string idl="";
+            foreach (TableCaravan kar in Modele.tableCaravan)
+            {
+                roboczy = kar.GetId();
+                if (roboczy == idk)
+                {
+                    idl = kar.GetIdLoc();
+                    czas = kar.GetDuration();
+                }
+            }
+            foreach (TableTown miasto in Modele.tableTown)
+            {
+                roboczy = miasto.GetIdLoc();
+                if (roboczy == idl)
+                {
+                    nazwa = miasto.GetName();
+                }
+            }
+
+            if (czas == 0)
+            {
+                return nazwa;
+            }
+            else
+            {
+                string wynik = "W drodze do " + nazwa + " pozostało " + czas + " tur";
+                return wynik;
+
+            }
+            
         }
     }
 }

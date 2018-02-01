@@ -142,8 +142,6 @@ namespace Caravans.model
                     idm = miasto.GetId();
                 }
             }
-
-
             return idm;
         }
 
