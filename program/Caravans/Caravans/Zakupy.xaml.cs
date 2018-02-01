@@ -436,7 +436,7 @@ namespace Caravans
                         {
                             if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
                             {
-                                Modele.setGold(Modele.getGold() + cena);
+                                Modele.setGold(Modele.getGold() + cena * ile);
                                 y.SetNumber(y.GetNumber() - ile);
                                 z.SetNumber(z.GetNumber() + ile);
                             }
@@ -457,7 +457,7 @@ namespace Caravans
                         {
                             if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
                             {
-                                Modele.setGold(Modele.getGold() - cena);
+                                Modele.setGold(Modele.getGold() - cena * ile);
                                 y.SetNumber(y.GetNumber() + ile);
                                 z.SetNumber(z.GetNumber() - ile);
                             }
