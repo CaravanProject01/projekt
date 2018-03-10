@@ -23,6 +23,8 @@ namespace Caravans
     {
         public MainWindow() => InitializeComponent();
 
+        public static GamesWindow wi;
+
         private void Bauthors_Click(object sender, RoutedEventArgs e)
         {
             authors au = new authors();
@@ -34,11 +36,15 @@ namespace Caravans
         private void Bplay_Click(object sender, RoutedEventArgs e)
         {
             Modele x = new Modele();
-            GamesWindow wi = new GamesWindow();
+            wi = new GamesWindow();
             wi.Show();
             this.Close();
         }
 
+        public static void odzwierzGlowne()
+        {
+            wi.odswiez();
+        }
         
     }
 }

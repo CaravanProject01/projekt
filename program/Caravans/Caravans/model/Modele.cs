@@ -145,6 +145,21 @@ namespace Caravans.model
             return idm;
         }
 
+        public static int dajCzas(string karID)
+        {
+            int wynik = 0;
+            foreach(TableCaravan kar in tableCaravan)
+            {
+                string id = kar.GetId();
+                if (id == karID)
+                {
+                    wynik = kar.GetDuration();
+                }
+            }
+
+            return wynik;
+        }
+
 
         internal void ReadListLocation()
         {

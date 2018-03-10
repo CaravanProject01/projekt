@@ -444,6 +444,7 @@ namespace Caravans
                     }
                 }
                 zassaj();
+                MainWindow.odzwierzGlowne();
             }
         }
         private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
@@ -465,10 +466,14 @@ namespace Caravans
                     }
                 }
                 zassaj();
+                MainWindow.odzwierzGlowne();
             }
             
         }
-        private void exitZ_Click(object sender, RoutedEventArgs e) => Close();
+        private void exitZ_Click(object sender, RoutedEventArgs e) {
+            Close();
+            GamesWindow.odswiezKarawane();           
+        }
 
 
         //funkcje obsługujące przyciski

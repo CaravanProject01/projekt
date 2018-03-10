@@ -122,6 +122,18 @@ namespace Caravans
             ilskoratour.DataContext = this;
             ilsrodtour.DataContext = this;
             ilprzyprawytour.DataContext = this;
+
+            int jazda = Modele.dajCzas(idk);
+            if (jazda == 0)
+            {
+                shop.IsEnabled = true;
+                podroz.IsEnabled = true;
+            }
+            else
+            {
+                shop.IsEnabled = false;
+                podroz.IsEnabled = false;
+            }
         }
 
         private void ExitW_Click(object sender, RoutedEventArgs e) => Close();
@@ -173,6 +185,34 @@ namespace Caravans
 
             }
             
+        }
+
+        public void odswiez()
+        {
+            string jablka=Modele.IleTowaru(idk, "TO02");
+            string drewno = Modele.IleTowaru(idk, "TO01");
+            string mieso = Modele.IleTowaru(idk, "TO04");
+            string chleb = Modele.IleTowaru(idk, "TO05");
+            string bron = Modele.IleTowaru(idk, "TO06");
+            string wino = Modele.IleTowaru(idk, "TO09");
+            string tkanina = Modele.IleTowaru(idk, "TO03");
+            string perla = Modele.IleTowaru(idk, "TO07");
+            string skora = Modele.IleTowaru(idk, "TO10");
+            string przyprawy = Modele.IleTowaru(idk, "TO08");
+            string alchemia = Modele.IleTowaru(idk, "TO11");
+
+            iljabtour.Text = jablka;
+            iltreetour.Text = drewno;
+            ilmeattour.Text = mieso;
+            ilchlebtour.Text = chleb;
+            ilbrontour.Text = bron;
+            ilwinotour.Text = wino;
+            iltkaninatour.Text = tkanina;
+            ilperlatour.Text = perla;
+            ilskoratour.Text = skora;
+            ilsrodtour.Text = alchemia;
+            ilprzyprawytour.Text = przyprawy;
+
         }
     }
 }

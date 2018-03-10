@@ -21,8 +21,10 @@ namespace Caravans
 
     public partial class GamesWindow : Window
     {
+        public static WaggonShop wa;
+        public static MainWindow mi;
+        public static MiastoTour mt;
         
-
         string kasa = Modele.getGoldS();
         string czas = Modele.getTimeS();
 
@@ -46,20 +48,20 @@ namespace Caravans
 
         private void Bmenu_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mi = new MainWindow();
+            mi = new MainWindow();
             mi.Show();
             this.Close();
         }
 
         private void Btourilguard_Click(object sender, RoutedEventArgs e)
         {
-            MiastoTour mt = new MiastoTour();
+            mt = new MiastoTour();
             mt.Show();
         }
 
         private void BWaggon_Click(object sender, RoutedEventArgs e)
         {
-            WaggonShop wa = new WaggonShop();
+            wa = new WaggonShop();
             wa.Show();
         }
 
@@ -67,10 +69,7 @@ namespace Caravans
         private void Bend_Click(object sender, RoutedEventArgs e)
         {
             endturn();
-            czas = Modele.getTimeS();
-            zegarek.Text = czas;
-            kasa = Modele.getGoldS();
-            textBlock.Text = kasa;
+            odswiez();
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
@@ -101,6 +100,23 @@ namespace Caravans
             if (Modele.time % 7 == 0) y.nowyTydzien();
         }
 
+        public static void z1()
+        {
+            wa.Close();
+        }
+
+        public static void odswiezKarawane()
+        {
+            wa.odswiez();
+        }
+
+        public void odswiez()
+        {
+            czas = Modele.getTimeS();
+            zegarek.Text = czas;
+            kasa = Modele.getGoldS();
+            textBlock.Text = kasa;
+        }
        
     }
 }
