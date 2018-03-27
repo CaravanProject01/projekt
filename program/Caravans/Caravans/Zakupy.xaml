@@ -23,7 +23,7 @@
             </ImageBrush>
         </Grid.Background>
         <Image x:Name="ob_jpg" Margin="-51,-16,-122,-90" Source="ob.jpg" Stretch="Fill"/>
-        <Button x:Name="exitZ" Content="EXIT" HorizontalAlignment="Left" Height="40" Margin="897,725,-49,-51" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.924,-0.172" Foreground="#FFFDFAFA" Click="exitZ_Click">
+        <Button x:Name="exitZ" Content="Zamknij" HorizontalAlignment="Left" Height="40" Margin="897,725,-49,-51" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.924,-0.172" Foreground="#FFFDFAFA" Click="exitZ_Click">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>

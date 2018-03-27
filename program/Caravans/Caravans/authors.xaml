@@ -24,25 +24,25 @@
         </Grid.Background>
         <Image x:Name="car_jpg" Source="car.jpg" Stretch="Fill"/>
         <Image x:Name="obud_png" Margin="-15,-17,-12,-17" Source="obud.png" Stretch="Fill"/>
-        <Label x:Name="label" Content="   AUTHORS" HorizontalAlignment="Left" Height="70" Margin="10,31,0,0" VerticalAlignment="Top" Width="299" Foreground="White" FontSize="48" FontWeight="Normal">
+        <Label x:Name="label" Content="   AUTORZY" HorizontalAlignment="Left" Height="70" Margin="10,31,0,0" VerticalAlignment="Top" Width="299" Foreground="White" FontSize="48" FontWeight="Normal">
             <Label.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Label.Background>
         </Label>
-        <Button x:Name="bexit" Content="EXIT" HorizontalAlignment="Left" Height="70" Margin="487,31,0,0" VerticalAlignment="Top" Width="88" Click="bexit_Click" Foreground="White" FontSize="22" FontWeight="Normal">
+        <Button x:Name="bexit" Content="Zamknij" HorizontalAlignment="Left" Height="70" Margin="487,31,0,0" VerticalAlignment="Top" Width="88" Click="bexit_Click" Foreground="White" FontSize="22" FontWeight="Normal">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
         </Button>
         <Image x:Name="book_jpg" Margin="61,117,68,30" Source="book.jpg" Stretch="Fill"/>
-        <Label x:Name="label1" Content="aleksy kirsanow" HorizontalAlignment="Left" Height="28" Margin="109,170,0,0" VerticalAlignment="Top" Width="174"/>
-        <Label x:Name="label2" Content="marcin wardzinski" HorizontalAlignment="Left" Height="29" Margin="99,278,0,0" VerticalAlignment="Top" Width="184"/>
-        <Label x:Name="label3" Content="kamil kiedrowicz" HorizontalAlignment="Left" Height="28" Margin="309,170,0,0" VerticalAlignment="Top" Width="167"/>
-        <Label x:Name="label4" Content="     mark rybak" HorizontalAlignment="Left" Height="29" Margin="309,278,0,0" VerticalAlignment="Top" Width="167"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="77" Margin="327,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"><Run Foreground="Black" FontSize="10" Text="  CZesc graficzna"/><Run Text=",jhg"/></TextBlock>
-        <Label x:Name="label5" Content="BAza dannych i modele" HorizontalAlignment="Left" Height="70" Margin="109,203,0,0" VerticalAlignment="Top" Width="157" FontSize="10"/>
-        <Label x:Name="label6" Content="Swiat&#xD;&#xA;mapa &#xD;&#xA;Drogi i wypelnienie &#xD;&#xA;podrozy" HorizontalAlignment="Left" Height="61" Margin="327,203,0,0" VerticalAlignment="Top" Width="130" FontSize="10"/>
-        <Label x:Name="label7" Content="Logika cenowa &#xD;&#xA;rozwój miast &#xD;&#xA;Kalkulator Cen" HorizontalAlignment="Left" Height="72" Margin="109,312,0,0" VerticalAlignment="Top" Width="157" FontSize="10"/>
+        <Label x:Name="label1" Content="Aleksy Kirsanow" HorizontalAlignment="Left" Height="28" Margin="109,170,0,0" VerticalAlignment="Top" Width="174"/>
+        <Label x:Name="label2" Content="Marcin Wardziński" HorizontalAlignment="Left" Height="29" Margin="109,278,0,0" VerticalAlignment="Top" Width="184"/>
+        <Label x:Name="label3" Content="Kamil Kiedrowicz" HorizontalAlignment="Left" Height="28" Margin="309,170,0,0" VerticalAlignment="Top" Width="167"/>
+        <Label x:Name="label4" Content="Mark Rybak" HorizontalAlignment="Left" Height="29" Margin="309,278,0,0" VerticalAlignment="Top" Width="167"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="77" Margin="327,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"><Run Foreground="Black" FontSize="10" Text="GUI"/><Run Text=",jhg"/></TextBlock>
+        <Label x:Name="label5" Content="Modelei&#xD;&#xA;Baza danych&#xD;&#xA;Połączenie z BD&#xD;&#xA;Świat Gry" HorizontalAlignment="Left" Height="70" Margin="109,203,0,0" VerticalAlignment="Top" Width="157" FontSize="10"/>
+        <Label x:Name="label6" Content="Mapa&#xD;&#xA;Funkcje użytkownicze&#xD;&#xA;" HorizontalAlignment="Left" Height="61" Margin="327,203,0,0" VerticalAlignment="Top" Width="130" FontSize="10"/>
+        <Label x:Name="label7" Content="Matematyka świat&#xD;&#xA;Klakulator cen&#xD;&#xA;Rozwój miast" HorizontalAlignment="Left" Height="72" Margin="109,312,0,0" VerticalAlignment="Top" Width="157" FontSize="10"/>
 
     </Grid>
 

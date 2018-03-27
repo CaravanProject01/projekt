@@ -36,7 +36,7 @@
 
         <Image x:Name="book_jpg" Margin="28,43,-30,30" Source="book.jpg" Stretch="Fill"/>
 
-        <Button x:Name="exitP" Content="EXIT" HorizontalAlignment="Left" Height="70" Margin="572,31,-30,0" VerticalAlignment="Top" Width="131" Click="exitP_Click" Foreground="White" FontSize="22" FontWeight="Normal">
+        <Button x:Name="exitP" Content="Zamknij" HorizontalAlignment="Left"  Height="70" Margin="572,31,-30,0" VerticalAlignment="Top" Width="131" Click="exitP_Click" Foreground="White" FontSize="22" FontWeight="Bold">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
