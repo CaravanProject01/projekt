@@ -28,7 +28,7 @@ namespace Caravans
         static string idm = Modele.GdzieJestem(idk);
                 
         //wsadza dane do powyższych zmiennych (włącznie z wywowałem funckji policzenia cen)
-        private static wjazd dane = new wjazd(idm);
+        private static ceny dane = new ceny(idm);
 
         //lista cen i ilości: IK-ilość w karawanie, IM-ilość w mieście, CK-cena kupna, CS-cena sprzedarzy
         //zmienienie tego co jest po znaku równości na "coś" zmienia wartość danej na "coś"-użyteczne przy testach
@@ -942,7 +942,7 @@ namespace Caravans
         public void zassaj()
         {
             string idm2 = Modele.GdzieJestem(idk);
-            wjazd dane2 = new wjazd(idm2);
+            ceny dane2 = new ceny(idm2);
             string kasa2 = Modele.getGoldS();
 
             string tkanIK2;

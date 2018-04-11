@@ -77,6 +77,8 @@ namespace Caravans.model
             this.Guard = Guard;
         }
 
+        //inne
+
         public void ChangeDuration()
         {
             if (this.Duration > 0)

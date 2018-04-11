@@ -77,9 +77,10 @@
       <DependentUpon>CaravansDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="matma\ceny.cs" />
-    <Compile Include="matma\dzien.cs" />
-    <Compile Include="matma\miesiac.cs" />
-    <Compile Include="matma\tydzien.cs" />
+    <Compile Include="matma\czas.cs" />
+    <Compile Include="matma\handel.cs" />
+    <Compile Include="matma\miasto.cs" />
+    <Compile Include="matma\towar.cs" />
     <Compile Include="model\Modele.cs" />
     <Compile Include="model\TableArticle.cs" />
     <Compile Include="model\TableArtInCaravan.cs" />

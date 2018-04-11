@@ -68,7 +68,8 @@ namespace Caravans
 
         private void Bend_Click(object sender, RoutedEventArgs e)
         {
-            endturn();
+            czas cz = new czas();
+            cz.tura();
             odswiez();
         }
 
@@ -84,20 +85,6 @@ namespace Caravans
         private void button9_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void endturn()
-        {
-            Modele.time += 1;
-            foreach (TableCaravan x in Modele.tableCaravan)//odejmujemy jedna ture od karawan
-            {
-                x.ChangeDuration(); // tu juz jest kontrola czy jest zero tur (przynajmniej powinno)
-
-            }
-            dzien z = new dzien();
-            z.nowyDzien();
-            tydzien y = new tydzien();
-            if (Modele.time % 7 == 0) y.nowyTydzien();
         }
 
         public static void z1()
