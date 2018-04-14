@@ -1,3 +1,0 @@
-doda³em do schematu pola zapotrzebowanie i produkcja w tabeli towar. s¹ to domyœlne wartoœci produkcji w przeliczeniu na mieszkañców, dajmy na to na 100. mówi³em by daæ tak¹ listê/tabelê w programie, uzna³em ¿e ³atwiej bêdzie to wrzuciæ do bazy danych
-
-doda³em te¿ to pole nazwy do lokacji
