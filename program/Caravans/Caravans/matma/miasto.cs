@@ -54,15 +54,13 @@ namespace Caravans.matma
                             towary.Add(tow);
                         }
                     }
-
-
                 }
-
             }
         }
 
         public void zmianaPopulacji()
         {
+            policzZywnosc();
             int zpop;
             int zyw = zywnosc;
             if (zyw < 0)
@@ -114,6 +112,57 @@ namespace Caravans.matma
             {
                 x.wyprowadzDane(id);
             }
+        }
+
+        public void policzZywnosc()
+        {
+            int zapJabl=0;
+            int zapMies=0;
+            int zapChleb=0;
+            int ileJabl=0;
+            int ileMies=0;
+            int ileChleb=0;
+            String idek;
+
+            foreach(towar tow in towary)
+            {
+                idek = tow.dajId();
+                switch (idek)
+                {
+                    case "TO02": //jabłka
+                        zapJabl = tow.dajZapotrzebowanie();
+                        ileJabl = tow.dajIlosc();
+                        break;
+                    case "TO05": //chleb
+                        zapChleb = tow.dajZapotrzebowanie();
+                        ileChleb = tow.dajIlosc();
+                        break;
+                    case "TO04": //mieso
+                        zapMies = tow.dajZapotrzebowanie();
+                        ileMies = tow.dajIlosc();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            double zapSuma = zapMies + zapJabl + zapChleb;
+            double ileSuma = ileMies + ileJabl + ileChleb;
+
+            double roznica;            
+            if (zapSuma == 0)
+            {
+                roznica = 1;
+            }
+            else
+            {
+                roznica = ileSuma / zapSuma;
+            }
+
+            roznica *= 100;
+            roznica -= 100;
+            int roz = (Int32)roznica;
+            zywnosc = roz;
         }
     }
 }
