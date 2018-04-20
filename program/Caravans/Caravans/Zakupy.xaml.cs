@@ -486,13 +486,9 @@ namespace Caravans
         //ważne-inicjalizacja jeśli texbox ma wyświetlać coś co nie jest z góry przypisane, trzeba go tu zainicjalizować
         public Zakupy()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
             nowy1.DataContext = this;
-
             zassaj();
-
-
         }
 
         //w te funkcje należy wkleić kod od kamila
@@ -568,7 +564,15 @@ namespace Caravans
         private void buttonT3_Click(object sender, RoutedEventArgs e)//tkanina kup
         {
             int ile = Convert.ToInt32(tkan.Text);
-            int cena = Convert.ToInt32(tkanCK);
+            int cena;
+            if (tkanCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(tkanCK);
+            }
             kupowanie(idk, idm, "TO03", ile, cena);
         }
 
@@ -598,7 +602,15 @@ namespace Caravans
         private void buttonW3_Click(object sender, RoutedEventArgs e)//wino kup
         {
             int ile = Convert.ToInt32(wino.Text);
-            int cena = Convert.ToInt32(winoCK);
+            int cena;
+            if (winoCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(winoCK);
+            }
             kupowanie(idk, idm, "TO09", ile, cena);
         }
 
@@ -627,8 +639,16 @@ namespace Caravans
 
         private void buttonB3_Click(object sender, RoutedEventArgs e)//bron kup
         {
-            int ile = Convert.ToInt32(bron.Text);           
-            int cena = Convert.ToInt32(bronCK);
+            int ile = Convert.ToInt32(bron.Text);
+            int cena;
+            if (bronCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(bronCK);
+            }
             kupowanie(idk, idm, "TO06", ile, cena);
         }
 
@@ -658,7 +678,15 @@ namespace Caravans
         private void buttonC3_Click(object sender, RoutedEventArgs e)//chleb kup
         {
             int ile = Convert.ToInt32(hleb.Text);
-            int cena = Convert.ToInt32(chlebCK);
+            int cena;
+            if (chlebCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(chlebCK);
+            }
             kupowanie(idk, idm, "TO05", ile, cena);
         }
 
@@ -688,7 +716,15 @@ namespace Caravans
         private void buttonD3_Click(object sender, RoutedEventArgs e)//drewno kup
         {
             int ile = Convert.ToInt32(brondrz.Text);
-            int cena = Convert.ToInt32(drewCK);
+            int cena;
+            if (drewCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(drewCK);
+            }
             kupowanie(idk, idm, "TO01", ile, cena);
         }
 
@@ -718,7 +754,15 @@ namespace Caravans
         private void buttonJ3_Click(object sender, RoutedEventArgs e)//jabłko kup
         {
             int ile = Convert.ToInt32(jabl.Text);
-            int cena = Convert.ToInt32(jablCK);
+            int cena;
+            if (jablCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(jablCK);
+            }
             kupowanie(idk, idm, "TO02", ile, cena);
         }
 
@@ -748,7 +792,15 @@ namespace Caravans
         private void buttonM3_Click(object sender, RoutedEventArgs e)//mięso kup
         {
             int ile = Convert.ToInt32(mies.Text);
-            int cena = Convert.ToInt32(miesoCK);
+            int cena;
+            if (miesoCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(miesoCK);
+            }
             kupowanie(idk, idm, "TO04", ile, cena);
         }
 
@@ -778,7 +830,15 @@ namespace Caravans
         private void buttonP3_Click(object sender, RoutedEventArgs e)//perła kup
         {
             int ile = Convert.ToInt32(perl.Text);
-            int cena = Convert.ToInt32(perlCK);
+            int cena;
+            if (perlCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(perlCK);
+            }
             kupowanie(idk, idm, "TO07", ile, cena);
         }
 
@@ -808,7 +868,15 @@ namespace Caravans
         private void buttonS3_Click(object sender, RoutedEventArgs e)//skóra kup
         {
             int ile = Convert.ToInt32(skur.Text);
-            int cena = Convert.ToInt32(skrCK);
+            int cena;
+            if (skrCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(skrCK);
+            }
             kupowanie(idk, idm, "TO10", ile, cena);
         }
 
@@ -838,7 +906,15 @@ namespace Caravans
         private void buttonA3_Click(object sender, RoutedEventArgs e)//alchemia kup
         {
             int ile = Convert.ToInt32(srodki.Text);
-            int cena = Convert.ToInt32(alchCK);
+            int cena;
+            if (alchCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(alchCK);
+            }
             kupowanie(idk, idm, "TO11", ile, cena);
         }
 
@@ -868,7 +944,15 @@ namespace Caravans
         private void buttonX3_Click(object sender, RoutedEventArgs e)//przyprawy kup
         {
             int ile = Convert.ToInt32(przyp.Text);
-            int cena = Convert.ToInt32(przypCK);
+            int cena;
+            if (przypCK == "niemożliwe")
+            {
+                cena = -1;
+            }
+            else
+            {
+                cena = Convert.ToInt32(przypCK);
+            }
             kupowanie(idk, idm, "TO08", ile, cena);
         }
 
