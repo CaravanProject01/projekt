@@ -42,10 +42,6 @@ namespace Caravans.model
         }
 
 
-        public static string getGoldS()
-        {
-            return gold.ToString();
-        }
         public static int getGold()
         {
             return gold;
@@ -53,10 +49,6 @@ namespace Caravans.model
         public static void setGold(int newgold)
         {
             gold = newgold;
-        }
-        public static string getTimeS()
-        {
-            return time.ToString();
         }
         public static int getTime()
         {
@@ -96,70 +88,8 @@ namespace Caravans.model
         {
             TableTownState stan = new TableTownState(idm, ids, czas);
             tableTownState.Add(stan);
-        }
-
-        public static string IleTowaru(string idk, string idt)
-        {
-            string wynik = "";
-            foreach(TableArtInCaravan xyz in tableArtInCaravan)
-            {
-                string id1 = xyz.GetId();
-                string id2 = xyz.GetIdArticle();
-                if (id1==idk && id2 == idt)
-                {
-                    int zmienna=xyz.GetNumber();
-                    if (zmienna == 0)
-                    {
-                        wynik = "0";
-                    }
-                    else
-                    {
-                        wynik = zmienna.ToString();
-                    }
-                }
-            }
-            return wynik;
-        }
-
-        public static string GdzieJestem(string idk)
-        {
-            string idm = "";
-            string idl = "";
-            string roboczy;
-            foreach (TableCaravan kar in tableCaravan)
-            {
-                roboczy = kar.GetId();
-                if (roboczy == idk)
-                {
-                    idl = kar.GetIdLoc();
-                }
-            }
-            foreach (TableTown miasto in tableTown)
-            {
-                roboczy = miasto.GetIdLoc();
-                if (roboczy == idl)
-                {
-                    idm = miasto.GetId();
-                }
-            }
-            return idm;
-        }
-
-        public static int dajCzas(string karID)
-        {
-            int wynik = 0;
-            foreach(TableCaravan kar in tableCaravan)
-            {
-                string id = kar.GetId();
-                if (id == karID)
-                {
-                    wynik = kar.GetDuration();
-                }
-            }
-
-            return wynik;
-        }
-
+        }       
+       
 
         internal void ReadListLocation()
         {

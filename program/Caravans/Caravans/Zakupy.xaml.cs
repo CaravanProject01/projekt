@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Caravans.matma;
-using Caravans.model;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 
@@ -24,137 +23,137 @@ namespace Caravans
     public partial class Zakupy : Window
     {
         //ID karawany i miasta-puki co przypisane odgórnie, potem się zrobi by jakoś szukało tych danych
-        static string idk = "KA01";
-        static string idm;
+        private static string idk = "KA01";
+        private static string idm;
 
         //wsadza dane do powyższych zmiennych (włącznie z wywowałem funckji policzenia cen)
         private static ceny dane;
-        string kasa;
+        private string kasa;
 
         //lista cen i ilości: IK-ilość w karawanie, IM-ilość w mieście, CK-cena kupna, CS-cena sprzedarzy
 
-        string tkanIK;
-        string tkanIM;
-        string tkanCK;
-        string tkanCS;
+        private string tkanIK;
+        private string tkanIM;
+        private string tkanCK;
+        private string tkanCS;
 
-        string winoIK;
-        string winoIM;
-        string winoCK;
-        string winoCS;
+        private string winoIK;
+        private string winoIM;
+        private string winoCK;
+        private string winoCS;
 
-        string bronIK;
-        string bronIM;
-        string bronCK;
-        string bronCS;
+        private string bronIK;
+        private string bronIM;
+        private string bronCK;
+        private string bronCS;
 
-        string chlebIK;
-        string chlebIM;
-        string chlebCK;
-        string chlebCS;
+        private string chlebIK;
+        private string chlebIM;
+        private string chlebCK;
+        private string chlebCS;
 
-        string drewIK;
-        string drewIM;
-        string drewCK;
-        string drewCS;
+        private string drewIK;
+        private string drewIM;
+        private string drewCK;
+        private string drewCS;
 
-        string jablIK;
-        string jablIM;
-        string jablCK;
-        string jablCS;
+        private string jablIK;
+        private string jablIM;
+        private string jablCK;
+        private string jablCS;
 
-        string miesoIK;
-        string miesoIM;
-        string miesoCK;
-        string miesoCS;
+        private string miesoIK;
+        private string miesoIM;
+        private string miesoCK;
+        private string miesoCS;
 
-        string perlIK;
-        string perlIM;
-        string perlCK;
-        string perlCS;
+        private string perlIK;
+        private string perlIM;
+        private string perlCK;
+        private string perlCS;
 
-        string skrIK;
-        string skrIM;
-        string skrCK;
-        string skrCS;
+        private string skrIK;
+        private string skrIM;
+        private string skrCK;
+        private string skrCS;
 
-        string alchIK;
-        string alchIM;
-        string alchCK;
-        string alchCS;
+        private string alchIK;
+        private string alchIM;
+        private string alchCK;
+        private string alchCS;
 
-        string przypIK;
-        string przypIM;
-        string przypCK;
-        string przypCS;
+        private string przypIK;
+        private string przypIM;
+        private string przypCK;
+        private string przypCS;
 
         public void zassaj()
         {
-            idm = Modele.GdzieJestem(idk);
+            idm = przekaznik.GdzieJestem(idk);
             dane = new ceny(idm);
-            kasa = Modele.getGoldS();
+            kasa = przekaznik.DajKaseS();
 
-            tkanIK = Modele.IleTowaru(idk, "TO03");
+            tkanIK = przekaznik.IleTowaru(idk, "TO03");
             tkanIM = dane.getIle("TO03");
             tkanCK = dane.getCenaKup("TO03");
             if (tkanCK == "-1") { tkanCK = "niemożliwe"; }
             tkanCS = dane.getCenaSp("TO03");
 
-            winoIK = Modele.IleTowaru(idk, "TO09");
+            winoIK = przekaznik.IleTowaru(idk, "TO09");
             winoIM = dane.getIle("TO09");
             winoCK = dane.getCenaKup("TO09");
             if (winoCK == "-1") { winoCK = "niemożliwe"; }
             winoCS = dane.getCenaSp("TO09");
 
-            bronIK = Modele.IleTowaru(idk, "TO06");
+            bronIK = przekaznik.IleTowaru(idk, "TO06");
             bronIM = dane.getIle("TO06");
             bronCK = dane.getCenaKup("TO06");
             if (bronCK == "-1") { bronCK = "niemożliwe"; }
             bronCS = dane.getCenaSp("TO06");
 
-            chlebIK = Modele.IleTowaru(idk, "TO05");
+            chlebIK = przekaznik.IleTowaru(idk, "TO05");
             chlebIM = dane.getIle("TO05");
             chlebCK = dane.getCenaKup("TO05");
             if (chlebCK == "-1") { chlebCK = "niemożliwe"; }
             chlebCS = dane.getCenaSp("TO05");
 
-            drewIK = Modele.IleTowaru(idk, "TO01");
+            drewIK = przekaznik.IleTowaru(idk, "TO01");
             drewIM = dane.getIle("TO01");
             drewCK = dane.getCenaKup("TO01");
             if (drewCK == "-1") { drewCK = "niemożliwe"; }
             drewCS = dane.getCenaSp("TO01");
 
-            jablIK = Modele.IleTowaru(idk, "TO02");
+            jablIK = przekaznik.IleTowaru(idk, "TO02");
             jablIM = dane.getIle("TO02");
             jablCK = dane.getCenaKup("TO02");
             if (jablCK == "-1") { jablCK = "niemożliwe"; }
             jablCS = dane.getCenaSp("TO02");
 
-            miesoIK = Modele.IleTowaru(idk, "TO04");
+            miesoIK = przekaznik.IleTowaru(idk, "TO04");
             miesoIM = dane.getIle("TO04");
             miesoCK = dane.getCenaKup("TO04");
             if (miesoCK == "-1") { miesoCK = "niemożliwe"; }
             miesoCS = dane.getCenaSp("TO04");
 
-            perlIK = Modele.IleTowaru(idk, "TO07");
+            perlIK = przekaznik.IleTowaru(idk, "TO07");
             perlIM = dane.getIle("TO07");
             perlCK = dane.getCenaKup("TO07");
             if (perlCK == "-1") { perlCK = "niemożliwe"; }
             perlCS = dane.getCenaSp("TO07");
 
-            skrIK = Modele.IleTowaru(idk, "TO10");
+            skrIK = przekaznik.IleTowaru(idk, "TO10");
             skrIM = dane.getIle("TO10");
             skrCK = dane.getCenaKup("TO10");
             if (skrCK == "-1") { skrCK = "niemożliwe"; }
             skrCS = dane.getCenaSp("TO10");
 
-            alchIK = Modele.IleTowaru(idk, "TO11");
+            alchIK = przekaznik.IleTowaru(idk, "TO11");
             alchIM = dane.getIle("TO11");
             alchCK = dane.getCenaKup("TO11");
             if (alchCK == "-1") { alchCK = "niemożliwe"; }
             alchCS = dane.getCenaSp("TO11");
 
-            przypIK = Modele.IleTowaru(idk, "TO08");
+            przypIK = przekaznik.IleTowaru(idk, "TO08");
             przypIM = dane.getIle("TO08");
             przypCK = dane.getCenaKup("TO08");
             if (przypCK == "-1") { przypCK = "niemożliwe"; }
@@ -495,51 +494,17 @@ namespace Caravans
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
         //Muszą także zmieniać wyświetlana ilość towaru (nie wiem czy zmiana w bazie danych starczy-być może trzeba dodatkowo tu zmienić wartości w liście cen i ilości)
         private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
-            if (ile > 0)
-            {
-                foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
-                {
-                    if (y.GetIdArticle() == IDtowar && ile <= y.GetNumber() && y.GetId() == IDkarawana)
-                    {
-                        foreach (TableArtInTown z in Modele.tableArtInTown)
-                        {
-                            if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar)
-                            {
-                                Modele.setGold(Modele.getGold() + cena * ile);
-                                y.SetNumber(y.GetNumber() - ile);
-                                z.SetNumber(z.GetNumber() + ile);
-                            }
-                        }
-                    }
-                }
-                zassaj();
-                MainWindow.odzwierzGlowne();
-            }
+            handel.sprzedaj(IDkarawana, IDmiasto, IDtowar, ile, cena);
+            zassaj();
+            MainWindow.odzwierzGlowne();          
         }
         private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
-            if (ile > 0)
-            {
-                foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
-                {
-                    if (y.GetIdArticle() == IDtowar && y.GetId() == IDkarawana && cena <= Modele.getGold())
-                    {
-                        foreach (TableArtInTown z in Modele.tableArtInTown)
-                        {
-                            if (z.GetId() == IDmiasto && z.GetIdArticle() == IDtowar && ile <= z.GetNumber())
-                            {
-                                Modele.setGold(Modele.getGold() - cena * ile);
-                                y.SetNumber(y.GetNumber() + ile);
-                                z.SetNumber(z.GetNumber() - ile);
-                            }
-                        }
-                    }
-                }
-                zassaj();
-                MainWindow.odzwierzGlowne();
-            }
-            
+            handel.kup(IDkarawana, IDmiasto, IDtowar, ile, cena);
+            zassaj();
+            MainWindow.odzwierzGlowne();  
         }
-        private void exitZ_Click(object sender, RoutedEventArgs e) {
+        private void exitZ_Click(object sender, RoutedEventArgs e) //zamknięcie okna
+        {
             Close();
             GamesWindow.odswiezKarawane();           
         }

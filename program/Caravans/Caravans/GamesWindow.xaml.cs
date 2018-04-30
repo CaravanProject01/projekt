@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Caravans.model;
 using Caravans.matma;
 
 namespace Caravans
@@ -24,9 +23,9 @@ namespace Caravans
         public static WaggonShop wa;
         public static MainWindow mi;
         public static MiastoTour mt;
-        
-        string kasa = Modele.getGoldS();
-        string czas = Modele.getTimeS();
+
+        public static string kasa = przekaznik.DajKaseS();
+        public static string czas = przekaznik.DajCzasS();
 
         public string KASA
         {
@@ -99,9 +98,11 @@ namespace Caravans
 
         public void odswiez()
         {
-            czas = Modele.getTimeS();
+            kasa = przekaznik.DajKaseS();
+            czas = przekaznik.DajCzasS();
+
+            odswiezKarawane();
             zegarek.Text = czas;
-            kasa = Modele.getGoldS();
             textBlock.Text = kasa;
         }
        

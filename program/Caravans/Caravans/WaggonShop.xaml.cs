@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Caravans.model;
+using Caravans.matma;
 
 namespace Caravans
 {
@@ -20,19 +20,34 @@ namespace Caravans
     /// </summary>
     public partial class WaggonShop : Window
     {
-        static string idk = "KA01";
+        public static string idk = "KA01";
+        
+        public static string tkanIK;
+        public static string winoIK;
+        public static string bronIK;
+        public static string chlebIK;
+        public static string drewIK;
+        public static string jablIK;
+        public static string miesoIK;
+        public static string perlIK;
+        public static string skrIK;
+        public static string alchIK;
+        public static string przypIK;
 
-        string tkanIK = Modele.IleTowaru(idk, "TO03");       
-        string winoIK = Modele.IleTowaru(idk, "TO09");
-        string bronIK = Modele.IleTowaru(idk, "TO06");      
-        string chlebIK = Modele.IleTowaru(idk, "TO05");
-        string drewIK = Modele.IleTowaru(idk, "TO01");
-        string jablIK = Modele.IleTowaru(idk, "TO02");
-        string miesoIK = Modele.IleTowaru(idk, "TO04");
-        string perlIK = Modele.IleTowaru(idk, "TO07");
-        string skrIK = Modele.IleTowaru(idk, "TO10");
-        string alchIK = Modele.IleTowaru(idk, "TO11");
-        string przypIK = Modele.IleTowaru(idk, "TO08");
+        public void zassaj()
+        {          
+            tkanIK = przekaznik.IleTowaru(idk, "TO03");
+            winoIK = przekaznik.IleTowaru(idk, "TO09");
+            bronIK = przekaznik.IleTowaru(idk, "TO06");
+            chlebIK = przekaznik.IleTowaru(idk, "TO05");
+            drewIK = przekaznik.IleTowaru(idk, "TO01");
+            jablIK = przekaznik.IleTowaru(idk, "TO02");
+            miesoIK = przekaznik.IleTowaru(idk, "TO04");
+            perlIK = przekaznik.IleTowaru(idk, "TO07");
+            skrIK = przekaznik.IleTowaru(idk, "TO10");
+            alchIK = przekaznik.IleTowaru(idk, "TO11");
+            przypIK = przekaznik.IleTowaru(idk, "TO08");
+        }
 
         public string ileTkanKar
         {
@@ -100,7 +115,7 @@ namespace Caravans
             set { przypIK = value; }
         }
 
-        string lokal1 = lokalizuj();
+        string lokal1 = przekaznik.lokalizuj(idk);
         public string LOK
         {
             get { return lokal1; }
@@ -109,6 +124,7 @@ namespace Caravans
 
         public WaggonShop()
         {
+            zassaj();
             InitializeComponent();
             lokal.DataContext = this;
             iljabtour.DataContext = this;
@@ -123,7 +139,7 @@ namespace Caravans
             ilsrodtour.DataContext = this;
             ilprzyprawytour.DataContext = this;
 
-            int jazda = Modele.dajCzas(idk);
+            int jazda = przekaznik.CzasPodrozy(idk);
             if (jazda == 0)
             {
                 shop.IsEnabled = true;
@@ -148,58 +164,21 @@ namespace Caravans
         {
             Podroz po = new Podroz();
             po.Show();
-        }
-
-        private static string lokalizuj()
-        {
-            string roboczy;
-            string nazwa="";
-            int czas=0;
-            string idl="";
-            foreach (TableCaravan kar in Modele.tableCaravan)
-            {
-                roboczy = kar.GetId();
-                if (roboczy == idk)
-                {
-                    idl = kar.GetIdLoc();
-                    czas = kar.GetDuration();
-                }
-            }
-            foreach (TableTown miasto in Modele.tableTown)
-            {
-                roboczy = miasto.GetIdLoc();
-                if (roboczy == idl)
-                {
-                    nazwa = miasto.GetName();
-                }
-            }
-
-            if (czas == 0)
-            {
-                return nazwa;
-            }
-            else
-            {
-                string wynik = "W drodze do " + nazwa + " pozostało " + czas + " tur";
-                return wynik;
-
-            }
-            
-        }
+        }       
 
         public void odswiez()
         {
-            string jablka=Modele.IleTowaru(idk, "TO02");
-            string drewno = Modele.IleTowaru(idk, "TO01");
-            string mieso = Modele.IleTowaru(idk, "TO04");
-            string chleb = Modele.IleTowaru(idk, "TO05");
-            string bron = Modele.IleTowaru(idk, "TO06");
-            string wino = Modele.IleTowaru(idk, "TO09");
-            string tkanina = Modele.IleTowaru(idk, "TO03");
-            string perla = Modele.IleTowaru(idk, "TO07");
-            string skora = Modele.IleTowaru(idk, "TO10");
-            string przyprawy = Modele.IleTowaru(idk, "TO08");
-            string alchemia = Modele.IleTowaru(idk, "TO11");
+            string jablka = przekaznik.IleTowaru(idk, "TO02");
+            string drewno = przekaznik.IleTowaru(idk, "TO01");
+            string mieso = przekaznik.IleTowaru(idk, "TO04");
+            string chleb = przekaznik.IleTowaru(idk, "TO05");
+            string bron = przekaznik.IleTowaru(idk, "TO06");
+            string wino = przekaznik.IleTowaru(idk, "TO09");
+            string tkanina = przekaznik.IleTowaru(idk, "TO03");
+            string perla = przekaznik.IleTowaru(idk, "TO07");
+            string skora = przekaznik.IleTowaru(idk, "TO10");
+            string przyprawy = przekaznik.IleTowaru(idk, "TO08");
+            string alchemia = przekaznik.IleTowaru(idk, "TO11");
 
             iljabtour.Text = jablka;
             iltreetour.Text = drewno;

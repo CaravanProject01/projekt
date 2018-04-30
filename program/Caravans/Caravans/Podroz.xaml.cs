@@ -99,6 +99,9 @@ namespace Caravans
             GamesWindow.z1();
         }
 
+
+        //ta funkcja ma stąd zniknąć-przenieść do folderu "matma"
+
         private void podrozdo(string miastoid, string karawanaid)
         {
             foreach (TableCaravan x in Modele.tableCaravan)//tu trz bd zmienic na liste 

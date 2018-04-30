@@ -80,6 +80,7 @@
     <Compile Include="matma\czas.cs" />
     <Compile Include="matma\handel.cs" />
     <Compile Include="matma\miasto.cs" />
+    <Compile Include="matma\przekaznik.cs" />
     <Compile Include="matma\towar.cs" />
     <Compile Include="model\Modele.cs" />
     <Compile Include="model\TableArticle.cs" />
