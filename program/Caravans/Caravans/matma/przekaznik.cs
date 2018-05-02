@@ -132,5 +132,31 @@ namespace Caravans.matma
             }
             return idm;
         }
+
+        public static int PoliczObciozenie(string id)
+        {
+            int wynik=0;
+            foreach(TableArtInCaravan towar in Modele.tableArtInCaravan)
+            {
+                if (towar.GetId() == id)
+                {
+                    wynik += towar.GetNumber();
+                }
+            }
+            return wynik;
+        }
+
+        public static int PoliczPojemnosc(string id)
+        {
+            int wynik=200;
+            foreach (TableCaravan karawana in Modele.tableCaravan)
+            {
+                if (karawana.GetId() == id)
+                {
+                    wynik = 200 * karawana.GetWagons();
+                }
+            }
+            return wynik;
+        }
     }
 }

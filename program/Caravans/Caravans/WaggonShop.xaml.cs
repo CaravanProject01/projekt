@@ -33,6 +33,8 @@ namespace Caravans
         public static string skrIK;
         public static string alchIK;
         public static string przypIK;
+        public static string pojemnosc;
+        public static string obciozenie;
 
         public void zassaj()
         {          
@@ -47,6 +49,20 @@ namespace Caravans
             skrIK = przekaznik.IleTowaru(idk, "TO10");
             alchIK = przekaznik.IleTowaru(idk, "TO11");
             przypIK = przekaznik.IleTowaru(idk, "TO08");
+            pojemnosc = przekaznik.PoliczPojemnosc(idk).ToString();
+            obciozenie = przekaznik.PoliczObciozenie(idk).ToString();
+        }
+
+        public string ileObciozenia
+        {
+            get { return obciozenie; }
+            set { obciozenie = value; }
+        }
+
+        public string ilePojemnosci
+        {
+            get { return pojemnosc; }
+            set { pojemnosc = value; }
         }
 
         public string ileTkanKar
@@ -138,6 +154,8 @@ namespace Caravans
             ilskoratour.DataContext = this;
             ilsrodtour.DataContext = this;
             ilprzyprawytour.DataContext = this;
+            textBlock.DataContext = this;
+            textBlock1.DataContext = this;
 
             int jazda = przekaznik.CzasPodrozy(idk);
             if (jazda == 0)
@@ -179,6 +197,8 @@ namespace Caravans
             string skora = przekaznik.IleTowaru(idk, "TO10");
             string przyprawy = przekaznik.IleTowaru(idk, "TO08");
             string alchemia = przekaznik.IleTowaru(idk, "TO11");
+            string obc = przekaznik.PoliczObciozenie(idk).ToString();
+            string poj = przekaznik.PoliczPojemnosc(idk).ToString();
 
             iljabtour.Text = jablka;
             iltreetour.Text = drewno;
@@ -191,6 +211,8 @@ namespace Caravans
             ilskoratour.Text = skora;
             ilsrodtour.Text = alchemia;
             ilprzyprawytour.Text = przyprawy;
+            textBlock.Text = obc;
+            textBlock1.Text = poj;
 
         }
     }
