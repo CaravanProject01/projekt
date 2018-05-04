@@ -37,7 +37,7 @@ namespace Caravans.matma
                 idm = stan.GetId();
                 czas = stan.GetDuration();
                 czas--;
-                if (czas == 0)
+                if (czas == 0)     //koniec stanu
                 {
                     switch (ids)
                     {
@@ -202,6 +202,77 @@ namespace Caravans.matma
                             ruiny[ileRuin] = idm;
                             ileRuin++;
                             break;
+                        case "ST11": //gold age
+                            foreach (TableArtInTown tow in Modele.tableArtInTown)
+                            {
+                                idt = tow.GetIdArticle();
+                                idm2 = tow.GetId();
+                                if (idt == "TO01" && idm == idm2)   //drewno
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 10;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO02" && idm == idm2)   //jabłko
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO03" && idm == idm2)   //tkanina
+                                {
+                                    licznik = tow.GetProduction();
+                                    licznik -= 25;
+                                    tow.SetProduction(licznik);
+                                }
+                                if (idt == "TO04" && idm == idm2)   //mięso
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO05" && idm == idm2)   //chleb
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO06" && idm == idm2)   //bron
+                                {
+                                    licznik = tow.GetProduction();
+                                    licznik -= 25;
+                                    tow.SetProduction(licznik);
+                                }
+                                if (idt == "TO07" && idm == idm2)   //perla
+                                {
+                                    licznik = tow.GetProduction();
+                                    licznik -= 45;
+                                    tow.SetProduction(licznik);
+
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO08" && idm == idm2)   //przyprawy
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO09" && idm == idm2)   //wino
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO11" && idm == idm2)   //alchemia
+                                {
+                                    licznik = tow.GetProduction();
+                                    licznik -= 40;
+                                    tow.SetProduction(licznik);
+                                }
+                            }
+                            break;
                         default:
                             break;
                     }
@@ -289,64 +360,150 @@ namespace Caravans.matma
                 }
             }
 
-            //losowanie ewentualnych nowych stanów
+        //losowanie ewentualnych nowych stanów
+
+            Boolean flaga;
             foreach (TableTown miasto in Modele.tableTown)
-            {
+            {                
                 idm = miasto.GetId();
+                int dobro = miasto.GetProsperity();
+                if (dobro>250)
+                {
+                    flaga = Modele.NowyStan("ST11", idm, 5);//gold age
+                    if (flaga == false)
+                    {
+                        foreach (TableArtInTown tow in Modele.tableArtInTown)
+                        {
+                            idt = tow.GetIdArticle();
+                            idm2 = tow.GetId();
+                            if (idt == "TO01" && idm == idm2)   //drewno
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 10;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO02" && idm == idm2)   //jabłko
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 20;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO03" && idm == idm2)   //tkanina
+                            {
+                                licznik = tow.GetProduction();
+                                licznik += 25;
+                                tow.SetProduction(licznik);
+                            }
+                            if (idt == "TO04" && idm == idm2)   //mięso
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 20;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO05" && idm == idm2)   //chleb
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 20;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO06" && idm == idm2)   //bron
+                            {
+                                licznik = tow.GetProduction();
+                                licznik += 25;
+                                tow.SetProduction(licznik);
+                            }
+                            if (idt == "TO07" && idm == idm2)   //perla
+                            {
+                                licznik = tow.GetProduction();
+                                licznik += 45;
+                                tow.SetProduction(licznik);
+
+                                licznik = tow.GetRequisition();
+                                licznik += 20;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO08" && idm == idm2)   //przyprawy
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 20;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO09" && idm == idm2)   //wino
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 20;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO11" && idm == idm2)   //alchemia
+                            {
+                                licznik = tow.GetProduction();
+                                licznik += 40;
+                                tow.SetProduction(licznik);
+                            }
+                        }
+                    }
+                }
+
                 int gotowosc = miasto.GetMilitary();
                 if (gotowosc < 50)
                 {
-                    Modele.NowyStan("ST08", idm, 12);
-                    foreach (TableArtInTown tow in Modele.tableArtInTown)
+                    flaga = Modele.NowyStan("ST08", idm, 12);//warprep
+                    if (flaga == false)
                     {
-                        idt = tow.GetIdArticle();
-                        idm2 = tow.GetId();
-                        if (idt == "TO06" && idm == idm2)   //bron
+                        foreach (TableArtInTown tow in Modele.tableArtInTown)
                         {
-                            licznik = tow.GetRequisition();
-                            licznik += 100;
-                            tow.SetRequisition(licznik);
+                            idt = tow.GetIdArticle();
+                            idm2 = tow.GetId();
+                            if (idt == "TO06" && idm == idm2)   //bron
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 100;
+                                tow.SetRequisition(licznik);
+                            }
                         }
                     }
                 }
                 if (gotowosc > 300)
                 {
-                    Modele.NowyStan("ST09", idm, 20);
-                    foreach (TableArtInTown tow in Modele.tableArtInTown)
+                    flaga = Modele.NowyStan("ST09", idm, 20);//war
+                    if (flaga == false)
                     {
-                        idt = tow.GetIdArticle();
-                        idm2 = tow.GetId();
-                        if (idt == "TO02" && idm == idm2)   //jabłka
+                        foreach (TableArtInTown tow in Modele.tableArtInTown)
                         {
-                            licznik = tow.GetRequisition();
-                            licznik += 200;
-                            tow.SetRequisition(licznik);
+                            idt = tow.GetIdArticle();
+                            idm2 = tow.GetId();
+                            if (idt == "TO02" && idm == idm2)   //jabłka
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 200;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO05" && idm == idm2)   //chleb
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 200;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO04" && idm == idm2)   //mieso
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 200;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO01" && idm == idm2)   //surowce
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 25;
+                                tow.SetRequisition(licznik);
+                            }
+                            if (idt == "TO11" && idm == idm2)   //medykamenty
+                            {
+                                licznik = tow.GetRequisition();
+                                licznik += 50;
+                                tow.SetRequisition(licznik);
+                            }
                         }
-                        if (idt == "TO05" && idm == idm2)   //chleb
-                        {
-                            licznik = tow.GetRequisition();
-                            licznik += 200;
-                            tow.SetRequisition(licznik);
-                        }
-                        if (idt == "TO04" && idm == idm2)   //mieso
-                        {
-                            licznik = tow.GetRequisition();
-                            licznik += 200;
-                            tow.SetRequisition(licznik);
-                        }
-                        if (idt == "TO01" && idm == idm2)   //surowce
-                        {
-                            licznik = tow.GetRequisition();
-                            licznik += 25;
-                            tow.SetRequisition(licznik);
-                        }
-                        if (idt == "TO11" && idm == idm2)   //medykamenty
-                        {
-                            licznik = tow.GetRequisition();
-                            licznik += 50;
-                            tow.SetRequisition(licznik);
-                        }
-                    }
+                    }    
                 }
 
             }
@@ -360,22 +517,27 @@ namespace Caravans.matma
                     idm2 = miasto.GetId();
                     if (idm == idm2)
                     {
-                        foreach (TableArtInTown tow in Modele.tableArtInTown)
-                        {
-                            idt = tow.GetIdArticle();
-                            idm2 = tow.GetId();
-                            if (idt == "TO01" && idm == idm2)   //materiały budowlane
-                            {
-                                licznik = tow.GetRequisition();
-                                licznik += 50;
-                                tow.SetRequisition(licznik);
-                            }
+                        flaga = Modele.NowyStan("ST07", idm, 10);  //odbudowa
+                        if (flaga == false) {
 
+                            foreach (TableArtInTown tow in Modele.tableArtInTown)
+                            {
+                                idt = tow.GetIdArticle();
+                                idm2 = tow.GetId();
+                                if (idt == "TO01" && idm == idm2)   //materiały budowlane
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik += 50;
+                                    tow.SetRequisition(licznik);
+                                }
+                            }
                         }
                     }
                 }
-                Modele.NowyStan("ST07", idm, 10);
+                
             }
+
+
 
             foreach (TableTown miasto in Modele.tableTown)
             {
@@ -387,102 +549,111 @@ namespace Caravans.matma
                 switch (randomek)
                 {
                     case 1:
-                        Modele.NowyStan("ST01", idm, czas2);  //zaraza
-                        foreach (TableArtInTown tow in Modele.tableArtInTown)
-                        {
-                            idt = tow.GetIdArticle();
-                            idm2 = tow.GetId();
-                            if (idt == "TO11" && idm == idm2)   //medykamenty
+                        flaga = Modele.NowyStan("ST01", idm, czas2);  //zaraza
+                        if (flaga == false) {foreach (TableArtInTown tow in Modele.tableArtInTown)
                             {
-                                licznik = tow.GetRequisition();
-                                licznik += 500;
-                                tow.SetRequisition(licznik);
+                                idt = tow.GetIdArticle();
+                                idm2 = tow.GetId();
+                                if (idt == "TO11" && idm == idm2)   //medykamenty
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik += 500;
+                                    tow.SetRequisition(licznik);
+                                }
                             }
                         }
                         break;
                     case 2:
-                        Modele.NowyStan("ST02", idm, czas2);  //susza
-                        foreach (TableArtInTown tow in Modele.tableArtInTown)
-                        {
-                            idt = tow.GetIdArticle();
-                            idm2 = tow.GetId();
-                            if (idt == "TO02" && idm == idm2)   //jabłka
+                        flaga = Modele.NowyStan("ST02", idm, czas2);  //susza
+                        if (flaga == false) {                      
+                            foreach (TableArtInTown tow in Modele.tableArtInTown)
                             {
-                                licznik = tow.GetRequisition();
-                                licznik -= 50;
-                                tow.SetRequisition(licznik);
-                            }
-                            if (idt == "TO05" && idm == idm2)   //chleb
-                            {
-                                licznik = tow.GetRequisition();
-                                licznik -= 50;
-                                tow.SetRequisition(licznik);
+                                idt = tow.GetIdArticle();
+                                idm2 = tow.GetId();
+                                if (idt == "TO02" && idm == idm2)   //jabłka
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 50;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO05" && idm == idm2)   //chleb
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 50;
+                                    tow.SetRequisition(licznik);
+                                }
                             }
                         }
                         break;
                     case 3:
-                        Modele.NowyStan("ST03", idm, czas2);  //nieurodzaj
-                        foreach (TableArtInTown tow in Modele.tableArtInTown)
-                        {
-                            idt = tow.GetIdArticle();
-                            idm2 = tow.GetId();
-                            if (idt == "TO02" && idm == idm2)   //jabłka
+                        flaga = Modele.NowyStan("ST03", idm, czas2);  //nieurodzaj
+                        if (flaga == false) {
+                            foreach (TableArtInTown tow in Modele.tableArtInTown)
                             {
-                                licznik = tow.GetRequisition();
-                                licznik -= 20;
-                                tow.SetRequisition(licznik);
-                            }
-                            if (idt == "TO05" && idm == idm2)   //chleb
-                            {
-                                licznik = tow.GetRequisition();
-                                licznik -= 20;
-                                tow.SetRequisition(licznik);
+                                idt = tow.GetIdArticle();
+                                idm2 = tow.GetId();
+                                if (idt == "TO02" && idm == idm2)   //jabłka
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO05" && idm == idm2)   //chleb
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik -= 20;
+                                    tow.SetRequisition(licznik);
+                                }
                             }
                         }
                         break;
                     case 4:
-                        Modele.NowyStan("ST04", idm, czas2);  //obfite plony
-                        foreach (TableArtInTown tow in Modele.tableArtInTown)
-                        {
-                            idt = tow.GetIdArticle();
-                            idm2 = tow.GetId();
-                            if (idt == "TO02" && idm == idm2)   //jabłka
+                        flaga = Modele.NowyStan("ST04", idm, czas2);  //obfite plony
+                        if (flaga == false) {
+                            foreach (TableArtInTown tow in Modele.tableArtInTown)
                             {
-                                licznik = tow.GetRequisition();
-                                licznik += 20;
-                                tow.SetRequisition(licznik);
-                            }
-                            if (idt == "TO05" && idm == idm2)   //chleb
-                            {
-                                licznik = tow.GetRequisition();
-                                licznik += 20;
-                                tow.SetRequisition(licznik);
+                                idt = tow.GetIdArticle();
+                                idm2 = tow.GetId();
+                                if (idt == "TO02" && idm == idm2)   //jabłka
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik += 20;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO05" && idm == idm2)   //chleb
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik += 20;
+                                    tow.SetRequisition(licznik);
+                                }
                             }
                         }
                         break;
                     case 5:
-                        Modele.NowyStan("ST05", idm, czas2);  //b. obf. plony
-                        foreach (TableArtInTown tow in Modele.tableArtInTown)
-                        {
-                            idt = tow.GetIdArticle();
-                            idm2 = tow.GetId();
-                            if (idt == "TO02" && idm == idm2)   //jabłka
+                        flaga = Modele.NowyStan("ST05", idm, czas2);  //b. obf. plony
+                        if (flaga == false) {
+                            foreach (TableArtInTown tow in Modele.tableArtInTown)
                             {
-                                licznik = tow.GetRequisition();
-                                licznik += 50;
-                                tow.SetRequisition(licznik);
-                            }
-                            if (idt == "TO05" && idm == idm2)   //chleb
-                            {
-                                licznik = tow.GetRequisition();
-                                licznik += 50;
-                                tow.SetRequisition(licznik);
+                                idt = tow.GetIdArticle();
+                                idm2 = tow.GetId();
+                                if (idt == "TO02" && idm == idm2)   //jabłka
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik += 50;
+                                    tow.SetRequisition(licznik);
+                                }
+                                if (idt == "TO05" && idm == idm2)   //chleb
+                                {
+                                    licznik = tow.GetRequisition();
+                                    licznik += 50;
+                                    tow.SetRequisition(licznik);
+                                }
                             }
                         }
                         break;
                     case 6:
                         czas2 /= 2;
-                        Modele.NowyStan("ST06", idm, czas2);  //pożar
+                        flaga = Modele.NowyStan("ST06", idm, czas2);  //pożar
                         break;
                     default:
                         break;

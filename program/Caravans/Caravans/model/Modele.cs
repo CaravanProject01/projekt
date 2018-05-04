@@ -84,10 +84,27 @@ namespace Caravans.model
             }
         }
 
-        public static void NowyStan(string ids, string idm, int czas)
+        public static Boolean NowyStan(string ids, string idm, int czas)
         {
-            TableTownState stan = new TableTownState(idm, ids, czas);
-            tableTownState.Add(stan);
+            Boolean flaga = false;
+            string ids2;
+            string idm2;
+            foreach (TableTownState stan in tableTownState)
+            {
+                idm2 = stan.GetId();
+                ids2 = stan.GetIdState();
+                if(idm2==idm && ids2 == ids)
+                {
+                    flaga = true;
+                    stan.SetDuration(czas);
+                }
+            }
+            if (flaga == false)
+            {
+                TableTownState nowy = new TableTownState(idm, ids, czas);
+                tableTownState.Add(nowy);
+            }
+            return flaga;
         }       
        
 
