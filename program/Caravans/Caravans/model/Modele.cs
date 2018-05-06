@@ -80,6 +80,7 @@ namespace Caravans.model
                 if (ids == ids2 && idm == idm2)
                 {
                     tableTownState.Remove(stan);
+                    break;
                 }
             }
         }

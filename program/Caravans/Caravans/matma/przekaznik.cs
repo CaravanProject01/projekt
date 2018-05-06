@@ -324,7 +324,7 @@ namespace Caravans.matma
                         if (stan2.GetId() == ids)
                         {
                             if (flaga == true) wynik = wynik + ", ";
-                            wynik = wynik + stan2.GetName();
+                            wynik = wynik + stan2.GetName() + "(" + stan.GetDuration() + ")";
                             flaga = true;
                         }
                     }

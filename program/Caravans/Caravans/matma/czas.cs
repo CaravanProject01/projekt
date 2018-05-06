@@ -31,6 +31,8 @@ namespace Caravans.matma
             int ileRuin = 0;
             int czas;
             int licznik;
+            List<TableTownState> kasowane = new List<TableTownState>();
+
             foreach (TableTownState stan in Modele.tableTownState)
             {
                 ids = stan.GetIdState();
@@ -277,7 +279,9 @@ namespace Caravans.matma
                         default:
                             break;
                     }
-                    Modele.KoniecStanu(ids, idm);
+
+                    TableTownState zakonczony = new TableTownState(idm, ids, 1);
+                    kasowane.Add(zakonczony);
                 }
                 else
                 {
@@ -366,6 +370,11 @@ namespace Caravans.matma
                             break;
                     }
                 }
+            }
+
+            foreach(TableTownState stan in kasowane)
+            {
+                Modele.KoniecStanu(stan.GetIdState(), stan.GetId());
             }
 
         //losowanie ewentualnych nowych stanów
