@@ -23,7 +23,6 @@ namespace Caravans
     public partial class MiastoTour : Window
     {
         private string id;
-        private string illud="1000" ;
         private string name = "";
         private string infojablka = "";
         private string infodrewno = "";

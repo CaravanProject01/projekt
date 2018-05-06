@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Caravans.matma;
+
+//ten using ma stąd zniknąć!!!
 using Caravans.model;
 
 namespace Caravans
 {
-    /// <summary>
-    /// Логика взаимодействия для Podroz.xaml
-    /// </summary>
+
     public partial class Podroz : Window
     {
         public Podroz()

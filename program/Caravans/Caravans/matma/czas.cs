@@ -703,10 +703,5 @@ namespace Caravans.matma
 
             }
         }
-
-        public void miesiac()
-        {
-
-        }
     }
 }
