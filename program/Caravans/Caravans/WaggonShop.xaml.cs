@@ -178,6 +178,13 @@ namespace Caravans
             Zakupy za = new Zakupy();
             za.Show();
         }
+
+        private void Info_Click(object sender, RoutedEventArgs e)
+        {
+            string idm = przekaznik.lok(idk);
+            MiastoTour wa = new MiastoTour(idm);
+            wa.Show();
+        }
         private void Podroz_Click(object sender, RoutedEventArgs e)
         {
             Podroz po = new Podroz();
@@ -214,7 +221,7 @@ namespace Caravans
             textBlock.Text = obc;
             textBlock1.Text = poj;
 
-        }
+        }     
     }
 }
 

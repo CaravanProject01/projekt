@@ -92,8 +92,45 @@ namespace Caravans.matma
                 return wynik;
 
             }
-
         }
+
+        public static string lok(string idk)
+        {
+            string roboczy;
+            string wynik="";
+            int czas = 0;
+            string idl = "";
+            foreach (TableCaravan kar in Modele.tableCaravan)
+            {
+                roboczy = kar.GetId();
+                if (roboczy == idk)
+                {
+                    idl = kar.GetIdLoc();
+                    czas = kar.GetDuration();
+                }
+            }
+            foreach (TableTown miasto in Modele.tableTown)
+            {
+                roboczy = miasto.GetIdLoc();
+                if (roboczy == idl)
+                {
+                    wynik = miasto.GetId();
+                }
+            }
+
+            return wynik;
+        }
+
+        public static string dajNazwe(string id)
+        {
+            string wynik = "";
+            foreach (TableTown miasto in Modele.tableTown)
+            {
+                if (miasto.GetId() == id) wynik = miasto.GetName();
+            }
+            return wynik;
+        }
+
         public static int CzasPodrozy(string karID)
         {
             int wynik = 0;
@@ -154,6 +191,143 @@ namespace Caravans.matma
                 if (karawana.GetId() == id)
                 {
                     wynik = 200 * karawana.GetWagons();
+                }
+            }
+            return wynik;
+        }
+
+        public static int DajPopulacje(string id)
+        {
+            int wynik = 0;
+            foreach(TableTown miasto in Modele.tableTown)
+            {
+                if (miasto.GetId() == id) wynik = miasto.GetPopulation();
+            }
+            return wynik;
+        }
+
+        public static string dajInfo(string idt, string idm, int populacja)
+        {
+            int pop = populacja / 100;
+            if (pop == 0) { pop = 1; }
+            string wynik = "";
+            int ilosc=0;
+            int cenaDef=0;                
+            int produkcjaDef=0;          
+            int produkcjaMod=0;           
+            int zapotrzebowanieDef=0;   
+            int zapotrzebowanieMod = 0;
+
+            foreach(TableArticle towar in Modele.tableArticle)
+            {
+                if (towar.GetId() == idt)
+                {
+                    cenaDef = towar.GetPrice();
+                    produkcjaDef = towar.GetProduction();
+                    zapotrzebowanieDef = towar.GetRequisition();
+                }
+            }
+
+            foreach(TableArtInTown towar in Modele.tableArtInTown)
+            {
+                if(towar.GetId()==idm && towar.GetIdArticle() == idt)
+                {
+                    ilosc = towar.GetNumber();
+                    zapotrzebowanieMod = towar.GetRequisition();
+                    produkcjaMod = towar.GetProduction();
+                }
+            }
+
+            towar tow = new towar(idt, ilosc, cenaDef, produkcjaDef, produkcjaMod, zapotrzebowanieDef, zapotrzebowanieMod);
+            int prod = tow.policzProdukcje(pop);
+            int zap = tow.policzZapotrzebowanie(pop);
+            int x;
+            if (prod == zap) wynik = "Produkcja idealnie pokrywa zapotrzebowanie.";
+            if (prod > zap)
+            {
+                wynik = "Produkcja jest większa niż zapotrzebowanie.";
+                x = zap * 2;
+                if (prod > x) wynik = "Produkcja jest ponad dwa razy większa niż zapotrzebowanie.";
+                x = zap * 3;
+                if (prod > x) wynik = "Produkcja jest ponad trzy razy większa niż zapotrzebowanie.";
+                x = zap * 4;
+                if (prod > x) wynik = "Produkcja jest ponad cztery razy większa niż zapotrzebowanie.";
+                x = zap * 5;
+                if (prod > x) wynik = "Produkcja jest ponad pięć razy większa niż zapotrzebowanie.";
+            }
+            if (prod < zap)
+            {
+                x = prod - zap;
+                x = ilosc / x;
+                wynik = "Produkcja jest mniejsza niż zapotrzebowanie, zapasy wyczerpią cię w ciągu " + x + " tygodni.";
+            }
+
+            return wynik;
+        }
+
+        public static string dajWojo(string id)
+        {
+            int wojo=0;
+            foreach(TableTown miasto in Modele.tableTown)
+            {
+                if (miasto.GetId() == id) wojo = miasto.GetMilitary();
+            }
+            if (wojo < 100) return "fatalna";
+            if (wojo > 300) return "wojenna";
+            if (wojo > 200) return "doskonała";
+            return "standardowa";
+        }
+
+        public static string dajZarcie(string id)
+        {
+            int zarcie=0;
+            foreach (TableTown miasto in Modele.tableTown)
+            {
+                if (miasto.GetId() == id) zarcie = miasto.GetFood();
+            }
+            if (zarcie < -25) return "głód";
+            if (zarcie < 0) return "niedobór";
+            if (zarcie > 100) return "szalony nadmiar";
+            if (zarcie > 50) return "nadmiar";
+            if (zarcie > 20) return "lekka nadwyżka";
+            return "wystarczające";
+        }
+
+        public static string dajBogactwo(string id)
+        {
+            int hajs=0;
+            foreach (TableTown miasto in Modele.tableTown)
+            {
+                if (miasto.GetId() == id) hajs = miasto.GetProsperity();
+            }
+            if (hajs < -100) return "bida z nędzą";
+            if (hajs < -50) return "bieda";
+            if (hajs < -0) return "ubióstwo";
+            if (hajs > 200) return "burżujstwo";
+            if (hajs > 100) return "bogactwo";
+            if (hajs > 50) return "nadmiar zbytków";
+            return "przeciętna";
+        }
+
+        public static string dajStany(string id)
+        {
+            string wynik = "";
+            Boolean flaga = false;
+            string ids;
+            foreach(TableTownState stan in Modele.tableTownState)
+            {
+                if (stan.GetId() == id)
+                {
+                    ids = stan.GetIdState();
+                    foreach(TableState stan2 in Modele.tableState)
+                    {
+                        if (stan2.GetId() == ids)
+                        {
+                            if (flaga == true) wynik = wynik + ", ";
+                            wynik = wynik + stan2.GetName();
+                            flaga = true;
+                        }
+                    }
                 }
             }
             return wynik;

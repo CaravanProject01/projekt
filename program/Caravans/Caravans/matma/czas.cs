@@ -37,6 +37,7 @@ namespace Caravans.matma
                 idm = stan.GetId();
                 czas = stan.GetDuration();
                 czas--;
+                stan.SetDuration(czas);
                 if (czas == 0)     //koniec stanu
                 {
                     switch (ids)
@@ -286,10 +287,14 @@ namespace Caravans.matma
                         case "ST01":  //zaraza
                             foreach (TableTown miasto in Modele.tableTown)
                             {
-                                double populacja = miasto.GetPopulation();
-                                populacja = populacja *= 0.92;
-                                int pop = (int)populacja;
-                                miasto.SetPopulation(pop);
+                                if (miasto.GetId()==idm) {
+                                    int pop = miasto.GetPopulation();
+                                    double populacja = pop;
+                                    double ofiary = pop * 0.05;
+                                    int of = (int)ofiary;
+                                    pop = pop - of;
+                                    miasto.SetPopulation(pop);
+                                }
                             }
                             break;
                         case "ST02": //susza
@@ -331,9 +336,12 @@ namespace Caravans.matma
                         case "ST08": //war prep
                             foreach (TableTown miasto in Modele.tableTown)
                             {
-                                int gotowosc = miasto.GetMilitary();
-                                gotowosc += 5;
-                                miasto.SetMilitary(gotowosc);
+                                if (miasto.GetId() == idm)
+                                {
+                                    int gotowosc = miasto.GetMilitary();
+                                    gotowosc += 5;
+                                    miasto.SetMilitary(gotowosc);
+                                }
                             }
                             break;
                         case "ST09": //war

@@ -52,12 +52,6 @@ namespace Caravans
             this.Close();
         }
 
-        private void Btourilguard_Click(object sender, RoutedEventArgs e)
-        {
-            mt = new MiastoTour();
-            mt.Show();
-        }
-
         private void BWaggon_Click(object sender, RoutedEventArgs e)
         {
             wa = new WaggonShop();
@@ -72,19 +66,6 @@ namespace Caravans
             odswiez();
         }
 
-        private void button6_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void button8_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         public static void z1()
         {
@@ -108,7 +89,3 @@ namespace Caravans
        
     }
 }
-
-//novoe_okno st = new novoe_okno();
-//st.Show();
-//this.Close()
