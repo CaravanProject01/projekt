@@ -187,8 +187,16 @@ namespace Caravans
         }
         private void Podroz_Click(object sender, RoutedEventArgs e)
         {
-            Podroz po = new Podroz();
-            po.Show();
+            Boolean a = przekaznik.czyMoznaPodrozowac(idk);
+            if (a == false)
+            {
+                //komunikat błędu-za mało ludzi
+            }
+            else
+            {
+                Podroz po = new Podroz();
+                po.Show();
+            }
         }       
         private void Workshop_Click(object sender, RoutedEventArgs e)
         {
