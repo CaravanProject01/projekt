@@ -76,6 +76,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CaravansDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Errors.xaml.cs">
+      <DependentUpon>Errors.xaml</DependentUpon>
+    </Compile>
     <Compile Include="matma\ceny.cs" />
     <Compile Include="matma\czas.cs" />
     <Compile Include="matma\handel.cs" />
@@ -108,6 +111,10 @@
       <DependentUpon>Zakupy.xaml</DependentUpon>
     </Compile>
     <Page Include="authors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Errors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -296,6 +303,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CaravansDB.mdf</DependentUpon>
     </Content>
+    <Resource Include="Save.png" />
     <Resource Include="klepsydra.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

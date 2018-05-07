@@ -26,6 +26,7 @@ namespace Caravans
 
         public static string kasa = przekaznik.DajKaseS();
         public static string czas = przekaznik.DajCzasS();
+        private Errors er;
 
         public string KASA
         {
@@ -77,6 +78,12 @@ namespace Caravans
         {
             wa.odswiez();
         }
+
+        //private void Error_Click(object sender, RoutedEventArgs e)
+        //{
+       //     er = new Errors();
+      //      er.Show();
+      //  }
 
         public void odswiez()
         {

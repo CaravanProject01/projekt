@@ -46,6 +46,12 @@
                 <ImageBrush ImageSource="klepsydra.jpg"/>
             </Border.Background>
         </Border>
+        <Button x:Name="Save" HorizontalAlignment="Left" Height="34" Margin="28,24,0,0" VerticalAlignment="Top" Width="47">
+            <Button.Background>
+                <ImageBrush ImageSource="Save.png"/>
+            </Button.Background>
+        </Button>
+
 
 
 

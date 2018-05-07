@@ -45,6 +45,6 @@ namespace Caravans
         {
             wi.odswiez();
         }
-        
+
     }
 }
