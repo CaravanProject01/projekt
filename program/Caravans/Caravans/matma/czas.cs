@@ -18,7 +18,31 @@ namespace Caravans.matma
 
             }
             dzien();
+            wyplata();
             if (Modele.time % 7 == 0) { tydzien(); }
+        }
+
+        public void wyplata()
+        {
+            int kasa=0;
+            int x;
+            foreach(TableCaravan kar in Modele.tableCaravan)
+            {
+                x = kar.GetGuard();
+                x = x * 3;
+                kasa = kasa + x;
+                x = kar.GetMinions();
+                kasa = kasa + x;
+            }
+
+            x = Modele.getGold();
+            x = x - kasa;
+            if (x < 0)
+            {
+                x = 100;
+                //bankructwo-wymyśleć coś ciekawego;
+            }
+            Modele.setGold(kasa);
         }
 
         public void dzien()
