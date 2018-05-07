@@ -46,11 +46,6 @@
                 <ImageBrush ImageSource="klepsydra.jpg"/>
             </Border.Background>
         </Border>
-        <Button x:Name="warsztat" Content="Warsztat" HorizontalAlignment="Right" Height="55" Margin="824,493,9,130" Width="106" Foreground="White" BorderBrush="#FF020000" Click="Bwarsztat_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="bac.jpg"/>
-            </Button.Background>
-        </Button>
 
 
 

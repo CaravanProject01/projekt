@@ -299,3 +299,5 @@ C:\Users\wardasz\Desktop\robocze\projekt-master\program\Caravans\Caravans\obj\De
 C:\Users\wardasz\Desktop\robocze\projekt-master\program\Caravans\Caravans\obj\Debug\Caravans.csproj.CoreCompileInputs.cache
 C:\Users\wardasz\Desktop\robocze\projekt-master\program\Caravans\Caravans\obj\Debug\Caravans.exe
 C:\Users\wardasz\Desktop\robocze\projekt-master\program\Caravans\Caravans\obj\Debug\Caravans.pdb
+D:\studia\projekt\projekt\program\Caravans\Caravans\obj\Debug\Warsztat.g.cs
+D:\studia\projekt\projekt\program\Caravans\Caravans\obj\Debug\Warsztat.baml

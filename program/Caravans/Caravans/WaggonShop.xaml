@@ -32,7 +32,7 @@
             </Button.Background>
         </Button>
 
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="301" Margin="450,198,0,0" VerticalAlignment="Top" Width="282" RenderTransformOrigin="-0.15,0.385">
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="324" Margin="450,198,0,0" VerticalAlignment="Top" Width="272" RenderTransformOrigin="-0.15,0.385">
             <Canvas Height="65" Width="345">
                 <Image x:Name="apple_jpg1" Height="55" Source="apple.jpg" Stretch="Fill" Width="53"/>
                 <Label x:Name="labe" Content="Jabłka:" Canvas.Left="58" Width="144" FontFamily="Sylfaen"/>
@@ -181,7 +181,7 @@
 
         </ListBox>
         <Image x:Name="wag1_jpg" Margin="78,280,370,134" Source="wag1.jpg" Stretch="Fill"/>
-        <Button x:Name="shop" Content="Sklep" Height="43" Margin="703,86,-53,0" VerticalAlignment="Top" Click="Shop_Click" Foreground="#FFFBFBFB">
+        <Button x:Name="shop" Content="Targowisko" Height="50" Margin="465,78,173,0" VerticalAlignment="Top" Click="Shop_Click" Foreground="#FFFBFBFB">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
@@ -194,7 +194,7 @@
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="312,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="22" Foreground="Black" FontFamily="Sylfaen"><Run Foreground="Black" Text="{Binding Path=ilePojemnosci}"/></TextBlock>
         <Label x:Name="label2" Content="Karawana" HorizontalAlignment="Left" Height="37" Margin="100,71,0,0" VerticalAlignment="Top" Width="119" FontFamily="Sylfaen" FontSize="24"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="42" Margin="78,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" Foreground="Black" FontFamily="Sylfaen"><Run Text=" "/><Run Text="Karawana ci pomoże w twej pracy!!!"/><LineBreak/><Run Text=" Powodzenia!!"/></TextBlock>
-        <Button x:Name="podroz" Content="Podróż" Height="49" Margin="665,515,-30,0" VerticalAlignment="Top" Click="Podroz_Click" Foreground="White">
+        <Button x:Name="podroz" Content="Podróż" Height="50" Margin="465,140,173,0" VerticalAlignment="Top" Click="Podroz_Click" Foreground="White">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
@@ -202,7 +202,15 @@
         <Label x:Name="label" Content="LOKALIZACJ&#xD;&#xA;" HorizontalAlignment="Left" Margin="78,181,0,0" VerticalAlignment="Top" Width="86" Height="41"/>
         <TextBlock x:Name="lokal" HorizontalAlignment="Left" Height="67" Margin="169,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"><Run Foreground="Black" Text="{Binding Path=LOK}"/></TextBlock>
         <Label x:Name="label1_Copy" Content="/" HorizontalAlignment="Left" Margin="295,152,0,0" VerticalAlignment="Top" Width="38" FontFamily="Sylfaen"/>
-        <Button x:Name="shop_Copy" Content="Info" Height="43" Margin="703,134,-53,0" VerticalAlignment="Top" Click="Info_Click" Foreground="#FFFBFBFB">
+        <Button x:Name="shop_Copy" Content="Karczma" Height="50" Margin="599,140,39,0" VerticalAlignment="Top" Click="Info_Click" Foreground="#FFFBFBFB">
+            <Button.Background>
+                <ImageBrush ImageSource="bac.jpg"/>
+            </Button.Background>
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="warsztat" Content="Warsztat" Height="50" Margin="599,78,39,0" VerticalAlignment="Top" Click="Workshop_Click" Foreground="#FFFBFBFB">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>

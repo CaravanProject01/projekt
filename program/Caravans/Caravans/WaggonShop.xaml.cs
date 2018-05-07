@@ -190,6 +190,11 @@ namespace Caravans
             Podroz po = new Podroz();
             po.Show();
         }       
+        private void Workshop_Click(object sender, RoutedEventArgs e)
+        {
+            Warsztat bw = new Warsztat(idk);
+            bw.Show();
+        }
 
         public void odswiez()
         {
@@ -221,7 +226,9 @@ namespace Caravans
             textBlock.Text = obc;
             textBlock1.Text = poj;
 
-        }     
+        }
+
+        
     }
 }
 

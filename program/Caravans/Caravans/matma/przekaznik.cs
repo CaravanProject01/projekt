@@ -170,6 +170,42 @@ namespace Caravans.matma
             return idm;
         }
 
+        public static int dajWozy(string id)
+        {
+            foreach (TableCaravan karawana in Modele.tableCaravan)
+            {
+                if (karawana.GetId() == id)
+                {
+                    return karawana.GetWagons();
+                }
+            }
+            return 5;
+        }
+
+        public static int dajOchrone(string id)
+        {
+            foreach (TableCaravan karawana in Modele.tableCaravan)
+            {
+                if (karawana.GetId() == id)
+                {
+                    return karawana.GetGuard();
+                }
+            }
+            return 0;
+        }
+
+        public static int dajPomagierow(string id)
+        {
+            foreach (TableCaravan karawana in Modele.tableCaravan)
+            {
+                if (karawana.GetId() == id)
+                {
+                    return karawana.GetMinions();
+                }
+            }
+            return 0;
+        }
+
         public static int PoliczObciozenie(string id)
         {
             int wynik=0;
