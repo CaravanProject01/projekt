@@ -335,3 +335,5 @@ F:\Tu\Новая папка\projekt-master\program\Caravans\Caravans\obj\Debug\C
 F:\Tu\Новая папка\projekt-master\program\Caravans\Caravans\obj\Debug\Caravans.pdb
 F:\Tu\Новая папка\projekt-master\program\Caravans\Caravans\obj\Debug\Errors.baml
 F:\Tu\Новая папка\projekt-master\program\Caravans\Caravans\obj\Debug\Errors.g.cs
+D:\studia\projekt\projekt\program\Caravans\Caravans\obj\Debug\Errors.g.cs
+D:\studia\projekt\projekt\program\Caravans\Caravans\obj\Debug\Errors.baml

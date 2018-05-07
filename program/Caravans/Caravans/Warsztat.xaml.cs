@@ -95,7 +95,8 @@ namespace Caravans
             Boolean a = warsztat.kupWoz(id);
             if (a == false)
             {
-                //komunika błędu-za mało hajsu
+                Errors er = new Errors("Nie stać cię na zakup wozu");
+                er.Show();
             }
             zassaj();
             MainWindow.odzwierzGlowne();
@@ -112,7 +113,8 @@ namespace Caravans
             Boolean a = warsztat.zwolnijPomoc(id);
             if (a == false)
             {
-                //komunika błędu-brak pomocników do zwolnienia
+                Errors er = new Errors("Nie masz pomocników do zwolnienia");
+                er.Show();
             }
             zassaj();
         }
@@ -128,7 +130,8 @@ namespace Caravans
             Boolean a = warsztat.zwolnijOchrone(id);
             if (a == false)
             {
-                //komunika błędu-brak najemników do zwolnienia
+                Errors er = new Errors("Nie masz najemników do zwolnienia");
+                er.Show();
             }
             zassaj();
         }

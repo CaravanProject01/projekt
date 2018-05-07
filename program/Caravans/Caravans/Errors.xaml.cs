@@ -19,9 +19,18 @@ namespace Caravans
     /// </summary>
     public partial class Errors : Window
     {
-        public Errors()
+        string mes;
+        public Errors(string a)
         {
+            mes = a;
             InitializeComponent();
+            wiadomosc.DataContext = this;
+        }
+
+        public string MES
+        {
+            get { return mes; }
+            set { mes = value; }
         }
 
         private void Exiterror_Click(object sender, RoutedEventArgs e) => Close();

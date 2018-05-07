@@ -79,11 +79,6 @@ namespace Caravans
             wa.odswiez();
         }
 
-        //private void Error_Click(object sender, RoutedEventArgs e)
-        //{
-       //     er = new Errors();
-      //      er.Show();
-      //  }
 
         public void odswiez()
         {
