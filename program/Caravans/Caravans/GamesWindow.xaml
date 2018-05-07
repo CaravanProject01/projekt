@@ -21,7 +21,7 @@
         </Grid.Background>
         <Image x:Name="map_jpg" Source="map.jpg" Stretch="Fill" Margin="80,42,80,50" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
         <Image x:Name="obud_png" Margin="-25,-25,-14,-25" Source="obud.png" Stretch="Fill"/>
-        <Button x:Name="Bmenu" Content="Zamknij" HorizontalAlignment="Right" Height="42" Margin="0,0,10,0" VerticalAlignment="Top" Width="103" FontSize="24" BorderBrush="Black" Foreground="White" Click="Bmenu_Click">
+        <Button x:Name="Bmenu" Content="Zamknij" HorizontalAlignment="Right" Height="42" Margin="0,13,19,0" VerticalAlignment="Top" Width="137" FontSize="24" BorderBrush="Black" Foreground="White" Click="Bmenu_Click">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
@@ -46,6 +46,11 @@
                 <ImageBrush ImageSource="klepsydra.jpg"/>
             </Border.Background>
         </Border>
+        <Button x:Name="warsztat" Content="Warsztat" HorizontalAlignment="Right" Height="55" Margin="824,493,9,130" Width="106" Foreground="White" BorderBrush="#FF020000" Click="Bwarsztat_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="bac.jpg"/>
+            </Button.Background>
+        </Button>
 
 
 

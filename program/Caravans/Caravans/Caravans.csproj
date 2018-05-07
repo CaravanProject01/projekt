@@ -100,6 +100,9 @@
     <Compile Include="WaggonShop.xaml.cs">
       <DependentUpon>WaggonShop.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Warsztat.xaml.cs">
+      <DependentUpon>Warsztat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Zakupy.xaml.cs">
       <DependentUpon>Zakupy.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WaggonShop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Warsztat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

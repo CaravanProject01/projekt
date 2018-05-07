@@ -45,6 +45,13 @@ namespace Caravans
             zegarek.DataContext = this;
         }
 
+        private void Bwarsztat_Click(object sender, RoutedEventArgs e)
+        {
+            Warsztat bw = new Warsztat();
+            bw.Show();
+        
+        }
+
         private void Bmenu_Click(object sender, RoutedEventArgs e)
         {
             mi = new MainWindow();
