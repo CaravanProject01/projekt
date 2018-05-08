@@ -16,7 +16,7 @@ namespace Caravans.matma
 
         public static void kup(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena)
         {
-            if (ile > 0)
+            if (ile > 0 && cena > 0)
             {
                 foreach (TableArtInCaravan y in Modele.tableArtInCaravan)
                 {
