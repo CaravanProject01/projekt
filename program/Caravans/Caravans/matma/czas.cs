@@ -42,7 +42,7 @@ namespace Caravans.matma
                 x = 100;
                 //bankructwo-wymyśleć coś ciekawego;
             }
-            Modele.setGold(kasa);
+            Modele.setGold(x);
         }
 
         public void dzien()
