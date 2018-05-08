@@ -162,11 +162,15 @@ namespace Caravans
             {
                 shop.IsEnabled = true;
                 podroz.IsEnabled = true;
+                warsztat.IsEnabled = true;
+                karczma.IsEnabled = true;
             }
             else
             {
                 shop.IsEnabled = false;
                 podroz.IsEnabled = false;
+                warsztat.IsEnabled = false;
+                karczma.IsEnabled = false;
             }
         }
 
@@ -190,7 +194,8 @@ namespace Caravans
             Boolean a = przekaznik.czyMoznaPodrozowac(idk);
             if (a == false)
             {
-                //komunikat błędu-za mało ludzi
+                Errors er = new Errors("W twojej karawanie jest za dużo wozów a za mało ludzi by wyruszyć w podróż.");
+                er.Show();
             }
             else
             {

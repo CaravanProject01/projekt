@@ -23,7 +23,7 @@
         </Grid.Background>
         <Image x:Name="car_jpg" Source="car.jpg" Stretch="Fill"/>
         <Image x:Name="obud_png" Margin="-18,-25,-19,-25" Source="obud.png" Stretch="Fill"/>
-        <Button x:Name="Bplay" Content="Grajc dalej" HorizontalAlignment="Left" Height="72" Margin="666,48,0,0" VerticalAlignment="Top" Width="226" FontSize="30" BorderBrush="Black" Foreground="#FFF7F1F1" Click="Bplay_Click">
+        <Button x:Name="Bplay" Content="Wczytaj gre" HorizontalAlignment="Left" Height="72" Margin="666,143,0,0" VerticalAlignment="Top" Width="226" FontSize="30" BorderBrush="Black" Foreground="#FFF7F1F1" Click="Bplay_Click">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
@@ -38,7 +38,7 @@
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="button1" Content="Nowa gra" HorizontalAlignment="Left" Height="65" Margin="759,143,0,0" VerticalAlignment="Top" Width="133" Foreground="White" BorderBrush="Black" FontSize="20">
+        <Button x:Name="button1" Content="Nowa gra" HorizontalAlignment="Left" Height="72" Margin="666,45,0,0" VerticalAlignment="Top" Width="226" Foreground="White" BorderBrush="Black" FontSize="30">
             <Button.Background>
                 <ImageBrush ImageSource="bac.jpg"/>
             </Button.Background>

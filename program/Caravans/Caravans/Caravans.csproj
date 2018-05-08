@@ -97,6 +97,7 @@
     <Compile Include="model\TableState.cs" />
     <Compile Include="model\TableTown.cs" />
     <Compile Include="model\TableTownState.cs" />
+    <Compile Include="model\Tablicadoliczenia.cs" />
     <Compile Include="Podroz.xaml.cs">
       <DependentUpon>Podroz.xaml</DependentUpon>
     </Compile>
