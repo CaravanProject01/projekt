@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Caravans.model;
+﻿using Caravans.model;
 
 namespace Caravans.matma
 {
@@ -15,7 +10,7 @@ namespace Caravans.matma
         {
 
             int liczbamiast = 0, i = 0, pomocint;
-            string cel = "", liczonalokacja;// moze wywalic na koniec lokacje
+            string cel = "";
             Tablicadoliczenia najmniejszywezel = new Tablicadoliczenia(), pom = new Tablicadoliczenia();
             najmniejszywezel.Setczas(-1);
             pom.Setczas(-1);
