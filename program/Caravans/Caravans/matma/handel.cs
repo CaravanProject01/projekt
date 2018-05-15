@@ -14,7 +14,7 @@ namespace Caravans.matma
         //w stylu "masz za mało złota by kupić ten towar", "ten towar nie jest dostępny w tym mieście", "za mała pojemność karawany" itd itp
 
 
-        public static void kup(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena)
+        public static string kup(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena)
         {
             if (ile > 0 && cena > 0)
             {
@@ -34,9 +34,10 @@ namespace Caravans.matma
                     }
                 }              
             }
+            return "done";
         }
 
-        public static void sprzedaj(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena)
+        public static string sprzedaj(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena)
         {
             if (ile > 0)
             {
@@ -56,6 +57,7 @@ namespace Caravans.matma
                     }
                 }              
             }
+            return "done";
         }
     }
 }

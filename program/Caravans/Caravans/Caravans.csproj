@@ -85,6 +85,7 @@
     <Compile Include="matma\miasto.cs" />
     <Compile Include="matma\podroz.cs" />
     <Compile Include="matma\przekaznik.cs" />
+    <Compile Include="matma\Tablicadoliczenia.cs" />
     <Compile Include="matma\towar.cs" />
     <Compile Include="matma\warsztat.cs" />
     <Compile Include="model\Modele.cs" />
@@ -97,7 +98,6 @@
     <Compile Include="model\TableState.cs" />
     <Compile Include="model\TableTown.cs" />
     <Compile Include="model\TableTownState.cs" />
-    <Compile Include="model\Tablicadoliczenia.cs" />
     <Compile Include="Podroz.xaml.cs">
       <DependentUpon>Podroz.xaml</DependentUpon>
     </Compile>

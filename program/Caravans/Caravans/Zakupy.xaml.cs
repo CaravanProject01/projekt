@@ -494,14 +494,30 @@ namespace Caravans
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
         //Muszą także zmieniać wyświetlana ilość towaru (nie wiem czy zmiana w bazie danych starczy-być może trzeba dodatkowo tu zmienić wartości w liście cen i ilości)
         private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
-            handel.sprzedaj(IDkarawana, IDmiasto, IDtowar, ile, cena);
-            zassaj();
-            MainWindow.odzwierzGlowne();          
+            string mess = handel.sprzedaj(IDkarawana, IDmiasto, IDtowar, ile, cena);
+            if (mess == "done")
+            {
+                zassaj();
+                MainWindow.odzwierzGlowne();
+            }
+            else
+            {
+                Errors er = new Errors("mess");
+                er.Show();
+            }
         }
         private void kupowanie(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
-            handel.kup(IDkarawana, IDmiasto, IDtowar, ile, cena);
-            zassaj();
-            MainWindow.odzwierzGlowne();  
+            string mess = handel.kup(IDkarawana, IDmiasto, IDtowar, ile, cena);
+            if (mess == "done")
+            {
+                zassaj();
+                MainWindow.odzwierzGlowne();
+            }
+            else
+            {
+                Errors er = new Errors("mess");
+                er.Show();
+            }
         }
         private void exitZ_Click(object sender, RoutedEventArgs e) //zamknięcie okna
         {
