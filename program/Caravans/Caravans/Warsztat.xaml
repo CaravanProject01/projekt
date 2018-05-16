@@ -58,13 +58,19 @@
                 <ImageBrush ImageSource="kaz.jpg"/>
             </Border.Background>
         </Border>
-        <Label x:Name="label7_Copy" Content="Ilość najemników" HorizontalAlignment="Left" Height="31" Margin="80,407,0,0" VerticalAlignment="Top" Width="232"/>
-        <TextBlock x:Name="ileOchrony" HorizontalAlignment="Left" Height="31" Margin="289,412,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=OCHRONA}"/></TextBlock>
-        <Button x:Name="button3_Copy" Content="najmij" HorizontalAlignment="Left" Height="25" Margin="101,443,0,0" VerticalAlignment="Top" Width="125" Click="button7_Click"/>
-        <Button x:Name="button6_Copy" Content="zwolnij" HorizontalAlignment="Left" Height="25" Margin="236,443,0,0" VerticalAlignment="Top" Width="125" Click="button8_Click"/>
+        <Label x:Name="label7_Copy" Content="Ilość najemników" HorizontalAlignment="Left" Height="31" Margin="80,381,0,0" VerticalAlignment="Top" Width="232"/>
+        <TextBlock x:Name="ileOchrony" HorizontalAlignment="Left" Height="31" Margin="298,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=OCHRONA}"/></TextBlock>
+        <Button x:Name="button3_Copy" Content="najmij" HorizontalAlignment="Left" Height="25" Margin="101,417,0,0" VerticalAlignment="Top" Width="125" Click="button7_Click"/>
+        <Button x:Name="button6_Copy" Content="zwolnij" HorizontalAlignment="Left" Height="25" Margin="236,417,0,0" VerticalAlignment="Top" Width="125" Click="button8_Click"/>
         <Label x:Name="label6_Copy" Content="Pencja pomocnika wynosi 1 sztukę złota dziennie" HorizontalAlignment="Left" Height="29" FontSize="10" Margin="109,342,0,0" VerticalAlignment="Top" Width="252"/>
-        <Label x:Name="label6_Copy2" Content="Pencja najemnika wynosi 3 sztuki złota dziennie" HorizontalAlignment="Left" Height="29" FontSize="10" Margin="109,473,0,0" VerticalAlignment="Top" Width="252"/>
+        <Label x:Name="label6_Copy2" Content="Pencja najemnika wynosi 3 sztuki złota dziennie" HorizontalAlignment="Left" Height="29" FontSize="10" Margin="109,447,0,0" VerticalAlignment="Top" Width="252"/>
         <Label x:Name="label6" Content="Cena wozu wynosi 200 sztuk złota" HorizontalAlignment="Left" Height="29" FontSize="12" Margin="109,237,0,0" VerticalAlignment="Top" Width="252"/>
+        <Button x:Name="nowaKarawana" Content="Sformuj karawanę" HorizontalAlignment="Left" Height="39" Margin="147,476,0,0" VerticalAlignment="Top" Width="165" Foreground="#FFFBFBFB" BorderBrush="Black" Click="nowa">
+            <Button.Background>
+                <ImageBrush ImageSource="bac.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label6_Copy1" Content="Cena nowej karawany wynosi 500 sztuk złota" HorizontalAlignment="Left" Height="29" FontSize="10" Margin="118,515,0,0" VerticalAlignment="Top" Width="252"/>
 
     </Grid>
 

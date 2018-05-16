@@ -19,8 +19,9 @@ namespace Caravans
     /// Логика взаимодействия для WaggonShop.xaml
     /// </summary>
     public partial class WaggonShop : Window
-    {
+    {       
         public static string idk = "KA01";
+        public static List<string> karawany;
         
         public static string tkanIK;
         public static string winoIK;
@@ -37,7 +38,9 @@ namespace Caravans
         public static string obciozenie;
 
         public void zassaj()
-        {          
+        {
+            karawany = przekaznik.dajKarawany();
+        
             tkanIK = przekaznik.IleTowaru(idk, "TO03");
             winoIK = przekaznik.IleTowaru(idk, "TO09");
             bronIK = przekaznik.IleTowaru(idk, "TO06");
@@ -52,6 +55,8 @@ namespace Caravans
             pojemnosc = przekaznik.PoliczPojemnosc(idk).ToString();
             obciozenie = przekaznik.PoliczObciozenie(idk).ToString();
         }
+
+
 
         public string ileObciozenia
         {
@@ -156,6 +161,10 @@ namespace Caravans
             ilprzyprawytour.DataContext = this;
             textBlock.DataContext = this;
             textBlock1.DataContext = this;
+            listunia.DataContext = this;
+
+            odswiezListe();
+            
 
             int jazda = przekaznik.CzasPodrozy(idk);
             if (jazda == 0)
@@ -179,8 +188,8 @@ namespace Caravans
 
         private void Shop_Click(object sender, RoutedEventArgs e)
         {
-            Zakupy za = new Zakupy();
-            za.Show();
+            Zakupy za = new Zakupy(idk);
+            za.Show();        
         }
 
         private void Info_Click(object sender, RoutedEventArgs e)
@@ -199,7 +208,7 @@ namespace Caravans
             }
             else
             {
-                Podroz po = new Podroz();
+                Podroz po = new Podroz(idk);
                 po.Show();
             }
         }       
@@ -241,7 +250,24 @@ namespace Caravans
 
         }
 
-        
+        private void listunia_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string txt = listunia.SelectedItem.ToString();
+            txt = txt.Remove(0, 13);
+            txt = "KA" + txt;
+            idk = txt;
+        }
+
+        public void odswiezListe()
+        {
+            listunia.Items.Clear();
+
+            foreach (string kar in karawany)
+            {
+                string wynik = "Karawana nr. " + kar.Remove(0, 2);
+                listunia.Items.Add(wynik);
+            }
+        }
     }
 }
 

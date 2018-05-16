@@ -23,7 +23,7 @@ namespace Caravans
     public partial class Zakupy : Window
     {
         //ID karawany i miasta-puki co przypisane odgórnie, potem się zrobi by jakoś szukało tych danych
-        private static string idk = "KA01";
+        private static string idk;
         private static string idm;
 
         //wsadza dane do powyższych zmiennych (włącznie z wywowałem funckji policzenia cen)
@@ -483,8 +483,9 @@ namespace Caravans
         
 
         //ważne-inicjalizacja jeśli texbox ma wyświetlać coś co nie jest z góry przypisane, trzeba go tu zainicjalizować
-        public Zakupy()
+        public Zakupy(string a)
         {
+            idk = a;
             InitializeComponent();           
             nowy1.DataContext = this;
             zassaj();

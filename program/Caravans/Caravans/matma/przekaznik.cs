@@ -9,6 +9,17 @@ namespace Caravans.matma
 {
     public class przekaznik
     {
+        public static List<string> dajKarawany()
+        {
+            List<string> lista = new List<string>();
+            foreach(TableCaravan kar in Modele.tableCaravan)
+            {
+                lista.Add(kar.GetId());
+            }
+
+            return lista;
+        }
+
         public static string DajCzasS()
         {
             int x = Modele.getTime();

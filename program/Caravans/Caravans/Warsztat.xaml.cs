@@ -135,5 +135,21 @@ namespace Caravans
             }
             zassaj();
         }
+
+        private void nowa(object sender, RoutedEventArgs e)
+        {
+            Boolean czy = warsztat.nowaKarawana(id);
+            if (czy == true)
+            {
+                Close();
+                MainWindow.odzwierzGlowne();
+                GamesWindow.z1();
+            }
+            else
+            {
+                Errors er = new Errors("Nie stać cię na nową karawanę");
+                er.Show();
+            }
+        }
     }
 }

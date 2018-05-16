@@ -21,81 +21,83 @@ namespace Caravans
 
     public partial class Podroz : Window
     {
-        public Podroz()
+        string id;
+        public Podroz(string a)
         {
+            id = a;
             InitializeComponent();
         }
         private void exitP_Click(object sender, RoutedEventArgs e) => Close();
 
         private void Btourilguard_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI01","KA01");
+            podroz.podrozdo("MI01",id);
             Close();
             GamesWindow.z1();
         }
         private void BEdgetown_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI02","KA01");
+            podroz.podrozdo("MI02",id);
             Close();
             GamesWindow.z1();
         }
         private void BRivercross_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI03","KA01");
+            podroz.podrozdo("MI03",id);
             Close();
             GamesWindow.z1();
         }
         private void BSinTog_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI04","KA01");
+            podroz.podrozdo("MI04",id);
             Close();
             GamesWindow.z1();
         }
         private void BPortfolk_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI05","KA01");
+            podroz.podrozdo("MI05",id);
             Close();
             GamesWindow.z1();
         }
         private void BMountainroot_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI06","KA01");
+            podroz.podrozdo("MI06",id);
             Close();
             GamesWindow.z1();
         }
         private void BBottomStream_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI07","KA01");
+            podroz.podrozdo("MI07",id);
             Close();
             GamesWindow.z1();
         }
         private void BBlackyardt_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI08","KA01");
+            podroz.podrozdo("MI08",id);
             Close();
             GamesWindow.z1();
         }
         private void BLakeshiret_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI09","KA01");
+            podroz.podrozdo("MI09",id);
             Close();
             GamesWindow.z1();
         }
         private void BLothrant_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI10","KA01");
+            podroz.podrozdo("MI10",id);
             Close();
             GamesWindow.z1();
         }
         private void BWaterclaw_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI11","KA01");
+            podroz.podrozdo("MI11",id);
             Close();
             GamesWindow.z1();
         }
         private void BHightown_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI12","KA01");
+            podroz.podrozdo("MI12",id);
             Close();
             GamesWindow.z1();
         }

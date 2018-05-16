@@ -71,6 +71,12 @@ namespace Caravans.model
             return nazwa;
         }
 
+        public static void dodajKarawane(string a, string b)
+        {
+            TableCaravan nowa = new TableCaravan(a, b, 1, 0, 0, 1);
+            tableCaravan.Add(nowa);
+        }
+
         public static void KoniecStanu(string ids, string idm)
         {
             foreach (TableTownState stan in tableTownState)

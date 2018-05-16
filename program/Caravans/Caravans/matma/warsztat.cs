@@ -95,5 +95,32 @@ namespace Caravans.matma
             }
             return false;
         }
+
+        public static Boolean nowaKarawana (string id)
+        {
+            if (Modele.getGold() < 500) return false;
+            int x = Modele.getGold();
+            x = x - 500;
+            Modele.setGold(x);
+            int a = Modele.tableCaravan.Count();
+            a++;
+            string idk = "";
+            if (a < 10)
+            {
+                idk = "KA0" + a.ToString();
+            }
+            else
+            {
+                idk = "KA" + a.ToString();
+            }
+            string idl = "";
+            foreach(TableCaravan kar in Modele.tableCaravan)
+            {
+                if (kar.GetId() == id) idl = kar.GetIdLoc();
+            }
+            Modele.dodajKarawane(idk, idl);
+
+            return true;
+        }
     }
 }
