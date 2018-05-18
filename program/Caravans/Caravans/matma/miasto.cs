@@ -60,7 +60,9 @@ namespace Caravans.matma
 
         public void zmianaPopulacji()
         {
-            policzZywnosc();
+            int pop = populacja / 100;
+            if (pop == 0) pop = 1;
+            policzZywnosc(pop);
             int zpop;
             int zyw = zywnosc;
             if (zyw < 0)
@@ -114,7 +116,7 @@ namespace Caravans.matma
             }
         }
 
-        public void policzZywnosc()
+        public void policzZywnosc(int popu)
         {
             int zapJabl=0;
             int zapMies=0;
@@ -130,15 +132,15 @@ namespace Caravans.matma
                 switch (idek)
                 {
                     case "TO02": //jabłka
-                        zapJabl = tow.dajZapotrzebowanie();
+                        zapJabl = tow.policzZapotrzebowanie(popu);
                         ileJabl = tow.dajIlosc();
                         break;
                     case "TO05": //chleb
-                        zapChleb = tow.dajZapotrzebowanie();
+                        zapChleb = tow.policzZapotrzebowanie(popu);
                         ileChleb = tow.dajIlosc();
                         break;
                     case "TO04": //mieso
-                        zapMies = tow.dajZapotrzebowanie();
+                        zapMies = tow.policzZapotrzebowanie(popu);
                         ileMies = tow.dajIlosc();
                         break;
                     default:
