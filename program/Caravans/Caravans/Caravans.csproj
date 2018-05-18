@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="matma\ceny.cs" />
     <Compile Include="matma\czas.cs" />
+    <Compile Include="matma\gra.cs" />
     <Compile Include="matma\handel.cs" />
     <Compile Include="matma\miasto.cs" />
     <Compile Include="matma\podroz.cs" />

@@ -89,6 +89,10 @@ namespace Caravans
             zegarek.Text = czas;
             textBlock.Text = kasa;
         }
-       
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            gra.zapisz();
+        }
     }
 }

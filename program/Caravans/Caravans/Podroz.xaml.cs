@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Caravans.matma;
 
-//ten using ma stąd zniknąć!!!
-using Caravans.model;
 
 namespace Caravans
 {

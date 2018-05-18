@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Caravans.model;
+using Caravans.matma;
 
 namespace Caravans
 {
@@ -33,18 +33,25 @@ namespace Caravans
 
         private void Bexit_Click(object sender, RoutedEventArgs e) => Close();
 
-        private void Bplay_Click(object sender, RoutedEventArgs e)
-        {
-            Modele x = new Modele();
-            wi = new GamesWindow();
-            wi.Show();
-            this.Close();
-        }
-
         public static void odzwierzGlowne()
         {
             wi.odswiez();
         }
 
+        private void nowa_click(object sender, RoutedEventArgs e)
+        {           
+            gra.nowa();
+            wi = new GamesWindow();
+            wi.Show();
+            this.Close();
+        }
+
+        private void wczytaj_Click(object sender, RoutedEventArgs e)
+        {
+            gra.wczytaj();
+            wi = new GamesWindow();
+            wi.Show();
+            this.Close();
+        }
     }
 }
