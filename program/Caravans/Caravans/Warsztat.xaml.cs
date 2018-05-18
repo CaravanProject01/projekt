@@ -136,7 +136,7 @@ namespace Caravans
             zassaj();
         }
 
-        private void nowa(object sender, RoutedEventArgs e)
+        private void nowa(object sender, RoutedEventArgs e) //nowa karawana
         {
             Boolean czy = warsztat.nowaKarawana(id);
             if (czy == true)

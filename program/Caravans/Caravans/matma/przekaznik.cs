@@ -142,13 +142,12 @@ namespace Caravans.matma
             return wynik;
         }
 
-        public static int CzasPodrozy(string karID)
+        public static int CzasPodrozy(string id)
         {
             int wynik = 0;
             foreach (TableCaravan kar in Modele.tableCaravan)
             {
-                string id = kar.GetId();
-                if (id == karID)
+                if ( kar.GetId()== id)
                 {
                     wynik = kar.GetDuration();
                 }
@@ -166,7 +165,7 @@ namespace Caravans.matma
                     return karawana.GetWagons();
                 }
             }
-            return 5;
+            return 0;
         }
 
         public static int dajOchrone(string id)

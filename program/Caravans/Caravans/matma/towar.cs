@@ -227,7 +227,6 @@ namespace Caravans.matma
                 }
             }
 
-
             double roznica;
             if (zap == 0)
             {
