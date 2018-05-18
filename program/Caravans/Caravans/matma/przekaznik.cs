@@ -69,6 +69,7 @@ namespace Caravans.matma
             return wynik;
         }
 
+        //oddaje stringa do wydrukowania w oknie karawany
         public static string lokalizuj(string idk)
         {
             string roboczy;
@@ -105,11 +106,11 @@ namespace Caravans.matma
             }
         }
 
+        //oddaje id miasta
         public static string lok(string idk)
         {
             string roboczy;
             string wynik="";
-            int czas = 0;
             string idl = "";
             foreach (TableCaravan kar in Modele.tableCaravan)
             {
@@ -117,7 +118,6 @@ namespace Caravans.matma
                 if (roboczy == idk)
                 {
                     idl = kar.GetIdLoc();
-                    czas = kar.GetDuration();
                 }
             }
             foreach (TableTown miasto in Modele.tableTown)
@@ -155,31 +155,7 @@ namespace Caravans.matma
             }
 
             return wynik;
-        }
-
-        public static string GdzieJestem(string idk)
-        {
-            string idm = "";
-            string idl = "";
-            string roboczy;
-            foreach (TableCaravan kar in Modele.tableCaravan)
-            {
-                roboczy = kar.GetId();
-                if (roboczy == idk)
-                {
-                    idl = kar.GetIdLoc();
-                }
-            }
-            foreach (TableTown miasto in Modele.tableTown)
-            {
-                roboczy = miasto.GetIdLoc();
-                if (roboczy == idl)
-                {
-                    idm = miasto.GetId();
-                }
-            }
-            return idm;
-        }
+        } 
 
         public static int dajWozy(string id)
         {

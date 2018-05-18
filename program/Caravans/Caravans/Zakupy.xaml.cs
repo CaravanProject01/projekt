@@ -89,7 +89,7 @@ namespace Caravans
 
         public void zassaj()
         {
-            idm = przekaznik.GdzieJestem(idk);
+            idm = przekaznik.lok(idk);
             dane = new ceny(idm);
             kasa = przekaznik.DajKaseS();
 
