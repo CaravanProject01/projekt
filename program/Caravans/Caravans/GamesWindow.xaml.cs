@@ -26,7 +26,6 @@ namespace Caravans
 
         public static string kasa = przekaznik.DajKaseS();
         public static string czas = przekaznik.DajCzasS();
-        private Errors er;
 
         public string KASA
         {
