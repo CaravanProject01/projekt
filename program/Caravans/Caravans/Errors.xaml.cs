@@ -20,17 +20,35 @@ namespace Caravans
     public partial class Errors : Window
     {
         string mes;
+        string title;
         public Errors(string a)
         {
             mes = a;
+            title = "Pomyłka!";
             InitializeComponent();
             wiadomosc.DataContext = this;
+            tytul.DataContext = this;
+        }
+
+        public Errors(string a, string b)
+        {
+            title = a;
+            mes = b;
+            InitializeComponent();
+            wiadomosc.DataContext = this;
+            tytul.DataContext = this;
         }
 
         public string MES
         {
             get { return mes; }
             set { mes = value; }
+        }
+
+        public string TIT
+        {
+            get { return title; }
+            set { title = value; }
         }
 
         private void Exiterror_Click(object sender, RoutedEventArgs e) => Close();

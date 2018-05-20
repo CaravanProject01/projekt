@@ -79,7 +79,6 @@ namespace Caravans
             wa.odswiez();
         }
 
-
         public void odswiez()
         {
             kasa = przekaznik.DajKaseS();
@@ -93,6 +92,21 @@ namespace Caravans
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             gra.zapisz();
+        }
+
+        public static void napadliNas(string a)
+        {
+            Errors er = new Errors("Napad!!!", a);
+            er.Show();
+        }
+
+        public void zbankrutowales()
+        {
+            mi = new MainWindow();
+            mi.Show();
+            Errors er = new Errors("Przegrana", "Złoto się skończyło, zbankrutowałeś");
+            er.Show();
+            this.Close();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caravans.model;
+using Caravans;
 
 namespace Caravans.matma
 {
@@ -12,14 +13,140 @@ namespace Caravans.matma
         public void tura()
         {
             Modele.time += 1;
-            foreach (TableCaravan x in Modele.tableCaravan)//odejmujemy jedna ture od karawan
+            foreach (TableCaravan kar in Modele.tableCaravan)//odejmujemy jedna ture od karawan
             {
-                x.ChangeDuration(); // tu juz jest kontrola czy jest zero tur (przynajmniej powinno)
-
+                kar.ChangeDuration(); // tu juz jest kontrola czy jest zero tur
+                if (kar.GetDuration() != 0)
+                {
+                    Random rng = new Random();
+                    int random = rng.Next(100);
+                    if (random == 1) napad(kar.GetId());
+                }
             }
             dzien();
             wyplata();
             if (Modele.time % 7 == 0) { tydzien(); }
+        }
+
+        public void napad(string id)
+        {
+            Random rng = new Random();
+            int ochrona = 0;
+            int slozba = 0;
+            foreach(TableCaravan kar in Modele.tableCaravan)
+            {
+                if (kar.GetId() == id)
+                {
+                    ochrona = kar.GetGuard();
+                    slozba = kar.GetMinions();
+                }
+            }
+            int sila = 15 + (10 * ochrona) + (2 * slozba);
+            
+            int ilu = rng.Next(2, 12);
+            int wrogSila = 0;
+            for(int x=0; x<=ilu; x++)
+            {
+                int moc = rng.Next(4, 8);
+                wrogSila = wrogSila + moc;
+            }
+            string numer = id.Remove(0, 2);
+            string wynik = "Karawana nr. " + numer + " została napadnięta";
+            if (sila > wrogSila * 2)
+            {
+                wynik = wynik + ", aczkolwiek napastników zdołano przegonić bez większych strat.";
+                GamesWindow.napadliNas(wynik);
+                return;
+            }
+            if (sila > wrogSila)
+            {
+                wynik = wynik + ", aczkolwiek udało się przegonić napastników. Nie obyło się jednak bez strat w ludziach.";
+                int straty = rng.Next(3);
+                for(int x = 0; x <= straty; x++)
+                {
+                    foreach (TableCaravan kar in Modele.tableCaravan)
+                    {
+                        if (kar.GetId() == id)
+                        {
+                            if (kar.GetGuard() > 0)
+                            {
+                                int z = kar.GetGuard();
+                                z--;
+                                kar.SetGuard(z);
+                            }
+                            else
+                            {
+                                int z = kar.GetMinions();
+                                z--;
+                                if (z < 0) z = 0;
+                                kar.SetMinions(z);
+                            }
+                        }
+                    }
+                }
+                GamesWindow.napadliNas(wynik);
+                return;
+            }
+            if (2 * sila > wrogSila)
+            {
+                wynik = wynik + " i choć udało się co nieco uratować, to większość obsługi i towaru została utracona.";
+                foreach (TableArtInCaravan art in Modele.tableArtInCaravan)
+                {
+                    if (art.GetId() == id)
+                    {
+                        int ilosc = art.GetNumber();
+                        double zmienna = ilosc;
+                        zmienna = zmienna * 0.4;
+                        ilosc = (int)zmienna;                     
+                        art.SetNumber(ilosc);
+                    }
+                }
+                foreach (TableCaravan kar in Modele.tableCaravan)
+                {
+                    if (kar.GetId() == id)
+                    {
+                        kar.SetMinions(1);
+                        kar.SetWagons(1);
+                        kar.SetGuard(0);
+                        Boolean czyOk = false;
+                        while (czyOk == false)
+                        {
+                            int pojemnosc = przekaznik.PoliczPojemnosc(id);
+                            int obciozenie = przekaznik.PoliczObciozenie(id);
+                            if (pojemnosc < obciozenie)
+                            {
+                                int y = kar.GetWagons();
+                                y++;
+                                kar.SetWagons(y);
+                            }
+                            else
+                            {
+                                czyOk = true;
+                            }
+                        }
+                    }
+                }            
+                GamesWindow.napadliNas(wynik);
+                return;
+            }
+            wynik = wynik + " i niemalże wszystko przepadło.";
+            foreach (TableArtInCaravan art in Modele.tableArtInCaravan)
+            {
+                if (art.GetId() == id)
+                {
+                    art.SetNumber(0);
+                }
+            }
+            foreach (TableCaravan kar in Modele.tableCaravan)
+            {
+                if (kar.GetId() == id)
+                {
+                    kar.SetMinions(1);
+                    kar.SetWagons(1);
+                    kar.SetGuard(0);                 
+                }
+            }
+            GamesWindow.napadliNas(wynik);
         }
 
         public void wyplata()
@@ -39,8 +166,7 @@ namespace Caravans.matma
             x = x - kasa;
             if (x < 0)
             {
-                x = 100;
-                //bankructwo-wymyśleć coś ciekawego;
+                MainWindow.wi.zbankrutowales();
             }
             Modele.setGold(x);
         }

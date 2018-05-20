@@ -13,9 +13,9 @@
         <Grid.Background>
             <ImageBrush ImageSource="buttom.png"/>
         </Grid.Background>
-        <TextBlock x:Name="wiadomosc" HorizontalAlignment="Left" Height="114" Margin="180,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="610" FontFamily="Sylfaen" Foreground="#FF0A0202"><Run Foreground="Black" Text="{Binding Path=MES}"/></TextBlock>
+        <TextBlock x:Name="wiadomosc" HorizontalAlignment="Left" Height="114" Margin="180,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="610" FontFamily="Sylfaen" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=MES}"/></TextBlock>
         <Button x:Name="button" Content="X" HorizontalAlignment="Left" Height="40" Margin="762,92,0,0" VerticalAlignment="Top" Width="43" Background="{x:Null}" FontSize="36" Click="Exiterror_Click" BorderBrush="{x:Null}"/>
-        <Label x:Name="label" Content="BŁĄD!" HorizontalAlignment="Left" Height="40" Margin="180,92,0,0" VerticalAlignment="Top" Width="128" FontSize="20"/>
+        <TextBlock x:Name="tytul" HorizontalAlignment="Left" Height="40" Margin="180,92,0,0" VerticalAlignment="Top" Width="128" FontSize="20" Foreground="Black"><Run Foreground="Black" Text="{Binding Path=TIT}"/></TextBlock>
     </Grid>
 
 </Window>
