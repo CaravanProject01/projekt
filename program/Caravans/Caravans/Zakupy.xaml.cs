@@ -503,7 +503,7 @@ namespace Caravans
             }
             else
             {
-                Errors er = new Errors("mess");
+                Errors er = new Errors(mess);
                 er.Show();
             }
         }
@@ -516,7 +516,7 @@ namespace Caravans
             }
             else
             {
-                Errors er = new Errors("mess");
+                Errors er = new Errors(mess);
                 er.Show();
             }
         }

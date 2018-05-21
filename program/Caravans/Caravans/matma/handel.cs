@@ -40,7 +40,7 @@ namespace Caravans.matma
                                         }
                                         else
                                         {
-                                            return "Brak towaru w miescie!";//gdy sie prosi o wiecej niz w miescie jest dostepne
+                                            return "Brak/za mało towaru w miescie!"; //gdy sie prosi o wiecej niz w miescie jest dostepne
                                         }
                                     }
                                     else
@@ -59,9 +59,9 @@ namespace Caravans.matma
             }
             else
             {
-                return "Brak towaru w miescie!";// gdy towar ma status niemozliwe
+                return "Ten towar nie jest na sprzedaż";// gdy towar ma status niemozliwe
             }
-            return "Operacja zakonczona pomyslnie.";
+            return "done";
         }
 
         public static string sprzedaj(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena)
@@ -91,7 +91,7 @@ namespace Caravans.matma
                     }
                 }              
             }
-            return "Operacja zakonczona pomyslnie.";
+            return "done";
         }
     }
 }
