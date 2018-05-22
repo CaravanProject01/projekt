@@ -371,3 +371,5 @@ C:\Users\wardasz\Desktop\robocze\program\Caravans\Caravans\obj\Debug\Caravans.cs
 C:\Users\wardasz\Desktop\robocze\program\Caravans\Caravans\obj\Debug\Caravans.csproj.CoreCompileInputs.cache
 C:\Users\wardasz\Desktop\robocze\program\Caravans\Caravans\obj\Debug\Caravans.exe
 C:\Users\wardasz\Desktop\robocze\program\Caravans\Caravans\obj\Debug\Caravans.pdb
+F:\Tu\projekt-master\program\Caravans\Caravans\obj\Debug\Errors.g.cs
+F:\Tu\projekt-master\program\Caravans\Caravans\obj\Debug\Errors.baml

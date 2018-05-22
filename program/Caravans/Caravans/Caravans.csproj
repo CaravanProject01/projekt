@@ -298,6 +298,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="car.png" />
     <Content Include="CaravansDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
