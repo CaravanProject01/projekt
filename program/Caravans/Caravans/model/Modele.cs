@@ -26,7 +26,7 @@ namespace Caravans.model
 
         internal Modele()
         {
-            gold = 1000;
+            gold = 100000;
             time = 0;
 
             ReadListLocation();
@@ -75,6 +75,30 @@ namespace Caravans.model
         {
             TableCaravan nowa = new TableCaravan(a, b, 1, 0, 0, 1);
             tableCaravan.Add(nowa);
+            TableArtInCaravan nowy = new TableArtInCaravan(a, "TO01", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO01", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO02", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO03", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO04", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO05", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO06", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO07", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO08", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO09", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO10", 0);
+            tableArtInCaravan.Add(nowy);
+            nowy = new TableArtInCaravan(a, "TO11", 0);
+            tableArtInCaravan.Add(nowy);
         }
 
         public static void KoniecStanu(string ids, string idm)

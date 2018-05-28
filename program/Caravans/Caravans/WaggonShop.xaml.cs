@@ -20,7 +20,7 @@ namespace Caravans
     /// </summary>
     public partial class WaggonShop : Window
     {       
-        public static string idk = "KA01";
+        public static string idk;
         public static List<string> karawany;
         
         public static string tkanIK;
@@ -145,6 +145,7 @@ namespace Caravans
 
         public WaggonShop()
         {
+            idk = "KA01";
             zassaj();
             InitializeComponent();
             lokal.DataContext = this;
@@ -163,8 +164,14 @@ namespace Caravans
             textBlock1.DataContext = this;
             listunia.DataContext = this;
 
-            odswiezListe();
-            
+            listunia.Items.Clear();
+
+            foreach (string kar in karawany)
+            {
+                string wynik = "Karawana nr. " + kar.Remove(0, 2);
+                listunia.Items.Add(wynik);
+            }
+
 
             int jazda = przekaznik.CzasPodrozy(idk);
             if (jazda == 0)
@@ -233,6 +240,7 @@ namespace Caravans
             string alchemia = przekaznik.IleTowaru(idk, "TO11");
             string obc = przekaznik.PoliczObciozenie(idk).ToString();
             string poj = przekaznik.PoliczPojemnosc(idk).ToString();
+            string miejsce = przekaznik.lokalizuj(idk);
 
             iljabtour.Text = jablka;
             iltreetour.Text = drewno;
@@ -247,6 +255,23 @@ namespace Caravans
             ilprzyprawytour.Text = przyprawy;
             textBlock.Text = obc;
             textBlock1.Text = poj;
+            lokal.Text = miejsce;
+
+            int jazda = przekaznik.CzasPodrozy(idk);
+            if (jazda == 0)
+            {
+                shop.IsEnabled = true;
+                podroz.IsEnabled = true;
+                warsztat.IsEnabled = true;
+                karczma.IsEnabled = true;
+            }
+            else
+            {
+                shop.IsEnabled = false;
+                podroz.IsEnabled = false;
+                warsztat.IsEnabled = false;
+                karczma.IsEnabled = false;
+            }
 
         }
 
@@ -255,19 +280,9 @@ namespace Caravans
             string txt = listunia.SelectedItem.ToString();
             txt = txt.Remove(0, 13);
             txt = "KA" + txt;
-            idk = txt;
-        }
-
-        public void odswiezListe()
-        {
-            listunia.Items.Clear();
-
-            foreach (string kar in karawany)
-            {
-                string wynik = "Karawana nr. " + kar.Remove(0, 2);
-                listunia.Items.Add(wynik);
-            }
-        }
+            idk = txt;          
+            odswiez();           
+        }      
     }
 }
 

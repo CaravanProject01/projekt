@@ -19,85 +19,183 @@ namespace Caravans
 
     public partial class Podroz : Window
     {
-        string id;
+        string idk;
+        string idm;
         public Podroz(string a)
         {
-            id = a;
+            idk = a;
+            idm = przekaznik.lok(idk);
             InitializeComponent();
         }
         private void exitP_Click(object sender, RoutedEventArgs e) => Close();
 
         private void Btourilguard_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI01",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI01")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI01", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BEdgetown_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI02",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI02")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI02", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BRivercross_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI03",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI03")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI03", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BSinTog_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI04",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI04")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI04", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BPortfolk_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI05",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI05")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI05", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BMountainroot_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI06",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI06")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI06", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BBottomStream_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI07",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI07")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI07", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BBlackyardt_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI08",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI08")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI08", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BLakeshiret_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI09",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI09")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI09", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BLothrant_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI10",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI10")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI10", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BWaterclaw_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI11",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI11")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI11", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
         private void BHightown_Click(object sender, RoutedEventArgs e)
         {
-            podroz.podrozdo("MI12",id);
-            Close();
-            GamesWindow.z1();
+            if (idm == "MI12")
+            {
+                Errors er = new Errors("Jesteś w tym mieście");
+                er.Show();
+            }
+            else
+            {
+                podroz.podrozdo("MI12", idk);
+                Close();
+                GamesWindow.z1();
+            }
         }
     }
 }
