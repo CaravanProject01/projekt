@@ -272,7 +272,6 @@ namespace Caravans
                 warsztat.IsEnabled = false;
                 karczma.IsEnabled = false;
             }
-
         }
 
         private void listunia_SelectionChanged(object sender, SelectionChangedEventArgs e)

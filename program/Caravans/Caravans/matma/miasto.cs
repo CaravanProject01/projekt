@@ -95,6 +95,7 @@ namespace Caravans.matma
                 zpop /= 500;
                 populacja += zpop;
             }
+            if (populacja < 50) populacja = 50;
         }
 
         public void policzTowary()

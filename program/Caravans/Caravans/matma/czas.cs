@@ -444,9 +444,10 @@ namespace Caravans.matma
                                 if (miasto.GetId()==idm) {
                                     int pop = miasto.GetPopulation();
                                     double populacja = pop;
-                                    double ofiary = pop * 0.05;
+                                    double ofiary = populacja * 0.05;
                                     int of = (int)ofiary;
                                     pop = pop - of;
+                                    if (pop < 50) pop = 50;
                                     miasto.SetPopulation(pop);
                                 }
                             }
