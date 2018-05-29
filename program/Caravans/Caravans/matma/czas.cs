@@ -12,7 +12,9 @@ namespace Caravans.matma
     {
         public void tura()
         {
-            Modele.time += 1;
+            int czas = Modele.getTime();
+            czas++;
+            Modele.setTime(czas);
             foreach (TableCaravan kar in Modele.tableCaravan)//odejmujemy jedna ture od karawan
             {
                 kar.ChangeDuration(); // tu juz jest kontrola czy jest zero tur
@@ -25,7 +27,7 @@ namespace Caravans.matma
             }
             dzien();
             wyplata();
-            if (Modele.time % 7 == 0) { tydzien(); }
+            if (czas % 7 == 0) { tydzien(); }
         }
 
         public void napad(string id)
@@ -39,6 +41,7 @@ namespace Caravans.matma
                 {
                     ochrona = kar.GetGuard();
                     slozba = kar.GetMinions();
+                    kar.BackDuration();
                 }
             }
             int sila = 15 + (10 * ochrona) + (2 * slozba);

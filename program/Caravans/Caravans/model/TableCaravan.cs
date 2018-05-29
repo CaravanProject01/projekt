@@ -86,6 +86,12 @@ namespace Caravans.model
                 this.Duration--;
             }
         }
+
+        public void BackDuration()
+        {
+            this.Duration++;
+        }
+
         public void ChangeDuration(int zmienna)
         {
                 this.Duration = zmienna;

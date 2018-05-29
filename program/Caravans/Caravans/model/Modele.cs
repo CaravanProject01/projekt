@@ -22,7 +22,7 @@ namespace Caravans.model
 
 
         private static int gold;
-        public static int time;
+        private static int time;
 
         internal Modele()
         {
@@ -46,13 +46,18 @@ namespace Caravans.model
         {
             return gold;
         }
-        public static void setGold(int newgold)
+        public static void setGold(int a)
         {
-            gold = newgold;
+            gold = a;
         }
         public static int getTime()
         {
             return time;
+        }
+
+        public static void setTime(int a)
+        {
+            time = a;
         }
 
         public static String Nazwalokacji()

@@ -31,7 +31,10 @@ namespace Caravans
             au.Show();
         }
 
-        private void Bexit_Click(object sender, RoutedEventArgs e) => Close();
+        private void Bexit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
 
         public static void odzwierzGlowne()
         {
