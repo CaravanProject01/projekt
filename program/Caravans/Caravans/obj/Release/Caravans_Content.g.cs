@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("caravansdb.mdf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("caravansdb_log.ldf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("caravansdb.mdf")]
 
 

@@ -24,6 +24,8 @@ namespace Caravans
         public static MainWindow mi;
         public static MiastoTour mt;
 
+        public Boolean kar = false;
+
         public static string kasa = przekaznik.DajKaseS();
         public static string czas = przekaznik.DajCzasS();
 
@@ -43,6 +45,11 @@ namespace Caravans
             InitializeComponent();
             textBlock.DataContext=this;
             zegarek.DataContext = this;
+
+            kasa = przekaznik.DajKaseS();
+            czas = przekaznik.DajCzasS();
+            zegarek.Text = czas;
+            textBlock.Text = kasa;
         }
 
 
@@ -55,6 +62,7 @@ namespace Caravans
 
         private void BWaggon_Click(object sender, RoutedEventArgs e)
         {
+            kar = true;
             wa = new WaggonShop();
             wa.Show();
         }
@@ -83,7 +91,7 @@ namespace Caravans
             kasa = przekaznik.DajKaseS();
             czas = przekaznik.DajCzasS();
 
-            odswiezKarawane();
+            if(kar==true) odswiezKarawane();
             zegarek.Text = czas;
             textBlock.Text = kasa;
         }

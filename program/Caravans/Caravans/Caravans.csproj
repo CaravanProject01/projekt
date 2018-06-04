@@ -298,13 +298,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="NewGame_data\Article_data.txt" />
+    <Resource Include="NewGame_data\Art_in_Caravan_data.txt" />
+    <Resource Include="NewGame_data\Art_in_Town_data.txt" />
+    <Content Include="CaravansDB_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>CaravansDB.mdf</DependentUpon>
+    </Content>
+    <Resource Include="NewGame_data\Locs_data.txt" />
+    <Resource Include="NewGame_data\Roads_data.txt" />
+    <Resource Include="NewGame_data\State_data.txt" />
+    <Resource Include="NewGame_data\Town_data.txt" />
     <Resource Include="car.png" />
     <Content Include="CaravansDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CaravansDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CaravansDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Save.png" />
     <Resource Include="klepsydra.jpg" />

@@ -9,19 +9,22 @@ namespace Caravans.matma
 {
     class gra
     {
+        Modele x = new Modele();
+
         public static void zapisz()
         {
-            
+            Modele.Save();
+
         }
 
         public static void wczytaj()
-        {
-            Modele x = new Modele();
+        {        
+            Modele.Load();
         }
 
         public static void nowa()
         {
-            Modele x = new Modele();
+            Modele.Repop();
         }
     }
 }
