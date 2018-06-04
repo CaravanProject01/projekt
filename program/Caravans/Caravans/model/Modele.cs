@@ -27,7 +27,6 @@ namespace Caravans.model
 
         internal Modele()
         {
-            //Load();
         }
 
         public static void Load()
@@ -67,7 +66,7 @@ namespace Caravans.model
             tableArtInTown.Clear();
             tableArtInCaravan.Clear();
 
-            gold = 11000;
+            gold = 5000;
             time = 0;
 
             ReadArticle_NG();
