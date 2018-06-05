@@ -239,7 +239,6 @@ namespace Caravans.model
         }
 
         //Czytanie danych do nowej Gry
-
         internal static void ReadLocs_NG()
         {
             string path = @"..\..\NewGame_data\Locs_data.txt";
@@ -252,20 +251,11 @@ namespace Caravans.model
                         string Line = sr.ReadLine();
                         String[] elem = Line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         tableLoc.Add(new TableLoc(elem[0], elem[1]));
-
-                        /*
-                        foreach (string el in elem)
-                        {
-                            if (el.Trim() != "") Console.Write(el);// Console.WriteLine(el);
-                        }
-                        Console.WriteLine("\n");
-                        */
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
         internal static void ReadArticle_NG()
@@ -280,20 +270,11 @@ namespace Caravans.model
                         string Line = sr.ReadLine();
                         String[] elem = Line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         tableArticle.Add(new TableArticle(elem[0], elem[1], Convert.ToInt32(elem[2]), Convert.ToInt32(elem[3]), Convert.ToInt32(elem[4])));
-
-                        /*
-                        foreach (string el in elem)
-                        {
-                            if (el.Trim() != "") Console.Write(el);// Console.WriteLine(el);
-                        }
-                        Console.WriteLine("\n");
-                        */
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
         internal static void ReadState_NG()
@@ -308,20 +289,11 @@ namespace Caravans.model
                         string Line = sr.ReadLine();
                         String[] elem = Line.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                         tableState.Add(new TableState(elem[0], elem[1], elem[2]));
-
-                        /*
-                        foreach (string el in elem)
-                        {
-                            if (el.Trim() != "") Console.WriteLine(el);
-                        }
-                        Console.WriteLine("\n");
-                        */
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
         internal static void ReadRoads_NG()
@@ -336,20 +308,11 @@ namespace Caravans.model
                         string Line = sr.ReadLine();
                         String[] elem = Line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         tableRoad.Add(new TableRoad(elem[0], elem[1], elem[2], Convert.ToInt32(elem[3]), Convert.ToInt32(elem[4])));
-
-                        /*
-                        foreach (string el in elem)
-                        {
-                            if (el.Trim() != "") Console.WriteLine(el);
-                        }
-                        Console.WriteLine("\n");
-                        */
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
         internal static void ReadTown_NG()
@@ -364,20 +327,11 @@ namespace Caravans.model
                         string Line = sr.ReadLine();
                         String[] elem = Line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         tableTown.Add(new TableTown(elem[0], elem[1], Convert.ToInt32(elem[2]), elem[3], Convert.ToInt32(elem[4]), Convert.ToInt32(elem[5]), Convert.ToInt32(elem[6])));
-
-                        /*
-                        foreach (string el in elem)
-                        {
-                            if (el.Trim() != "") Console.WriteLine(el);
-                        }
-                        Console.WriteLine("\n");
-                        */
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
         internal static void ReadCaravan_NG()
@@ -396,20 +350,11 @@ namespace Caravans.model
                         string Line = sr.ReadLine();
                         String[] elem = Line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         tableArtInCaravan.Add(new TableArtInCaravan(elem[0], elem[1], Convert.ToInt32(elem[2])));
-
-                        /*
-                        foreach (string el in elem)
-                        {
-                            if (el.Trim() != "") Console.WriteLine(el);
-                        }
-                        Console.WriteLine("\n");
-                        */
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("The process failed: {0}", e.ToString());
             }
         }
         internal static void ReadArt_in_town_NG()
@@ -424,100 +369,13 @@ namespace Caravans.model
                         string Line = sr.ReadLine();
                         String[] elem = Line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         tableArtInTown.Add(new TableArtInTown(elem[0], elem[1], Convert.ToInt32(elem[2]), Convert.ToInt32(elem[3]), Convert.ToInt32(elem[4])));
-
-                        /*
-                        foreach (string el in elem)
-                        {
-                            if (el.Trim() != "") Console.Write(el);// Console.WriteLine(el);
-                        }
-                        Console.WriteLine("\n");
-                        */
                     }
                 }
             }
             catch (Exception e)
             {
-                //Console.WriteLine("The process failed: {0}", e.ToString());
             }
-        }
-
-        //Druk modelu
-        /*
-        internal void PrintListLocation()
-        {
-            foreach (var i in tableLoc)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetName() + "\n" + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListCaravan()
-        {
-            foreach (var i in tableCaravan)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetIdLoc() + "\n" + i.GetWagons() + "\n" + i.GetGuard() + "\n" + i.GetDuration() + "\n" + i.GetMinions() + "\n" + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListState()
-        {
-            foreach (var i in tableState)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetName() + "\n" + i.GetDescription() + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListRoad()
-        {
-            foreach (var i in tableRoad)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetIdLoc_1() + "\n" + i.GetIdLoc_2() + "\n" + i.GetLength() + "\n" + i.GetQuality() + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListArticle()
-        {
-            foreach (var i in tableArticle)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetName() + "\n" + i.GetPrice() + "\n" + i.GetProduction() + "\n" + i.GetRequisition() + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListTown()
-        {
-            foreach (var i in tableTown)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetName() + "\n" + i.GetPopulation() + "\n" + i.GetIdLoc() + "\n" + i.GetMilitary() + "\n" + i.GetProsperity() + "\n" + i.GetFood() + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListArtInTown()
-        {
-            foreach (var i in tableArtInTown)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetIdArticle() + "\n" + i.GetNumber() + "\n" + i.GetRequisition() + "\n" + i.GetProduction() + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListArtInCaravan()
-        {
-            foreach (var i in tableArtInCaravan)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetIdArticle() + "\n" + i.GetNumber() + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        internal void PrintListTownState()
-        {
-            foreach (var i in tableTownState)
-            {
-                Console.Write(i.GetId() + "\n" + i.GetIdState() + "\n" + i.GetDuration() + "\n\n");
-            }
-            Console.WriteLine();
-        }
-        */
-
-        //UPDATE
+        }    
 
         public static void UpdateListArticle()
         {

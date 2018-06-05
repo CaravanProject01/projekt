@@ -11,9 +11,6 @@ namespace Caravans.model
 {
     class SQLreq
     {
-
-        //App.config - connectionstring
-
         static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CaravansDB.mdf;Integrated Security=True";
 
         internal void Status()
@@ -37,7 +34,6 @@ namespace Caravans.model
 
         
         //Czytanie dadych z tabeli do Modelu
-
         internal void ReadLocsToMod(List<TableLoc> Location)
         {
             string Comm = "SELECT * FROM Locs";
@@ -271,9 +267,7 @@ namespace Caravans.model
                         object TurnDB = reader.GetValue(2);
 
                         Gold = Convert.ToInt32(GoldDB);
-                        //Console.WriteLine("Gold: {0}", Gold);
                         Turn = Convert.ToInt32(TurnDB);
-                        //Console.WriteLine("Turn: {0}", Turn);
                     }
                 }
             }
@@ -291,7 +285,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
 
@@ -302,7 +295,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while DELETE: {0}", se.Message);
                 return;
             }
         }
@@ -315,7 +307,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
 
@@ -326,7 +317,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while ALTER TABLE (DROP) Art_in_Caravan: {0}", se.Message);
                 return;
             }
 
@@ -338,7 +328,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while TRUNCATE Caravan: {0}", se.Message);
                 return;
             }
 
@@ -349,7 +338,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while ALTER ADD Art_in_Caravan: {0}", se.Message);
                 return;
             }
         }
@@ -362,7 +350,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
 
@@ -379,7 +366,6 @@ namespace Caravans.model
             }
         }
 
-
         //Update tables
 
         internal void UpdateTown(TableTown Town)
@@ -391,7 +377,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
             SqlCommand cmd = new SqlCommand("Update Town" + " Set Name = @Name, Population = @Population, IdLoc = @IdLoc, Military = @Military, Prosperity = @Prosperity, Food = @Food where IdTown = @IdTown", conn);
@@ -437,21 +422,17 @@ namespace Caravans.model
             param.Value = Town.GetId();
             param.SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.Add(param);
-
-            //Console.WriteLine("Update record: " + Town.GetId());
+            
             try
             {
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException se)
             {
-
-                //Console.WriteLine("Error while UPDATE: {0}", se.Message);
                 return;
             }
             conn.Close();
             conn.Dispose();
-            //Console.WriteLine();
         }
         internal void UpdateCaravan(TableCaravan Caravan)
         {
@@ -462,7 +443,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
 
@@ -503,20 +483,17 @@ namespace Caravans.model
             param.Value = Caravan.GetMinions();
             param.SqlDbType = SqlDbType.Int;
             cmd.Parameters.Add(param);
-
-            //Console.WriteLine("Update record: " + Caravan.GetId());
+            
             try
             {
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while INSERT: {0}", se.Message);
                 return;
             }
             conn.Close();
             conn.Dispose();
-            //Console.WriteLine();
         }
         internal void UpdateTownState(TableTownState TownState)
         {
@@ -527,7 +504,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
 
@@ -550,20 +526,17 @@ namespace Caravans.model
             param.Value = TownState.GetDuration();
             param.SqlDbType = SqlDbType.Int;
             cmd.Parameters.Add(param);
-
-            //Console.WriteLine("Insert record: " + TownState.GetId());
+            
             try
             {
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while INSERT: {0}", se.Message);
                 return;
             }
             conn.Close();
             conn.Dispose();
-            //Console.WriteLine();
         }
         internal void UpdateArtInTown(TableArtInTown ArtInTown)
         {
@@ -574,7 +547,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
             SqlCommand cmd = new SqlCommand("Update Art_in_Town" + " Set Number = @Number, Requisition = @Requisition, Production = @Prod where IdArticle = @IdArticle AND IdTown = @IdTown", conn);
@@ -608,22 +580,17 @@ namespace Caravans.model
             param.Value = ArtInTown.GetId();
             param.SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.Add(param);
-
-            //Console.WriteLine("Update record: " + ArtInTown.GetId());
+            
             try
             {
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException se)
-            {
-
-                //Console.WriteLine("Error while UPDATE: {0}", se.Message);
+            {               
                 return;
             }
             conn.Close();
             conn.Dispose();
-            //Console.WriteLine();
-
         }
         internal void UpdateArtInCaravan(TableArtInCaravan ArtInCaravan)
         {
@@ -634,13 +601,10 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
 
             SqlCommand cmd = new SqlCommand("Insert into Art_in_Caravan" + "(IdCaravan, IdArticle, Number) Values (@Id, @IdArt, @Num)", conn);
-
-            //SqlCommand cmd = new SqlCommand("Update Art_in_Caravan" + " Set Number = @Num where IdCaravan = @Id AND IdArticle = @IdArt", conn);
 
             SqlParameter param = new SqlParameter();
             param.ParameterName = "@Id";
@@ -659,20 +623,17 @@ namespace Caravans.model
             param.Value = ArtInCaravan.GetNumber();
             param.SqlDbType = SqlDbType.Int;
             cmd.Parameters.Add(param);
-
-            //Console.WriteLine("Update record: " + ArtInCaravan.GetId());
+            
             try
             {
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while UPDATE: {0}", se.Message);
                 return;
             }
             conn.Close();
             conn.Dispose();
-            //Console.WriteLine();
         }
         internal void UpdateArticle(TableArticle Article)
         {
@@ -683,7 +644,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
             SqlCommand cmd = new SqlCommand("Update Article" + " Set Name = @Name, Price = @Price, Prod = @Prod, Requisition = @Requisition where IdArticle = @ID", conn);
@@ -717,22 +677,17 @@ namespace Caravans.model
             param.Value = Article.GetId();
             param.SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.Add(param);
-
-            //Console.WriteLine("Update record: " + Article.GetId());
+            
             try
             {
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException se)
-            {
-
-                //Console.WriteLine("Error while UPDATE: {0}", se.Message);
+            {                
                 return;
             }
             conn.Close();
             conn.Dispose();
-            //Console.WriteLine();
-
         }
         internal void UpdateResources(int Gold, int Turn)
         {
@@ -743,7 +698,6 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Connection Error:{0}", se.Message);
                 return;
             }
             SqlCommand cmd = new SqlCommand("Update Resources" + " Set Gold = @Gold, Turn = @Turn WHERE IdResources = @IdResources", conn);
@@ -772,14 +726,11 @@ namespace Caravans.model
             }
             catch (SqlException se)
             {
-                //Console.WriteLine("Error while UPDATE: {0}", se.Message);
                 return;
             }
             conn.Close();
             conn.Dispose();
-            //Console.WriteLine();
         }
-
 
         //Czytanie dadych z tabeli, oraz druk do konsoli
 
