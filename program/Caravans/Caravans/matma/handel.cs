@@ -9,10 +9,6 @@ namespace Caravans.matma
 {
     class handel
     {
-        //kamil, popraw te funkcje
-        //poza usunięcięm błędów spraw by zwracały stringa-gównowiadomość jeśli się uda, wyjaśnienie czemu się nie udało jak nie wydzie
-        //w stylu "masz za mało złota by kupić ten towar", "ten towar nie jest dostępny w tym mieście", "za mała pojemność karawany" itd itp
-
 
         public static string kup(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena)
         {
