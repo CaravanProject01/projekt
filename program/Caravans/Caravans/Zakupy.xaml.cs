@@ -494,7 +494,7 @@ namespace Caravans
         //w te funkcje należy wkleić kod od kamila
         //WAŻNE-przed faktyczną wymianą należy sprawdzić czy ilość towaru i kasa sie zgadzają-by nie było ujemnych towarów w mieście
         //Muszą także zmieniać wyświetlana ilość towaru (nie wiem czy zmiana w bazie danych starczy-być może trzeba dodatkowo tu zmienić wartości w liście cen i ilości)
-        private void sprzedarz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
+        private void sprzedaz(string IDkarawana, string IDmiasto, string IDtowar, int ile, int cena) {
             string mess = handel.sprzedaj(IDkarawana, IDmiasto, IDtowar, ile, cena);
             if (mess == "done")
             {
@@ -532,7 +532,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(tkan.Text);
             int cena = Convert.ToInt32(tkanCS);
-            sprzedarz(idk, idm, "TO03", ile, cena);
+            sprzedaz(idk, idm, "TO03", ile, cena);
         }
 
         private void buttonT2_Click(object sender, RoutedEventArgs e)//tkanina -
@@ -570,7 +570,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(wino.Text);
             int cena = Convert.ToInt32(winoCS);
-            sprzedarz(idk, idm, "TO09", ile, cena);
+            sprzedaz(idk, idm, "TO09", ile, cena);
         }
 
         private void buttonW2_Click(object sender, RoutedEventArgs e)//wino -
@@ -608,7 +608,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(bron.Text);
             int cena = Convert.ToInt32(bronCS);
-            sprzedarz(idk, idm, "TO06", ile, cena);
+            sprzedaz(idk, idm, "TO06", ile, cena);
         }
 
         private void buttonB2_Click(object sender, RoutedEventArgs e)//bron -
@@ -646,7 +646,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(hleb.Text);
             int cena = Convert.ToInt32(chlebCS);
-            sprzedarz(idk, idm, "TO05", ile, cena);
+            sprzedaz(idk, idm, "TO05", ile, cena);
         }
 
         private void buttonC2_Click(object sender, RoutedEventArgs e)//chleb -
@@ -684,7 +684,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(brondrz.Text);
             int cena = Convert.ToInt32(drewCS);
-            sprzedarz(idk, idm, "TO01", ile, cena);
+            sprzedaz(idk, idm, "TO01", ile, cena);
         }
 
         private void buttonD2_Click(object sender, RoutedEventArgs e)//drewno -
@@ -722,7 +722,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(jabl.Text);
             int cena = Convert.ToInt32(jablCS);
-            sprzedarz(idk, idm, "TO02", ile, cena);
+            sprzedaz(idk, idm, "TO02", ile, cena);
         }
 
         private void buttonJ2_Click(object sender, RoutedEventArgs e)//jabłko -
@@ -760,7 +760,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(mies.Text);
             int cena = Convert.ToInt32(miesoCS);
-            sprzedarz(idk, idm, "TO04", ile, cena);
+            sprzedaz(idk, idm, "TO04", ile, cena);
         }
 
         private void buttonM2_Click(object sender, RoutedEventArgs e)//mięso -
@@ -798,7 +798,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(perl.Text);
             int cena = Convert.ToInt32(perlCS);
-            sprzedarz(idk, idm, "TO07", ile, cena);
+            sprzedaz(idk, idm, "TO07", ile, cena);
         }
 
         private void buttonP2_Click(object sender, RoutedEventArgs e)//perła -
@@ -836,7 +836,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(skur.Text);
             int cena = Convert.ToInt32(skrCS);
-            sprzedarz(idk, idm, "TO10", ile, cena);
+            sprzedaz(idk, idm, "TO10", ile, cena);
         }
 
         private void buttonS2_Click(object sender, RoutedEventArgs e)//skóra -
@@ -874,7 +874,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(srodki.Text);
             int cena = Convert.ToInt32(alchCS);
-            sprzedarz(idk, idm, "TO11", ile, cena);
+            sprzedaz(idk, idm, "TO11", ile, cena);
         }
 
         private void buttonA2_Click(object sender, RoutedEventArgs e)//alchemia -
@@ -912,7 +912,7 @@ namespace Caravans
         {
             int ile = Convert.ToInt32(przyp.Text);
             int cena = Convert.ToInt32(przypCS);
-            sprzedarz(idk, idm, "TO08", ile, cena);
+            sprzedaz(idk, idm, "TO08", ile, cena);
         }
 
         private void buttonX2_Click(object sender, RoutedEventArgs e)//przyprawy -
